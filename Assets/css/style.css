@@ -1,0 +1,95 @@
+:root {
+    --c-dark: #053827;
+    --c-brand: #D6D6D6;
+    --c-brand-hover: rgb(202, 202, 202);
+    --c-brand-light: #00C38C;
+    --c-brand-button: #01946A;
+    --c-body: #00C38C;
+    --font-base: "ClashDisplay", sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: var(--font-base);
+}
+
+/* front background CSS*/
+
+.bg-front {
+    height: 100vh;
+    background: url(../images/bg-front.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-front-background{
+    height: 100vh;
+    background-color: var(--c-dark);
+    opacity: calc(0.5);
+}
+
+/* navigation CSS*/
+
+nav {
+    height: 40px;
+    max-width: 1860px;
+    width: 100%;
+    background: var(--c-dark);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    color: var(--c-brand);
+    z-index: 2;
+}
+
+.nav-title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-sections ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+.nav-sections ul li {
+    display: inline;
+    margin-left: 50px; 
+}
+
+.nav-sections ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-sections ul li a:hover {
+    color: var(--c-brand-hover);
+}
+
+.nav-sections .btn-sign-in {
+    padding: 4px 25px;
+    background-color: var(--c-brand-button);
+    border-radius: 10px;
+}
+
+.nav-sections .btn-sign-in:hover {
+    filter: brightness(110%);
+}

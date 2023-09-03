@@ -4,18 +4,19 @@
     --c-brand-hover: rgb(202, 202, 202);
     --c-brand-light: #00C38C;
     --c-brand-button: #01946A;
-    /* --c-brand-bg-radient: ; */
+    --c-brand-bg-radient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
     --font-base: "ClashDisplay", sans-serif;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
 }
-    /* changes */
+
 * {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
     font-family: var(--font-base);
+    background-color: ;
 }
 
 /* front background CSS*/
@@ -26,24 +27,64 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    
 }
 
 .bg-front-background{
     height: 100vh;
-    background-color: var(--c-dark);
-    opacity: calc(0.5);
+    background-color: var(--c-brand-button);
+    opacity: calc(0.3);
+}
+
+/* front page CSS */
+
+.container-center {
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.container-center .text{
+    margin-top: 10px;
+}
+
+.container-center .appointment-btn {
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: var(--c-brand-button);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+.container-center .appointment-btn:hover{
+    filter: brightness(90%);
 }
 
 /* navigation CSS*/
 
 nav {
     height: 40px;
-    max-width: 1860px;
-    width: 100%;
+    max-width: calc(100% - 40px); 
+    width: auto; 
     background: var(--c-dark);
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30px; 
+    right: 30px; 
     margin-top: 20px;
     border-radius: 6px;
     display: flex;
@@ -51,7 +92,7 @@ nav {
     padding: 0 20px;
     align-items: center;
     color: var(--c-brand);
-    z-index: 2;
+    z-index: 99;
 }
 
 .nav-title {
@@ -92,5 +133,5 @@ nav {
 }
 
 .nav-sections .btn-sign-in:hover {
-    filter: brightness(110%);
+    filter: brightness(90%);
 }

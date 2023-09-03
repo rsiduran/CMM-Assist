@@ -58,6 +58,7 @@
 
 .container-center .text{
     margin-top: 10px;
+    text-shadow: var(--box-shadow);
 }
 
 .container-center .appointment-btn {
@@ -134,4 +135,32 @@ nav {
 
 .nav-sections .btn-sign-in:hover {
     filter: brightness(90%);
+}
+
+.hamburger-nav{
+    display: none;
+}
+
+/* Media Screens */
+
+/* navbar media */
+@media screen and (max-width: 850px) {
+    nav {
+        display: none;
+    }
+}
+
+/* large mobile */
+@media screen and (max-width: 425px) {
+    
+}
+
+/* medium mobile */
+@media screen and (max-width: 375px) {
+    
+}
+
+/* small mobile */
+@media screen and (max-width: 320px) {
+    
 }

@@ -145,9 +145,13 @@ nav {
 
 /* navbar media */
 @media screen and (max-width: 850px) {
-    nav {
+    .nav-sections {
         display: none;
     }
+    .hamburger-nav {
+        display: block;
+    }
+
 }
 
 /* large mobile */

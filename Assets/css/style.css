@@ -4,7 +4,7 @@
     --c-brand-hover: rgb(202, 202, 202);
     --c-brand-light: #00C38C;
     --c-brand-button: #01946A;
-    --c-brand-bg-radient: linear-gradient(to right, #D4FBDC, white);
+    --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
     --font-base: "ClashDisplay", sans-serif;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
@@ -16,6 +16,10 @@
     box-sizing: border-box;
     padding: 0;
     font-family: var(--font-base);
+}
+
+section {
+    padding-top: 70px;
 }
 
 /* front background CSS*/
@@ -155,10 +159,155 @@ nav {
     transition: all 0.3s ease-in-out;
     background-color: white;
 }
+
+/* section services */
+
+#services {
+    background: var(--c-brand-bg-gradient);
+}
+
+.services {
+    max-width: 944px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.CMM-services{
+    font-size: 24px;
+}
+
+.line {
+    width: 100px;
+    background-color: #42AF90;
+    height: 5px;
+    margin: 0 auto;
+    margin-top: 7px;
+    margin-bottom: 51px;
+    border-radius: 5px;
+}
+
+.texts {
+    padding: 0 78px;
+    font-size: 18px;
+}
+
+.text-2 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.text-3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 300px);
+    gap: 22px;
+    justify-content: center; 
+    align-items: center; 
+    padding-bottom: 50px;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.services-img1 {
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-img2 {
+    width: 75%;
+    top: 7%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-img3 {
+    width: 100%;
+    top: 15%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-img4 {
+    width: 80%;
+    top: 3%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-img5 {
+    width: 100%;
+    top: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-img6 {
+    width: 70%;
+    top: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.color-1 {
+    background-color: #3FC1BF;
+}
+
+.color-2 {
+    background-color: #008773;
+}
+
+.color-3 {
+    background-color: #E9BAC0;
+}
+
+.color-4 {
+    background-color: #CCB358;
+}
+
+.color-5 {
+    background-color: #A2DDE5;
+}
+
+.color-6 {
+    background-color: #A9AAEE;
+}
+
+.service-title {
+    
+    padding: 12px 40px;
+    background-color: #A0FFB5;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+}
+
+
 /* Media Screens */
 
 /* navbar media */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
     .navbar.active {
         border-radius: 6px 6px 0 0;
     }
@@ -198,6 +347,20 @@ nav {
     }
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3, 300px);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(6, 300px);
     }
 }
 

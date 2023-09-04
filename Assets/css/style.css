@@ -59,6 +59,11 @@
 .container-center .text{
     margin-top: 10px;
     text-shadow: var(--box-shadow);
+    padding: 0 20px;
+}
+
+.img-l {
+    width: 100%;
 }
 
 .container-center .appointment-btn {
@@ -137,31 +142,91 @@ nav {
     filter: brightness(90%);
 }
 
-.hamburger-nav{
+.hamburger{
     display: none;
+    cursor: pointer;
 }
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
 /* Media Screens */
 
 /* navbar media */
 @media screen and (max-width: 850px) {
-    .nav-sections {
-        display: none;
+    .navbar.active {
+        border-radius: 6px 6px 0 0;
     }
-    .hamburger-nav {
+    .hamburger {
         display: block;
     }
-
+    .nav-sections.active {
+        right: 30px;
+        left: 30px;
+    }
+    .nav-sections {
+        height: auto;
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--c-dark);
+        width: 100% calc(-30px);
+        text-align: center;
+        transition: 0.3s;
+        z-index: 1000;
+        border-radius: 0 0 6px 6px;
+    }
+    .nav-sections ul {
+        flex-direction: column;
+    }
+    .nav-sections ul li {
+        margin-left: 0;
+        margin-bottom: 16px;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /* large mobile */
 @media screen and (max-width: 425px) {
-    
+    .container-center {
+        width: 390px;
+    }
+    .container-center .text{
+        font-size: 16px;
+    }
+    .img-l {
+        width: 100%;
+    }
 }
 
 /* medium mobile */
 @media screen and (max-width: 375px) {
-    
+    .container-center .text{
+        font-size: 15px;
+        
+    }
+    .image-logo {
+        width: 300px;
+    }
+    .img-l {
+        width: 100%;
+    }
 }
 
 /* small mobile */

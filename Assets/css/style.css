@@ -172,8 +172,9 @@ nav {
     text-align: center;
 }
 
-.CMM-services{
+.section-title {
     font-size: 24px;
+    text-align: center;
 }
 
 .line {
@@ -201,7 +202,7 @@ nav {
     margin-bottom: 20px;
 }
 
-.grid-container {
+.grid-container-services {
     display: grid;
     grid-template-columns: repeat(3, 300px);
     grid-template-rows: repeat(2, 300px);
@@ -303,11 +304,107 @@ nav {
     display: block;
 }
 
+/* section doctors */
+
+.grid-container-doctors {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 400px);
+    gap: 22px;
+    justify-content: center; 
+    align-items: center; 
+    padding-bottom: 50px;
+}
+
+.color-green {
+    background-color: #AEE4D4;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.color-blue {
+    background-color: #81BCD5;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.img-container-hide {
+    height: 100%;
+}
+
+.doctors-img {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.color-green.active {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: #00C38C;
+}
+
+.color-blue.active {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: #3FC1BF;
+}
+
+.doctors-img.active {
+    display: none;
+}
+
+.doctors-info-blue.active, .doctors-info-green.active {
+    display: block;
+}
+
+
+.doctors-info-green {
+    height: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color:#00C38C;
+    text-align: center;
+    display: none;
+}
+
+.doctors-info-blue {
+    height: 100%;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: #3FC1BF;
+    text-align: center;
+    display: none;
+}
+
+.doctors-text-1 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.doctors-text-2 {
+    padding-bottom: 40px;
+}
 
 /* Media Screens */
 
 /* navbar media */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .navbar.active {
         border-radius: 6px 6px 0 0;
     }
@@ -351,16 +448,24 @@ nav {
 }
 
 @media screen and (max-width: 950px) {
-    .grid-container {
+    .grid-container-services {
         grid-template-columns: repeat(2, 300px);
         grid-template-rows: repeat(3, 300px);
+    }
+    .grid-container-doctors {
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3, 400px);
     }
 }
 
 @media screen and (max-width: 650px) {
-    .grid-container {
+    .grid-container-services {
         grid-template-columns: repeat(1, 300px);
         grid-template-rows: repeat(6, 300px);
+    }
+    .grid-container-doctors {
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(6, 400px);
     }
 }
 

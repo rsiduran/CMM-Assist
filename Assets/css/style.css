@@ -18,6 +18,10 @@
     font-family: var(--font-base);
 }
 
+body {
+    background: var(--c-brand-bg-gradient);
+}
+
 section {
     padding-top: 70px;
 }
@@ -209,7 +213,6 @@ nav {
     gap: 22px;
     justify-content: center; 
     align-items: center; 
-    padding-bottom: 50px;
 }
 
 .grid-item {
@@ -431,6 +434,61 @@ nav {
     opacity: 1;
 }
 
+/* section about-us */
+
+.about-us-top {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.text-title-about-us {
+    font-size: 18px;
+}
+
+.text-about-us {
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.about-us {
+    margin: 0 auto;
+    max-width: 1660px;
+    padding-left: 40px;
+    padding-right: 40px; 
+}
+
+.map-left {
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.map-frame {
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.about-us-bottom {
+    height: 100px;
+    background-color: #B1C4B2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone, .email, .facebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.icon-about-us {
+    margin-right: 10px;
+}
 
 
 /* Media Screens */
@@ -477,6 +535,9 @@ nav {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+    .map-frame {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -488,6 +549,7 @@ nav {
         grid-template-columns: repeat(2, 300px);
         grid-template-rows: repeat(3, 400px);
     }
+    
 }
 
 @media screen and (max-width: 650px) {
@@ -499,6 +561,7 @@ nav {
         grid-template-columns: repeat(1, 300px);
         grid-template-rows: repeat(6, 400px);
     }
+    
 }
 
 /* large mobile */

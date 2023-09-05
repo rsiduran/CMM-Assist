@@ -1,29 +1,11 @@
 const hamburger = document.querySelector(".hamburger");
 const navSections = document.querySelector(".nav-sections");
 const navBar = document.querySelector(".navbar");
-const colorGreenElements = document.querySelectorAll(".color-green");
-const colorBlueElements = document.querySelectorAll(".color-blue");
-const doctorsImage = document.querySelectorAll(".doctors-img");
-const doctorsInfoGreen = document.querySelectorAll(".doctors-info-green");
-const doctorsInfoBlue = document.querySelectorAll(".doctors-info-blue");
-
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navSections.classList.toggle("active");
     navBar.classList.toggle("active");
-});
-
-colorGreenElements.forEach((element) => {
-    element.addEventListener("click", () => {
-        element.classList.toggle("active");
-    });
-});
-
-colorBlueElements.forEach((element) => {
-    element.addEventListener("click", () => {
-        element.classList.toggle("active");
-    });
 });
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {

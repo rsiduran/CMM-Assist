@@ -512,6 +512,17 @@ nav {
     .img-l {
         width: 100%;
     }
+    .texts, .text-doctors {
+        font-size: 14px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .section-title {
+        font-size: 18px;
+    }
+    .text-3 {
+        font-size: 12px;
+    }
 }
 
 /* medium mobile */
@@ -525,6 +536,14 @@ nav {
     }
     .img-l {
         width: 100%;
+    }
+    .grid-container-services {
+        grid-template-columns: repeat(1, 250px);
+        grid-template-rows: repeat(6, 250px);
+    }
+    .grid-container-doctors {
+        grid-template-columns: repeat(1, 250px);
+        grid-template-rows: repeat(6, 350px);
     }
 }
 

@@ -552,6 +552,16 @@ nav {
     
 }
 
+@media screen and (max-width: 815px) {
+    .about-us-bottom {
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .icon-about-us {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .grid-container-services {
         grid-template-columns: repeat(1, 300px);
@@ -575,7 +585,7 @@ nav {
     .img-l {
         width: 100%;
     }
-    .texts, .text-doctors {
+    .texts, .text-doctors, .text-title-about-us, .text-about-us {
         font-size: 14px;
         padding-left: 30px;
         padding-right: 30px;
@@ -607,6 +617,9 @@ nav {
     .grid-container-doctors {
         grid-template-columns: repeat(1, 250px);
         grid-template-rows: repeat(6, 350px);
+    }
+    .map-frame {
+        width: 100%;
     }
 }
 

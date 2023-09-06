@@ -33,20 +33,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const signInLink = document.getElementById("signInLink");
-const ekisIcon = document.getElementById("ekis-icon");
-const signContainer = document.querySelector(".sign-container");
+document.addEventListener("DOMContentLoaded", function () {
+    const signInLink = document.getElementById("signInLink");
+    const signInPopUp = document.getElementById("signInPopUp");
+    const ekisIcon = document.getElementById("ekis-icon");
 
-signInLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    toggleSignContainer();
+    signInLink.addEventListener("click", function (event) {
+        event.preventDefault(); 
+
+       
+        if (signInPopUp.style.transform === "translate(-50%, -50%)") {
+            signInPopUp.style.opacity = 0;
+            signInPopUp.style.transform = "translate(-50%, -150%)"; 
+            setTimeout(() => {
+                signInPopUp.style.display = "none";
+            }, 300); 
+        } else {
+            signInPopUp.style.display = "block";
+            setTimeout(() => {
+                signInPopUp.style.opacity = 1;
+                signInPopUp.style.transform = "translate(-50%, -50%)"; 
+            }, 10); 
+        }
+    });
+
+    ekisIcon.addEventListener("click", function () {
+        signInPopUp.style.opacity = 0;
+        signInPopUp.style.transform = "translate(-50%, -150%)";
+        setTimeout(() => {
+            signInPopUp.style.display = "none";
+        }, 300);
+    });
 });
 
-ekisIcon.addEventListener("click", function (event) {
-    event.preventDefault();
-    toggleSignContainer();
-});
-
-function toggleSignContainer() {
-    signContainer.classList.toggle("active");
-}

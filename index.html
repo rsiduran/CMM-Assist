@@ -9,6 +9,34 @@
 </head>
 <body>
 
+    <div class="sign-container">
+        <div class="sign-in-pop-up">
+            <i class='bx bx-x bx-md ekis-icon' id="ekis-icon"></i>
+            <div class="top-sign-in">
+                <p>Sign in</p>
+                <img class="sign-in-logo-img" src="Assets/images/CMM LOGO.png" alt="CMM LOGO">
+            </div>
+            <div class="sign-in-text">
+                Kindly provide your credentials to access the secure portal. To proceed, please enter the following information
+            </div>
+            <div class="sign-in-inputs">
+                <form action="">
+                    <label class="label-field-sign-in" for="fullname">Username:</label><br>
+                    <input class="sign-in-input" type="text" name="username" required><br><br>
+            
+                    <label class="label-field-sign-in" for="password">Password:</label><br>
+                    <input class="sign-in-input" type="password" name="password" required>
+                    <p class="sign-in-forgot">Forgot password?</p>
+
+                    <div class="btn-container">
+                        <button class="log-in-btn" type="submit">Sign in</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <nav class="navbar">
         <div class="nav-title">
             <h2>CMM assist</h2>
@@ -20,7 +48,7 @@
                 <li class="nav-item"><a href="#doctors" class="nav-link">Doctors</a></li>
                 <li class="nav-item"><a href="#about-us" class="nav-link">About us</a></li>
                 <li class="nav-item"><a href="#contact-us" class="nav-link">Contact us</a></li>
-                <li class="nav-item"><a href="#sign-in" class="btn-sign-in nav-link">SIGN IN</a></li>
+                <li class="nav-item"><a href="#sign-in" class="btn-sign-in nav-link" id="signInLink">SIGN IN</a></li>
             </ul>
         </div>
         <div class="hamburger">

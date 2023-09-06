@@ -32,3 +32,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+const signInLink = document.getElementById("signInLink");
+const ekisIcon = document.getElementById("ekis-icon");
+const signContainer = document.querySelector(".sign-container");
+
+signInLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleSignContainer();
+});
+
+ekisIcon.addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleSignContainer();
+});
+
+function toggleSignContainer() {
+    signContainer.classList.toggle("active");
+}

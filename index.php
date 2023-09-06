@@ -1,3 +1,21 @@
+<?php
+
+include 'config.php';
+
+if(isset($_POST['submit'])) {
+    $inquiry_name = $_POST['inquiry_name'];
+    $inquiry_email = $_POST['inquiry_email'];
+    $inquiry_message = $_POST['inquiry_message'];
+
+
+    $inquiry_name = mysqli_real_escape_string($connect, $inquiry_name);
+    $inquiry_email = mysqli_real_escape_string($connect, $inquiry_email);
+    $inquiry_message = mysqli_real_escape_string($connect, $inquiry_message);
+
+    $inquiry = mysqli_query($connect, "INSERT INTO `inquiry` (name, email, message) VALUES ('$inquiry_name', '$inquiry_email', '$inquiry_message')") or die ('Query Failed');
+}   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -257,17 +275,17 @@
             <div class="y-line"><div class="text-contact-us">
                 If you are experiencing issues or have questions let us know by filling out the form below
             </div></div>
-            <form class="contact-us-form" action="">
+            <form class="contact-us-form" action="" method="post">
                 <label class="label-field" for="fullname">Full Name:</label><br>
-                <input class="input-field" type="text" id="fullname" name="fullname" required><br><br>
+                <input class="input-field" autocomplete="off" type="text" id="fullname" name="inquiry_name" required pattern="[A-Za-z. ]+"><br><br>
         
                 <label class="label-field" for="email">Email:</label><br>
-                <input class="input-field" type="email" id="email" name="email" required><br><br>
+                <input class="input-field" autocomplete="off" type="email" id="email" name="inquiry_email" required><br><br>
         
                 <label class="label-field" for="message">Message:</label><br>
-                <textarea style="max-width: 840px;" class="input-field" id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <textarea style="max-width: 840px;" class="input-field" autocomplete="off" id="message" name="inquiry_message" rows="4" cols="50" required></textarea><br><br>
         
-                <input class="contact-us-submit" type="submit" value="Submit">
+                <input class="contact-us-submit" type="submit" value="Submit" name="submit">
             </form>
         </div>
         <div class="contact-us-right">

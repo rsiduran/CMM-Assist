@@ -34,17 +34,6 @@ section {
 
 /* sign-in-pop-up */
 
-.sign-container {
-    display: none;
-    transition: opacity 5s ease-in-out; 
-    opacity: 0; 
-}
-
-.sign-container.active {
-    display: block;
-    opacity: 1;
-}
-
 .sign-in-pop-up {
     height: 400px;
     max-width: 425px;
@@ -58,6 +47,10 @@ section {
     transform: translate(-50%, -50%);
     border-radius: 5px;
     font-family: 'Montserrat';
+    display: none;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translate(-50%, -150%);
 }
 
 .ekis-icon {

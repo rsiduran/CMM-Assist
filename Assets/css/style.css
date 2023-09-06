@@ -1,3 +1,9 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+
 :root {
     --c-dark: #053827;
     --c-brand: #D6D6D6;
@@ -6,7 +12,7 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: "ClashDisplay", sans-serif;
+    --font-base: sans-serif;;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
 }
@@ -24,6 +30,122 @@ body {
 
 section {
     padding-top: 70px;
+}
+
+/* sign-in-pop-up */
+
+.sign-container {
+    display: none;
+    transition: opacity 5s ease-in-out; 
+    opacity: 0; 
+}
+
+.sign-container.active {
+    display: block;
+    opacity: 1;
+}
+
+.sign-in-pop-up {
+    height: 400px;
+    max-width: 425px;
+    width: 425px;
+    background: #67ac94; 
+    position: fixed;
+    z-index: 200;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.598);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    font-family: 'Montserrat';
+}
+
+.ekis-icon {
+    position: fixed;
+    right: 0;
+    cursor: pointer;
+}
+
+.top-sign-in {
+    height: 50px;
+    margin-top: 55px;
+    padding-right: 20px;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .1px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.479);
+    font-size: 22px;
+}
+
+.sign-in-logo-img {
+    height: 100%;
+}
+
+.sign-in-text {
+    margin-top: 20px;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+
+.sign-in-inputs {
+    padding: 0 30px;
+}
+
+.label-field-sign-in {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sign-in-input {
+    margin-bottom: 5px;
+    width: 100%;
+    font-weight: 15px;
+    padding: 7px;
+    font-family: sans-serif;
+    border: 1px solid green;
+    border-radius: 4px;
+    margin-top: 2px;
+    outline: none;
+}
+
+.sign-in-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
+}
+
+.sign-in-forgot {
+    text-align: right;
+    font-size: 13px;
+    color: #0047FF;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.btn-container {
+    position: relative;
+}
+
+.log-in-btn {
+    padding: 5px 25px;
+    border-radius: 3px;
+    border: none;
+    background: #00C38C;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all ease-in-out .08s;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.log-in-btn:hover {
+    background-color: rgb(0, 80, 52);
+    color: white;
 }
 
 /* front background CSS*/
@@ -167,7 +289,7 @@ nav {
 /* section services */
 
 #services {
-    background: var(--c-brand-bg-gradient);
+    padding-bottom: 20px;
 }
 
 .services {
@@ -309,7 +431,7 @@ nav {
 /* section doctors */
 
 #doctors {
-    background: var(--c-brand-bg-gradient);
+    background: #EAEEEF;  /* can be removed */
 }
 
 .ft-bold {
@@ -556,7 +678,8 @@ nav {
 }
 
 .input-field:focus {
-     border: #009f5d solid 1px; /* I dunno why this isnt working */
+    outline: none;
+    box-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
 }
 
 .contact-us-submit {

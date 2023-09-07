@@ -1,4 +1,4 @@
-
+@import url('../Fonts/WEB/css/clash-display.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
@@ -9,7 +9,7 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: sans-serif;;
+    --font-base: sans-serif;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
 }
@@ -648,6 +648,7 @@ nav {
    top: 50%;
    transform: translateY(-50%);
    font-size: 18px;
+   font-family: 'ClashDisplay-Medium';
 }
 
 .contact-us-form {
@@ -658,6 +659,7 @@ nav {
 
 .label-field {
     font-size: 16px;
+    font-family: 'ClashDisplay-Semibold';
 }
 
 .input-field {
@@ -669,6 +671,7 @@ nav {
     border-radius: 3px;
     padding: 7px;
     font-size: 18px;
+    font-family: 'ClashDisplay-Medium';
 }
 
 .input-field:focus {
@@ -724,6 +727,7 @@ footer {
     background-color: #B1C4B2;
     text-align: center;
     position: relative;
+    
 }
 
 .footer {

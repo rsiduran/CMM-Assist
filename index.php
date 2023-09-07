@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'backend/config.php';
 
 if(isset($_POST['submit'])) {
     $inquiry_name = $_POST['inquiry_name'];

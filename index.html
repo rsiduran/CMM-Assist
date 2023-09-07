@@ -13,7 +13,7 @@
         <div class="sign-in-pop-up" id="signInPopUp">
             <i class='bx bx-x bx-md ekis-icon' id="ekis-icon"></i>
             <div class="top-sign-in">
-                <p>Sign in</p>
+                <p class="sign-in-title">Sign in</p>
                 <img class="sign-in-logo-img" src="Assets/images/CMM LOGO.png" alt="CMM LOGO">
             </div>
             <div class="sign-in-text">
@@ -28,7 +28,7 @@
                     <input class="sign-in-input" type="password" name="password" required>
                     <p class="sign-in-forgot">Forgot password?</p>
 
-                    <div class="btn-container">
+                    <div class="btn-container"> 
                         <button class="log-in-btn" type="submit">Sign in</button>
                     </div>
                     
@@ -69,7 +69,7 @@
                 <div class="text">
                     "Before you worry about the beauty of your body, worry about the health of your body."
                 </div>
-                <button class="appointment-btn">Appoint Now</button>
+                <a href="pages/appointmentForm.html" class="appointment-btn">Appoint Now</a>
             </div>
         </div>
     </main>
@@ -257,17 +257,17 @@
             <div class="y-line"><div class="text-contact-us">
                 If you are experiencing issues or have questions let us know by filling out the form below
             </div></div>
-            <form class="contact-us-form" action="">
+            <form class="contact-us-form" action="backend/contactUs.php" method="post">
                 <label class="label-field" for="fullname">Full Name:</label><br>
-                <input class="input-field" type="text" id="fullname" name="fullname" required><br><br>
+                <input class="input-field" autocomplete="off" type="text" id="fullname" name="inquiry_name" required pattern="[A-Za-z. ]+"><br><br>
         
                 <label class="label-field" for="email">Email:</label><br>
-                <input class="input-field" type="email" id="email" name="email" required><br><br>
+                <input class="input-field" autocomplete="off" type="email" id="email" name="inquiry_email" required><br><br>
         
                 <label class="label-field" for="message">Message:</label><br>
-                <textarea style="max-width: 840px;" class="input-field" id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <textarea style="max-width: 840px;" class="input-field" autocomplete="off" id="message" name="inquiry_message" rows="4" cols="50" required></textarea><br><br>
         
-                <input class="contact-us-submit" type="submit" value="Submit">
+                <input class="contact-us-submit" type="submit" value="Submit" name="submit">
             </form>
         </div>
         <div class="contact-us-right">

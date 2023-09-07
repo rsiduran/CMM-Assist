@@ -1,8 +1,5 @@
 
-
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
     --c-dark: #053827;
@@ -37,8 +34,8 @@ section {
 .sign-in-pop-up {
     height: 400px;
     max-width: 425px;
-    width: 425px;
-    background: #67ac94; 
+    min-width: 320px;
+    background: white; 
     position: fixed;
     z-index: 200;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.598);
@@ -126,7 +123,7 @@ section {
 .log-in-btn {
     padding: 5px 25px;
     border-radius: 3px;
-    border: none;
+    border: #00C38C 1px solid;
     background: #00C38C;
     cursor: pointer;
     font-size: 15px;
@@ -134,11 +131,14 @@ section {
     position: absolute;
     right: 0;
     top: 20px;
+    color: white;
 }
 
 .log-in-btn:hover {
-    background-color: rgb(0, 80, 52);
-    color: white;
+    border: 1px #00C38C solid;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
+    color: black;
 }
 
 /* front background CSS*/
@@ -197,6 +197,7 @@ section {
     border-radius: 10px;
     color: white;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .container-center .appointment-btn:hover{
@@ -680,7 +681,7 @@ nav {
     height: 50px;
     border-radius: 10px;
     background-color: #01946A;
-    border: none;
+    border: 1px #01946A solid;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -690,9 +691,9 @@ nav {
 
 .contact-us-submit:hover {
     background-color: #EAEEEF;
-    border: solid 2px #01946A;
+    border: 1px #00C38C solid;
+    box-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
     color: #01946A;
-    
 }
 
 .contact-us-right {
@@ -986,6 +987,15 @@ footer {
     }
 }
 
+@media screen and (max-width: 840px) {
+    .sign-in-pop-up {
+        height: 410px;
+    }
+    .sign-in-inputs {
+        margin-top: 10px;
+    }
+}
+
 @media screen and (max-width: 815px) {
     .about-us-bottom {
         flex-direction: column;
@@ -1054,6 +1064,18 @@ footer {
     }
     .map-frame {
         width: 100%;
+    }
+    .sign-in-pop-up {
+        min-width: 290px;
+    }
+    .sign-in-logo-img {
+        height: 80%;
+    }
+    .label-field-sign-in, .sign-in-text, .sign-in-forgot {
+        font-size: 12px;
+    }
+    .sign-in-title {
+        font-size: 18px;
     }
 }
 

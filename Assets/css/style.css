@@ -37,7 +37,7 @@ section {
 .sign-in-pop-up {
     height: 400px;
     max-width: 425px;
-    width: 425px;
+    min-width: 320px;
     background: white; 
     position: fixed;
     z-index: 200;
@@ -876,6 +876,15 @@ footer {
     }
 }
 
+@media screen and (max-width: 840px) {
+    .sign-in-pop-up {
+        height: 410px;
+    }
+    .sign-in-inputs {
+        margin-top: 10px;
+    }
+}
+
 @media screen and (max-width: 815px) {
     .about-us-bottom {
         flex-direction: column;
@@ -944,6 +953,18 @@ footer {
     }
     .map-frame {
         width: 100%;
+    }
+    .sign-in-pop-up {
+        min-width: 290px;
+    }
+    .sign-in-logo-img {
+        height: 80%;
+    }
+    .label-field-sign-in, .sign-in-text, .sign-in-forgot {
+        font-size: 12px;
+    }
+    .sign-in-title {
+        font-size: 18px;
     }
 }
 

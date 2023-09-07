@@ -649,7 +649,6 @@ nav {
    top: 50%;
    transform: translateY(-50%);
    font-size: 18px;
-   font-family: 'ClashDisplay-Medium';
 }
 
 .contact-us-form {
@@ -660,7 +659,6 @@ nav {
 
 .label-field {
     font-size: 16px;
-    font-family: 'ClashDisplay-Semibold';
 }
 
 .input-field {
@@ -672,7 +670,7 @@ nav {
     border-radius: 3px;
     padding: 7px;
     font-size: 18px;
-    font-family: 'ClashDisplay-Medium';
+
 }
 
 .input-field:focus {

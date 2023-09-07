@@ -1,8 +1,5 @@
 
-
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
     --c-dark: #053827;
@@ -200,6 +197,7 @@ section {
     border-radius: 10px;
     color: white;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .container-center .appointment-btn:hover{

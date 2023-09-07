@@ -14,6 +14,8 @@ if(isset($_POST['submit'])) {
 
     $inquiry = mysqli_query($connect, "INSERT INTO `inquiry` (name, email, message) VALUES ('$inquiry_name', '$inquiry_email', '$inquiry_message')") or die ('Query Failed');
 }   
+
+    //Dapat hindi mag reresend kapag nirerefresh.
 ?>
 
 <!DOCTYPE html>

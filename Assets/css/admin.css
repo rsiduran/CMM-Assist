@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root {
+    --c-dark: #053827;
+    --c-brand: #D6D6D6;
+    --c-brand-hover: rgb(202, 202, 202);
+    --c-brand-light: #00C38C;
+    --c-brand-button: #01946A;
+    --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
+    --c-body: #00C38C;
+    --font-base: sans-serif;;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: var(--font-base);
+}
+
+body {
+    background: var(--c-brand-bg-gradient);
+}
+
+/* Accounts */
+
+.sidebar .user i {
+    color:#393939;
+    font-size: 200px;
+    margin-bottom: 40px;
+}
+
+.sidebar {
+    width: 350px;
+    background-color: #637464;
+    height: 100%;
+    overflow: auto;
+    text-align:center;
+    position: absolute;
+    top: -20px;
+    left: 9%;
+    transform: translateX(-50%);    
+}
+
+.image-logo .CMM-img {
+    float: right;
+    margin-top: 30px;
+    margin-right:40px;
+    width:400px    ;
+}
+
+.sidebar ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.sidebar li {
+    margin:0;
+    padding:0;
+}
+
+.sidebar ul li {
+    padding:15px 0px;
+}
+
+.sidebar ul li a {
+    display:block;
+    text-decoration:none;
+    color:white;  
+}
+
+.sidebar a {
+    background-color:#393939;
+    padding:15px 10px;
+    border-radius: 15px;
+    font-size: 30px;
+}
+
+.sidebar-section i {
+    color:white;
+    font-size:30px;
+    text-align: left;
+}
+
+.sidebar .logout a {
+    margin-top:50px;
+    background-color:#393939;
+    padding:10px 110px;
+    border-radius: 15px;
+    font-size: 30px;
+}
+
+.logout i {
+    text-align:left;
+    color:white;
+    font-size:30px;
+}
+
+.sidebar-item a:hover {
+    background-color:#00E2A2;
+}
+
+.search .search-bar {
+    margin-top:250px;
+    float:right;
+    right:10%;
+    transform: translateX(110%);
+    padding:10px 30px;
+    border-radius: 15px;
+    font-size:20px; 
+    border: solid black;
+} 
+
+.search i {
+    float:right;
+    padding:6px 10px;
+    margin-top:250px;
+    transform: translateX(1158%);
+    font-size: 31px;
+    border-radius: 15px;
+    border: solid black;
+    background-color:#01946A;
+}  
+
+.account table {
+    float: right;
+    margin-top:70px;
+    width:75%;
+    text-align:center;
+    transform: translateX(-5%);
+    font-size: 20px;
+}
+
+.account th {
+    padding: 15px 10px;
+    background-color: #01946A;
+}
+
+.account td {
+    padding: 15px 10px;
+    background-color: white;
+
+}
+
+.reset-btn {
+    width: 80%;
+    height:auto;
+    padding:15px 1px;
+    font-size: 15px;
+    background-color: #969393;
+    border:none;
+    border-radius: 10px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+  }
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

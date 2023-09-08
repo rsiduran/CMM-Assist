@@ -87,23 +87,41 @@ main {
     color: #9A9A9A;
 }
 
+/* right-wrapper */
+
+.header-2 {
+    padding: 20px;
+}
+
+.text-description-1 {
+    padding: 0 20px;
+}
+.text-description-2 {
+    padding: 0 20px;
+}
+
 .wrapper-right {
-    width: 1414px;
-    height: 750px;
+    max-width: 1414px;
+    min-height: 750px;
     background-color: white;
     margin-left: 22px;
     border-radius: 10px;
 }
 
-.header-2, .text-description-1, .text-description-2 {
-    margin: 20px;
+.grid-container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 440px));
+    grid-gap: 20px; 
+    position: relative;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 440px);
-    gap: 20px;
-    justify-content: center; }
+.titles {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
 .appointment-date-header, .appointment-date {
     padding: 20px;
@@ -127,6 +145,19 @@ main {
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 70px;
+    bottom: 0px;
     right: 80px;
 }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+

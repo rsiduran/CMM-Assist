@@ -194,15 +194,21 @@ section {
     padding: 8px 20px;
     background-color: var(--c-brand-button);
     cursor: pointer;
-    border: none;
+    border: var(--c-brand-button) solid 1px;
     border-radius: 10px;
     color: white;
     font-size: 18px;
     text-decoration: none;
+    transition: all .1s;
 }
 
 .container-center .appointment-btn:hover{
-    filter: brightness(90%);
+    background-color: rgb(133, 255, 155);
+    opacity: 0.9;
+    color: black;
+    border: #23ffc1 1px solid;
+    box-shadow: 0 0 100px rgba(36, 255, 178, 0.495);
+    text-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
 }
 
 /* navigation CSS*/

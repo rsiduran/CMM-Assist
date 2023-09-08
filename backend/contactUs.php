@@ -16,5 +16,4 @@ if(isset($_POST['submit'])) {
     header("Location: ../index.html");
 }   
 
-    //Dapat hindi mag reresend kapag nirerefresh.
 ?>

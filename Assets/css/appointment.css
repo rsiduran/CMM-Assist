@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
@@ -9,8 +8,9 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: sans-serif;;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --font-base: sans-serif;
+    ;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
     --transition: all 0.5s ease;
 }
 
@@ -66,7 +66,7 @@ main {
     font-weight: bold;
     text-decoration: none;
     color: black;
-    text-shadow: 0px 1px 1px rgba(0,0,0, 0.4);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .bold:hover {
@@ -87,11 +87,121 @@ main {
     color: #9A9A9A;
 }
 
+/* right-wrapper */
+
+.header-2 {
+    padding: 20px;
+}
+
+.text-description-1 {
+    padding: 0 20px;
+}
+
+.text-description-2 {
+    padding: 0 20px;
+}
+
 .wrapper-right {
-    width: 1414px;
-    height: 750px;
+    max-width: 1414px;
+    padding-bottom: 50px;
     background-color: white;
     margin-left: 22px;
     border-radius: 10px;
 }
 
+.grid-container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 440px));
+    grid-gap: 20px;
+    position: relative;
+}
+
+.titles {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.appointment-date-header,
+.appointment-date {
+    padding: 20px;
+}
+
+.gray-button {
+    background-color: gray;
+    color: white;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    transition: all .2s;
+}
+
+.gray-button:hover {
+    filter: brightness(90%);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1350px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 440px));
+    }
+
+    .gray-button {
+        bottom: 20px;
+
+    }
+
+    .gray-button {
+        bottom: 20px;
+    }
+
+    .grid-container {
+        padding-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 1066px) {
+    .grid-container {
+        grid-template-columns: repeat(1, minmax(0, 440px));
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .wrapper {
+        display: none;
+    }
+
+    .cmm-logo {
+        margin-top: 30px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .cmm-logo {
+        margin-top: -10px;
+        height: 50px;
+    }
+
+    main {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+}

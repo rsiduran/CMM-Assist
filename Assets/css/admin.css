@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('../Fonts/WEB/css/clash-display.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap');
 
 :root {
     --c-dark: #053827;
@@ -9,8 +10,9 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: sans-serif;;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --font-base: sans-serif;
+    ;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
     --transition: all 0.5s ease;
 }
 
@@ -22,250 +24,203 @@
 }
 
 body {
-    background: white;
-    padding: 0px;
-    margin: 0px;
-    font-size: 20px;
-    min-height: 100vh;
+    background: #EAEEEF;
+
 }
 
-/* Accounts */
+.hamburger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+    cursor: pointer;
+}
 
-.sidebar .user i {
-    color:#393939;
-    font-size: 200px;
-    margin-top: 80px;
-    margin-bottom: 60px;
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .sidebar {
-    width: 350px;
-    background-color: #637464;
-    height: 100%;
-    overflow: auto;
-    text-align:center;
-    position: absolute;
-    top: -20px;
-    left: 9%;
-    transform: translateX(-50%);    
-}
-
-.image-logo .CMM-img {
-    float: right;
-    margin-top: 30px;
-    margin-right:40px;
-    width:400px    ;
-}
-
-.sidebar ul {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-.sidebar li {
-    margin:0;
-    padding:0;
-}
-
-.sidebar ul li {
-    padding:8px 0px;
-}
-
-.sidebar ul li a {
-    display:block;
-    text-decoration:none;
-    color:white;
-    text-align: left;  
-}
-
-.sidebar a {
-    padding:15px 10px;
-    border-radius: 15px;
-    font-size: 30px;
-}
-
-.sidebar-section i {
-    color:white;
-    font-size:40px;
-    text-align: left;
-    margin-left: 10px;
-}
-
-.sidebar .logout a {
-    margin-top:50px;
-    text-align: left;
-    padding:15px 10px;
-    border-radius: 15px;
-    font-size: 30px;
-}
-
-.logout i {
-    text-align:left;
-    color:white;
-    font-size:40px;
-}
-
-.sidebar-item a:hover {
-    background-color:#00E2A2;
-}
-
-.search .search-bar {
-    margin-top:250px;
-    float:right;
-    right:10%;
-    transform: translateX(110%);
-    padding:10px 30px;
-    border-radius: 15px;
-    font-size:20px; 
-    border: solid 1px #01946A;
-} 
-
-.account table {
-    float: right;
-    margin-top:70px;
-    width:75%;
-    text-align:center;
-    transform: translateX(-5%);
-    font-size: 20px;
-}
-
-.account th {
-    padding: 15px 10px;
-    background-color: #01946A;
-    color:white;
-}
-
-.account td {
-    padding: 15px 10px;
+    width: 280px;
+    height: 100vh;
     background-color: white;
-}
-.account table, td {
-    border:black solid 1px;
-    border-collapse: collapse;
-}
-
-.reset-btn {
-    width: 100%;    
-    height:auto;
-    padding:10px 50px;
-    font-size: 20px;
-    background-color: #969393;
-    border:none;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
+    box-shadow: 1px 0 100px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.search-btn {
-    float:right;
-    padding:6px 10px;
-    margin-top:250px;
-    transform: translateX(1280%);   
-    border-radius: 15px;    
-    background-color:#01946A;
+.top {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
 }
 
-.search .search-btn i{
-    font-size: 30px;
-    color:white;
+.left-texts {
+    text-align: right;
+    padding-right: 10px;
 }
 
-/* media queries */
-@media screen and (max-width: 1000px) {
-
-    .sidebar.active {
-        border-radius: 6px 6px 0 0;
-    }
-    .sidebar-section.active {
-        right: 30px;
-        left: 30px;
-    }
-    .sidebar-section {
-        height: auto;
-        position: fixed;
-        right: -100%;
-        top: 60px;
-        gap: 0;
-        flex-direction: column;
-        background-color: var(--c-dark);
-        width: 100% calc(-30px);
-        text-align: center;
-        transition: 0.3s;
-        z-index: 1000;
-        border-radius: 0 0 6px 6px;
-    }
-    .sidebar-section ul {
-        flex-direction: column;
-    }
-    .sidebar-section ul li {
-        margin-left: 0;
-        margin-bottom: 16px;
-    }
+.text-top {
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
-@media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-  }
-  .table-center {
+.text-bottom {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.middle {
+    position: absolute;
+    top: 200px;
     width: 100%;
-  }
-  .reset-btn {
-    width: auto;
-    padding:10px 30px;
-    font-size: 15px;
-  }
+}
 
-@media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
+.sidebar-section {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-section:hover {
+    background: #EAFFEA;
+}
+
+.sidebar-section-icon {
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.sidebar-section-text {
+    font-size: 18px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 130px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 70px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bottom:hover {
+    background: #EAFFEA;
+}
+
+.logout-icon {
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.logout-text {
+    font-size: 18px;
+}
+
+.img-container {
+    position: absolute;
+    right: 65px;
+    top: 35px;
+    height: 90px;
+}
+
+.img-cmm {
+    height: 100%;
+}
+
+.table-container {
+    margin-left: 300px;
+    max-width: 1620px;
+    margin-top: 200px;
+    overflow-x: auto;
+}
+
+.table-accounts {
+    margin: 0 auto;
+    width: 90%;
+    min-width: 900px;
+    background: white;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.table-accounts th {
+    background: #88FF88;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.table-accounts td {
+    background: #EEFFEE;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.table-accounts th,
+.table-accounts td {
+    padding: 10px;
+}
+
+.table-accounts button {
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 1350px) {
+    .table-container {
+        margin-left: 0;
     }
-    .reset-btn {
-        width: auto;
-        padding:5px 10px;
-        font-size: 5px;
-      }
-      .table-center {
-        width: 50%;
-      }
-      .sidebar .user{
-        font-size: 50px;
-      }
-      .sidebar{
-        width: 100px;
-        background-color: #637464;
-        height: 100%;
-        position: fixed;
-      }
-      .image-logo .CMM-img {
-        float: right;
-        width:50px    ;
+
+    .table-accounts {
+        width: 92%;
     }
-    .sidebar ul li {
-        padding:3px 0px;
+
+    .sidebar {
+        display: none;
     }
-    .sidebar a {
-        padding:8px 3px;
-        border-radius: 5px;
-        font-size: 10px;
+
+    .hamburger {
+        display: block;
     }
-    
-    .sidebar-section i {
-        font-size:10px;
+}
+
+@media screen and (max-width: 905px) {
+    .table-container {
+        margin-left: 0;
     }
-    
-    .sidebar .logout a {
-        padding:8px 3px;
-        border-radius: 5px;
-        font-size: 10px;
+
+    .table-accounts {
+        width: 92%;
     }
-    .logout i {
-        font-size:10px;
+
+    .sidebar {
+        display: none;
     }
-  }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* paki show nalang ng sidebar when clicking the hamburger menu need dito script and some other css classes */

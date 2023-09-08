@@ -202,12 +202,12 @@ table,
 
 .reset-btn {
     background-color:#999999;
-    padding:20px 25px;
+    width: 50%;
 }
 
 .delete-btn {
     background-color:#fa4848;
-    padding:20px 25px;
+    width: 30%;
 }
 
 .table-accounts td {
@@ -235,10 +235,38 @@ table,
 @media screen and (max-width: 905px) {
     .table-container {
         margin-left: 0;
+        width:90%;
     }
 
     .table-accounts {
-        width: 92%;
+        width: 70%;
+    }
+
+    .reset-btn, .delete-btn {
+        width:60%;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .table-container {
+        margin-left: 0;
+        width:100%;
+    }
+
+    .table-accounts {
+        width: 50%;
+    }
+
+    .reset-btn, .delete-btn {
+        width:80%;
     }
 
     .sidebar {

@@ -10,8 +10,9 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: sans-serif;;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --font-base: sans-serif;
+    ;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
     --transition: all 0.5s ease;
 }
 
@@ -24,10 +25,10 @@
 
 body {
     background: #EAEEEF;
-    
+
 }
 
-.hamburger{
+.hamburger {
     position: fixed;
     top: 10px;
     left: 10px;
@@ -54,7 +55,7 @@ body {
     width: 280px;
     height: 100vh;
     background-color: white;
-    box-shadow: 1px 0 100px rgba(0, 0, 0, 0.1); 
+    box-shadow: 1px 0 100px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     left: 0;
@@ -172,29 +173,33 @@ body {
 }
 
 .table-accounts td {
-    background: #EEFFEE; 
+    background: #EEFFEE;
     border-radius: 5px;
     text-align: center;
 }
 
-.table-accounts th, .table-accounts td {
-    padding: 10px; 
+.table-accounts th,
+.table-accounts td {
+    padding: 10px;
 }
 
 .table-accounts button {
-    padding: 5px 10px; 
+    padding: 5px 10px;
 }
 
 @media screen and (max-width: 1350px) {
     .table-container {
         margin-left: 0;
     }
+
     .table-accounts {
         width: 92%;
     }
+
     .sidebar {
         display: none;
     }
+
     .hamburger {
         display: block;
     }
@@ -204,12 +209,15 @@ body {
     .table-container {
         margin-left: 0;
     }
+
     .table-accounts {
         width: 92%;
     }
+
     .sidebar {
         display: none;
     }
+
     .hamburger {
         display: block;
     }

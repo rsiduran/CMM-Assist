@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
@@ -9,8 +8,9 @@
     --c-brand-button: #01946A;
     --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
     --c-body: #00C38C;
-    --font-base: sans-serif;;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --font-base: sans-serif;
+    ;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
     --transition: all 0.5s ease;
 }
 
@@ -66,7 +66,7 @@ main {
     font-weight: bold;
     text-decoration: none;
     color: black;
-    text-shadow: 0px 1px 1px rgba(0,0,0, 0.4);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .bold:hover {
@@ -96,6 +96,7 @@ main {
 .text-description-1 {
     padding: 0 20px;
 }
+
 .text-description-2 {
     padding: 0 20px;
 }
@@ -114,7 +115,7 @@ main {
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 440px));
-    grid-gap: 20px; 
+    grid-gap: 20px;
     position: relative;
 }
 
@@ -123,7 +124,8 @@ main {
     margin-bottom: 20px;
 }
 
-.appointment-date-header, .appointment-date {
+.appointment-date-header,
+.appointment-date {
     padding: 20px;
 }
 
@@ -159,13 +161,16 @@ input[type="checkbox"] {
     .grid-container {
         grid-template-columns: repeat(2, minmax(0, 440px));
     }
+
     .gray-button {
         bottom: 20px;
-        
+
     }
+
     .gray-button {
         bottom: 20px;
     }
+
     .grid-container {
         padding-bottom: 90px;
     }
@@ -181,6 +186,7 @@ input[type="checkbox"] {
     .wrapper {
         display: none;
     }
+
     .cmm-logo {
         margin-top: 30px;
         height: 60px;
@@ -192,9 +198,10 @@ input[type="checkbox"] {
         margin-top: -10px;
         height: 50px;
     }
+
     main {
         padding-left: 0;
         padding-right: 10px;
     }
-   
+
 }

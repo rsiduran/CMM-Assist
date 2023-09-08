@@ -42,8 +42,57 @@
               <ul class="days"></ul>
             </div>
         </div>
+
         <div class="wrapper-right">
-            
+            <h2 class="header-2">Choose Services</h2>
+              <p class="text-description-1">Our doctors are highly trained clinicians capable of diagnosing complex conditions. Schedule an appointment now.</p>
+              <p class="text-description-2">Located at <a href="https://www.google.com/maps/place/CMM+Medical+and+Diagnostic+Clinic/@14.652684,120.9696821,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b5d8a76b7da5:0xe80243276b5d5fdc!8m2!3d14.652684!4d120.972257!16s%2Fg%2F11n__96tp9?entry=ttu" target="_blank">510 A. Mabini St., Brgy. 13, Caloocan City</a></p>
+
+              <div class="grid-container">
+                <div class="grid-content">
+                  <h3 class="speciality-consultations">Speciality Consultations</h3>
+                    <form>
+                      <label><input type="checkbox" name="specialty" value="Nephrology"> Nephrology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Cardiology"> Cardiology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Pulmonology"> Pulmonology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Urology"> Urology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Orthopedics"> Orthopedics</label><br>
+                      <label><input type="checkbox" name="specialty" value="Endocrinology"> Endocrinology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Neurology"> Neurology</label><br>
+                      <label><input type="checkbox" name="specialty" value="Pediatrics"> Pediatrics</label><br>
+                    </form>
+                </div>
+                <div class="grid-content">
+                  <h3 class="laboratory-test">Laboratory Tests</h3>
+                    <form>
+                      <label><input type="checkbox" name="laboratory" value="Blood Test"> Blood Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="Antigen/Antibody Test"> Antigen/Antibody Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="Mircrobial Test"> Mircrobial Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="Semen Test"> Semen Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="Stool Test"> Stool Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="Urine Test"> Urine Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="RT-PCR Test"> RT-PCR Test</label><br>
+                      <label><input type="checkbox" name="laboratory" value="ECG"> ECG</label><br>
+                    </form>
+                </div>
+                <div class="grid-content"></div>
+                  <h3 class="imaging">Imaging</h3>
+                    <form>
+                      <label><input type="checkbox" name="imaging" value="X-Ray"> X-Ray</label><br>
+                      <label><input type="checkbox" name="imaging" value="General Ultrasound"> General Ultrasound</label><br>
+                      <label><input type="checkbox" name="imaging" value="OB Ultrasound"> OB Ultrasound</label><br>
+                      <label><input type="checkbox" name="imaging" value="CT Scan"> CT Scan</label><br>
+                      <label><input type="checkbox" name="imaging" value="MRI Option"> MRI Option</label><br>
+                    </form>
+                </div>
+                  <h3 class="appointment-date-header">Date of Appointment</h3>
+                    <form class="appointment-date">
+                      <label for="datetime">Select Date and Time:</label>
+                      <input type="datetime-local" id="datetime" name="datetime">
+                      <input type="submit" class="submit-date" value="Submit">
+                    </form>
+                    <input type="submit" class="gray-button" value="Next">
+              </div>
         </div>
     </main>
 </body>

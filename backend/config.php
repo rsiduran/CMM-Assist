@@ -1,3 +1,3 @@
 <?php
-$connect = mysqli_connect('localhost','root','','cmm') or die('Connection Failed');
+    $connect = mysqli_connect('localhost','root','','cmm') or die('Connection Failed');
 ?>

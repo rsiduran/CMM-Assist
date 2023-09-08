@@ -242,10 +242,7 @@ body {
 @media screen and (max-width: 1800px){
     .heading {
         margin-top: 20vh;
-        transform: translateX(-300%);
-        font-size: 40px;
-        text-decoration: underline;
-        text-decoration-color: #01946A;
+        transform: translateX(30%);
         margin-bottom:40px;
         position: relative;
     }
@@ -273,8 +270,6 @@ body {
         margin-top: 20vh;
         transform: translateX(-10%);
         font-size: 40px;
-        text-decoration: underline;
-        text-decoration-color: #01946A;
         margin-bottom:40px;
         position: relative;
     }

@@ -22,6 +22,76 @@
 }
 
 body {
-    background: var(--c-brand-bg-gradient);
+    background: #EAEEEF;
+}
+
+header {
+    margin: 0 auto;
+    height: 100px;
+    max-width: 1920px;
+    position: relative;
+    padding-left: 60px;
+    padding-right: 65px;
+    margin-bottom: 30px;
+}
+
+main {
+    display: flex;
+    padding-left: 60px;
+    padding-right: 65px;
+    padding-bottom: 40px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.right-header {
+    position: absolute;
+    top: 25px;
+    right: 65px;
+}
+
+.cmm-logo {
+    height: 90px;
+}
+
+.left-header {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+}
+
+.bold {
+    font-size: 18px;
+    font-family: 'ClashDisplay';
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    text-shadow: 0px 1px 1px rgba(0,0,0, 0.4);
+}
+
+.bold:hover {
+    color: rgb(97, 97, 97);
+}
+
+.lineY {
+    height: 20px;
+    width: 1px;
+    background-color: #9A9A9A;
+    margin: 0 22px;
+}
+
+.light {
+    font-size: 18px;
+    font-family: 'ClashDisplay';
+    font-weight: 200;
+    color: #9A9A9A;
+}
+
+.wrapper-right {
+    width: 1414px;
+    height: 750px;
+    background-color: white;
+    margin-left: 22px;
+    border-radius: 10px;
 }
 

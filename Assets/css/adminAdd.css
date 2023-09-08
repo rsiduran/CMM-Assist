@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('../Fonts/WEB/css/clash-display.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap');
+
+:root {
+    --c-dark: #053827;
+    --c-brand: #D6D6D6;
+    --c-brand-hover: rgb(202, 202, 202);
+    --c-brand-light: #00C38C;
+    --c-brand-button: #01946A;
+    --c-brand-bg-gradient: linear-gradient(to right, #D4FBDC, white);
+    --c-body: #00C38C;
+    --font-base: sans-serif;
+    ;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: var(--font-base);
+}
+
+body {
+    background: #ffffff;
+
+}
+
+.hamburger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: #01946A;
+    box-shadow: 1px 0 100px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.top {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.left-texts {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.text-top {
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.text-bottom {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.middle {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+.sidebar-section {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-section:hover {
+    background: #026b4d;
+}
+
+.sidebar-section-icon {
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.sidebar-section-text {
+    font-size: 18px;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 130px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 70px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bottom:hover {
+    background: #026b4d;
+}
+
+.logout-icon {
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.logout-text {
+    font-size: 18px;
+}
+
+.img-container {
+    position: absolute;
+    right: 65px;
+    top: 35px;
+    height: 90px;
+}
+
+.img-cmm {
+    height: 100%;
+}   
+
+.heading {
+    float: right;
+    color: solid black;
+    margin-top: 20vh;
+    transform: translateX(-500%);
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: #01946A;
+    margin-bottom:40px;
+    position: relative;
+}
+
+.form-account {
+    margin-top: 270px;
+    width: 70%;
+    height: auto;
+    background-color: #ffffff;
+    display: inline-block;
+    transform: translateX(33%);
+    text-align: left;
+}
+
+.form-account .add-account input {
+    width: 30%; 
+    border:1px solid #01946A;
+    font-size: 20px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.form-account .add-account input:hover {
+    opacity:70%;
+    border:solid 1px black;
+}
+
+.form-account .add-account input:focus{
+    border:1px solid #070707;
+    box-shadow: 0 0 10px;
+}
+
+.form-account label {
+    font-size: 130%;
+    margin-right: 38vh;
+}
+
+.form-account select{
+    font-size: 20px;
+    border:1px solid #01946A;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    width: 30%;
+    text-align: left;
+    margin-right: 100px;
+    padding: 5px;
+}
+
+.form-account select:hover{
+    border:1px solid #000000;
+    opacity:70%;
+}
+
+.form-account select:focus{
+    border:1px solid #01946A;
+    box-shadow: 0 0 10px;
+}
+
+.form-account select option{
+    background-color: #ffffff;
+    border:1px solid #01946A;
+}
+
+.add-btn {
+    background-color:#01946A ;
+    color: white;
+    width:10%;
+    border-radius:10px;
+    padding:8px 20px;
+    font-size: 20px;
+    transform: translateX(300%);
+    margin-top: 30px;
+}
+
+.add-btn:hover {
+    opacity:70%;
+}
+
+
+@media screen and (max-width: 1800px){
+    .heading {
+        margin-top: 20vh;
+        transform: translateX(-300%);
+        font-size: 40px;
+        text-decoration: underline;
+        text-decoration-color: #01946A;
+        margin-bottom:40px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .sidebar {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    .form-account{
+        width:50%;
+    }
+    .heading {
+        margin-top: 20vh;
+        transform: translateX(-300%);
+        font-size: 40px;
+        text-decoration: underline;
+        text-decoration-color: #01946A;
+        margin-bottom:40px;
+        position: relative;
+    }
+    .add-btn{
+        width: 20%;
+        font-size: 15px;
+        transform: translatex(70%);
+    }
+    .form-account label {
+        font-size: 130%;
+        margin-right: 20vh;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .sidebar {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    .form-account{
+        width:30%;
+    }
+    .heading {
+        margin-top: 20vh;
+        transform: translateX(-200%);
+        font-size: 40px;
+        text-decoration: underline;
+        text-decoration-color: #01946A;
+        margin-bottom:40px;
+        position: relative;
+    }
+    .add-btn{
+        width: 25%;
+        font-size: 15px;
+        transform: translateX(80%);
+    }
+    .form-account label {
+        font-size: 100%;
+        margin-right: 3vh;
+    }
+    .form-account .add-account input {
+        width: 20%; 
+        font-size: 20px;
+        margin-right: 70px;
+        margin-bottom: 100px;
+        margin-top: 10px;
+        padding: 3px;
+    }
+    .form-account select{
+        font-size: 20px;
+        border:1px solid #01946A;
+        margin-bottom: 100px;
+        margin-top: 10px;
+        width: 20%;
+        text-align: left;
+        margin-right: 70px;
+        padding: 5px;
+    }
+}

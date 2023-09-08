@@ -1,5 +1,5 @@
 const hamburger = document.querySelector(".hamburger");
-const sidebarSections = document.querySelector(".sidebar-section");
+const sidebarSections = document.querySelector(".middle");
 const sideBar = document.querySelector(".sidebar");
 
 hamburger.addEventListener("click", () => {
@@ -8,13 +8,13 @@ hamburger.addEventListener("click", () => {
     sideBar.classList.toggle("active");
 });
 
-document.querySelectorAll(".side-link").forEach(n => n.addEventListener("click", () => {
+document.querySelectorAll(".sidebar-section").forEach(n => n.addEventListener("click", () => {
 hamburger.classList.remove("active");
 sidebarSections.classList.remove("active");
 }));
 
 document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".side-link");
+    const navLinks = document.querySelectorAll(".sidebar-section");
 
     navLinks.forEach(function (link) {
         link.addEventListener("click", function (e) {

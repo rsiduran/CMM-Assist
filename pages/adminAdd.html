@@ -1,1 +1,76 @@
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMM adm</title>
+    <link rel="stylesheet" href="../Assets/css/adminAdd.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>S
+        </div>
+        </div>
+        <div class="sidebar">
+            <div class="top">
+                <div class="left-texts">
+                    <div class="text-top">CMM Assist</div>
+                    <div class="text-bottom">Admin</div>
+                </div>
+                <div class="right-icon">
+                    <i class='bx bxs-user-circle bx-lg'></i>
+                </div>
+            </div>
+            <div class="middle">
+                <a href="admin.html" class="sidebar-section">
+                    <div class="sidebar-section-icon"><i class='bx bxs-group bx-md' ></i></div>
+                    <div class="sidebar-section-text">Accounts</div>
+                </a>
+                <a href="adminAdd.html" class="sidebar-section">
+                    <div class="sidebar-section-icon"><i class='bx bx-plus-circle bx-md' ></i></div>
+                    <div class="sidebar-section-text">Add Account</div>
+                </a>
+                <a href="#" class="sidebar-section">
+                    <div class="sidebar-section-icon"><i class='bx bx-cog bx-md' ></i></div>
+                    <div class="sidebar-section-text">Settings</div>
+                </a>
+            </div>
+            <a href="#" class="bottom">
+                <div class="logout-icon"><i class='bx bx-log-out bx-md' ></i></div>
+                <div class="logout-text">Logout</div>
+            </a>
+        </div>
+        <main>
+            <div class="img-container">
+                <img class="img-cmm" src="/Assets/images/CMM LOGO.png" alt="cmm-logo">
+            </div>
+
+            <h1 class="heading">Add Account</h1>
+
+        <form class="form-account">
+            <div class="add-account">
+            <label for="fname">Name</label><br>
+                <input type="text" placeholder="First" class="firstname">
+                <input type="text" placeholder="Last" class="lastname"><br>
+            <label for="fname">Account Type</label>
+            <label for="fname">Username</label><br>
+                <select name="account-type">
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Medical Staff">Medical Staff</option>
+                </select>
+                <input type="text" placeholder="" class="username">
+            </div>
+                <button class="add-btn">Add</button>
+        </form>
+            
+        </main>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="Assets/js/admin.js"></script>
+</body>
+</html>

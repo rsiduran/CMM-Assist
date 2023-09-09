@@ -18,22 +18,22 @@
                 <img class="sign-in-logo-img" src="Assets/images/CMM LOGO.png" alt="CMM LOGO">
             </div>
             <div class="sign-in-text">
-                Kindly provide your credentials to access the secure portal. To proceed, please enter the following information
+                Kindly provide your credentials to access the secure portal. To proceed, please enter your account.
             </div>
             <div class="sign-in-inputs">
-                <form action="">
+                <form id="login-form" action="">
                     <label class="label-field-sign-in" for="fullname">Username:</label><br>
-                    <input class="sign-in-input" type="text" name="username" required><br><br>
-            
+                    <input class="sign-in-input" type="text" id="username" name="username" required><br><br>
+                  
                     <label class="label-field-sign-in" for="password">Password:</label><br>
-                    <input class="sign-in-input" type="password" name="password" required>
+                    <input class="sign-in-input" type="password" id="password" name="password" required>
                     <p class="sign-in-forgot">Forgot password?</p>
-
+                  
                     <div class="btn-container"> 
-                        <button class="log-in-btn" type="submit">Sign in</button>
+                      <button class="log-in-btn" type="submit">Sign in</button>
                     </div>
-                    
-                </form>
+                    <p id="error-message" class="error-message" style="color: red; font-size: 12px;"></p>
+                </form>                  
             </div>
         </div>
     </div>

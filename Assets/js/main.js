@@ -66,3 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+const loginForm = document.getElementById("login-form");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const errorMessage = document.getElementById("error-message");
+
+loginForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const enteredUsername = usernameInput.value;
+  const enteredPassword = passwordInput.value;
+
+  if (enteredUsername === "admin" && enteredPassword === "admin") {
+    window.location.href = "../../pages/admin.html";
+  } else {
+    errorMessage.textContent = "Invalid username or password. Try again.";
+    usernameInput.value = "";
+    passwordInput.value = "";
+  }
+});
+

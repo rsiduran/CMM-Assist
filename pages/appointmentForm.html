@@ -44,7 +44,7 @@
                 <ul class="days"></ul>
             </div>
         </div>
-        <div class="wrapper-right">
+        <div class="wrapper-right" id="wrapper-right">
             <h2 class="header-2">Choose Services</h2>
             <p class="text-description-1">Our doctors are highly trained clinicians capable of diagnosing complex
                 conditions. Schedule an appointment now.</p>
@@ -63,6 +63,7 @@
                     <label><input type="checkbox" name="specialty" value="Neurology"> Neurology</label>
                     <label><input type="checkbox" name="specialty" value="Pediatrics"> Pediatrics</label>
                 </div>
+
                 <div class="grid-content">
                     <h3 class="titles">Laboratory Tests</h3>
                     <label><input type="checkbox" name="laboratory" value="Blood Test"> Blood Test</label>
@@ -75,6 +76,7 @@
                     <label><input type="checkbox" name="laboratory" value="RT-PCR Test"> RT-PCR Test</label>
                     <label><input type="checkbox" name="laboratory" value="ECG"> ECG</label>
                 </div>
+
                 <div class="grid-content">
                     <h3 class="titles">Imaging</h3>
                     <label><input type="checkbox" name="imaging" value="X-Ray"> X-Ray</label>
@@ -83,14 +85,15 @@
                     <label><input type="checkbox" name="imaging" value="CT Scan"> CT Scan</label>
                     <label><input type="checkbox" name="imaging" value="MRI Option"> MRI Option</label>
                 </div>
+
                 <div class="grid-content">
                     <h3 class="titles">Date of Appointment</h3>
                     <label for="datetime">Select Date and Time:</label>
                     <input type="datetime-local" id="datetime" name="datetime">
-                    <a id="next-page" class="gray-button" style="text-decoration: none;">Next</a>
+                    <!-- <a href="#" id="showWrapperRight2" class="next-page-button" style="text-decoration: none;">Next</a> -->
+                    <a href="appointmentForm2.html" id="next-page-button" class="next-page-button" style="text-decoration: none;">Next</a>
                 </div>
             </form>
-        </div>
         </div>
     </main>
 </body>

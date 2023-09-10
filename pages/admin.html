@@ -18,52 +18,52 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="#">
+                <a href="#" onclick="showSection('dashboard')">
                     <i class='bx bxs-dashboard' ></i>
                     <span class="link_name">Dashboard</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Dashboard</a></li>
+                    <li><a class="link_name" href="#" onclick="showSection('dashboard')">Dashboard</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="#" onclick="showSection('accounts')">
                     <i class="bx bxs-group"></i>
                     <span class="link_name" style="white-space: nowrap;">Accounts</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Accounts</a></li>
+                    <li><a class="link_name" href="#" onclick="showSection('accounts')">Accounts</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="#" onclick="showSection('forms')">
                     <i class='bx bx-notepad'></i>
                     <span class="link_name" style="white-space: nowrap;">Form</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Form</a></li>
+                    <li><a class="link_name" href="#" onclick="showSection('forms')">Form</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="#" onclick="showSection('messages')">
                     <i class='bx bxs-message'></i>
                     <span class="link_name" style="white-space: nowrap;">Messages</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Messages</a></li>
+                    <li><a class="link_name" href="#" onclick="showSection('messages')">Messages</a></li>
                 </ul>
             </li>
             <li>
                 <div class="iocn-link">
-                    <a href="#">
+                    <a href="#" onclick="showSection('settings')">
                         <i class='bx bxs-cog'></i>
                         <span class="link_name">Settings</span>
                     </a>
                     <i class="bx bxs-chevron-down arrow"></i>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Settings</a></li>
-                    <li><a href="#">Change password</a></li>
+                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
+                    <li><a href="#" onclick="showSection('settings')">Change password</a></li>
                 </ul>
             </li>
             <li>
@@ -81,14 +81,14 @@
         </ul>
     </div>
 
-    <section class="home-section">
+    <main class="home-section">
         <div class="home-content">
             <i class="bx bx-menu"></i>
             
         </div>
         <div class="container-fluid">
             <!-- Dashboard -->
-            <section id="home" class="section-padding">
+            <section id="dashboard" class="section-padding">
                 <div class="container">
                     <h1 class="header">Dashboard</h1>
                     <div class="line"></div>
@@ -124,14 +124,14 @@
                     </div>
                     <div class="dashboard-bottom">
                         <main class="table">
-                            <section class="table__header">
+                            <article class="table__header">
                                 <h1>Recent Appointment</h1>
                                     <form action="" class="input-group">
                                         <input type="search" placeholder="Search Data...">
                                     <img src="../Assets/images/search.png" alt="">
                                 </form>
-                            </section>
-                            <section class="table__body">
+                            </article>
+                            <article class="table__body">
                                 <table>
                                     <thead>
                                         <tr>
@@ -196,14 +196,288 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </section>
+                            </article>
                         </main>
                     </div>
                 </div>
                 
             </section>
+            <!-- Accounts  -->
+            <section id="accounts" class="section-padding">
+                <div class="container">
+                    <h1 class="header">Accounts</h1>
+                    <div class="line"></div>
+                    <div class="dashboard-bottom">
+                        <main class="table">
+                            <article class="table__header">
+                                <h1>Doctors</h1>
+                                    <form action="" class="input-group">
+                                        <input type="search" placeholder="Search Data...">
+                                    <img src="../Assets/images/search.png" alt="">
+                                </form>
+                            </article>
+                            <article class="table__body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Account Created <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Username <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Contact <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Actions <span class="icon-arrow">&UpArrow;</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </main>
+                    </div>
+                    <div class="dashboard-bottom">
+                        <main class="table">
+                            <article class="table__header">
+                                <h1>Nurses</h1>
+                                    <form action="" class="input-group">
+                                        <input type="search" placeholder="Search Data...">
+                                    <img src="../Assets/images/search.png" alt="">
+                                </form>
+                            </article>
+                            <article class="table__body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Account Created <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Username <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Contact <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Actions <span class="icon-arrow">&UpArrow;</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </main>
+                    </div>
+                    <div class="dashboard-bottom">
+                        <main class="table">
+                            <article class="table__header">
+                                <h1>Medicine Staff</h1>
+                                    <form action="" class="input-group">
+                                        <input type="search" placeholder="Search Data...">
+                                    <img src="../Assets/images/search.png" alt="">
+                                </form>
+                            </article>
+                            <article class="table__body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Account Created <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Username <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Contact <span class="icon-arrow">&UpArrow;</span></th>
+                                            <th> Actions <span class="icon-arrow">&UpArrow;</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td> 1 </td>
+                                            <td> 09 Sep, 2023 </td>
+                                            <td> Lorem Ipsum </td>
+                                            <td> Lorem </td>
+                                            <td> Thisemail@gmail.com </td>
+                                            <td style="white-space: nowrap;"> 
+                                                <a href="#" class="btn-action">Reset Account</a> <!-- whatever password u have it will be 123 -->
+                                                <a href="#" class="btn-action">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </main>
+                    </div>
+                </div>
+            </section>
+            <!-- form  -->
+            <section id="forms" class="section-padding">
+                <div class="container">
+                    <h1 class="header">Form</h1>
+                    <div class="line"></div>
+                </div>
+            </section>
+            <!-- messages  -->
+            <section id="messages" class="section-padding">
+                <div class="container">
+                    <h1 class="header">Messages</h1>
+                    <div class="line"></div>
+                </div>
+            </section>
+            <!-- settings  -->
+            <section id="settings" class="section-padding">
+                <div class="container">
+                    <h1 class="header">Settings</h1>
+                    <div class="line"></div>
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
     <script src="../Assets/js/admin.js"></script>
 </body>
 

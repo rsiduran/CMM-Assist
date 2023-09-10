@@ -146,12 +146,12 @@ main {
 .confirm-button {
     background-color: rgb(211, 209, 209);
     color: black;
-    padding: 5px 20px;
+    padding: 5px 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 130px;
+    bottom: 100px;
     right: 80px;
     transition: all .2s;
 }
@@ -159,12 +159,12 @@ main {
 .cancel-button {
     background-color: rgb(211, 209, 209);
     color: black;
-    padding: 5px 20px;
+    padding: 5px 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 130px;
+    bottom: 100px;
     right: 310px;
     transition: all .2s;
 }
@@ -256,21 +256,18 @@ label {
     height: 25px;
 }
 
-.grid-container-text {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
-    grid-gap: 20px; /* Gap between grid items */
-}
-
 .header-3 {
-    padding: 0 20px;
+    margin-top: 50px;
 }
 
 .custom-file-input {
-    padding: 20px;
+    padding-top: 20px;
     margin-top: -20px;
 }
 
 .clickable-file {
     cursor: pointer;
+}
+.text-bold {
+    margin-top: 5px;
 }

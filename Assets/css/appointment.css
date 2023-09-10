@@ -146,27 +146,42 @@ main {
 .confirm-button {
     background-color: rgb(211, 209, 209);
     color: black;
-    padding: 5px 35px;
+    padding: 5px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 100px;
-    right: 80px;
+    bottom: -20px;
+    right: 30px;
     transition: all .2s;
+    white-space: nowrap;
 }
 
 .cancel-button {
     background-color: rgb(211, 209, 209);
     color: black;
-    padding: 5px 35px;
+    padding: 5px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 100px;
-    right: 310px;
+    bottom: -20px;
+    right: 210px;
     transition: all .2s;
+    white-space: nowrap;
+}
+
+.input-field {
+    padding: 2px 7px;
+    font-size: 16px;
+    width: 100%;
+    border: #20A17D 1px solid;
+    border-radius: 3px;
+}
+
+.input-field:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(36, 255, 178, 0.495);
 }
 
 .next-page-button:hover, .cancel-button:hover, .confirm-button:hover {
@@ -241,20 +256,11 @@ label {
     margin-top: -20px;
 }
 
-#gender {
-    width: 251px;
-    height: 25px;
-}
-
 #gender:hover {
     pointer-events: none;
 }
 
 /* calendar design */
-#dob {
-    width: 251px;
-    height: 25px;
-}
 
 .header-3 {
     margin-top: 50px;

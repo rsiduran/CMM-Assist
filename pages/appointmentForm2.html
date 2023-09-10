@@ -50,28 +50,28 @@
             <form class="grid-container">
                 <div class="grid-content-1">
                     <label for="firstName" class="grid-content">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required><br><br>
+                    <input placeholder="Juan" class="input-field" type="text" id="firstName" name="firstName" required><br><br>
                     
                     <label for="email" class="grid-content">Email:</label>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <input placeholder="email@example.com" class="input-field" type="email" id="email" name="email" required><br><br>
                     
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()">
+                    <input required class="input-field" type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()">
                     <p id="dob-error" style="color: red;"></p>
                 </div>
                 <div class="grid-content-2">
-                    <label for="email" class="grid-content">Last Name:</label>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="lastName" class="grid-content">Last Name:</label>
+                    <input placeholder="Dela Cruz" class="input-field" type="text" id="lastName" name="lastName" required><br><br>
                     
                     <label for="contactNumber">Contact No:</label>
-                    <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
+                    <input placeholder="09*********" class="input-field" type="tel" id="contactNumber" name="contactNumber" required><br><br>
                 </div>
                 <div class="grid-content-3">
                     <label for="middleName" class="grid-content">Middle Name:</label>
-                    <input type="text" id="firstName" name="firstName" required><br><br>
+                    <input placeholder="Diaz" class="input-field" type="text" id="firstName" name="firstName" required><br><br>
 
                     <label for="gender">Gender:</label>
-                    <select id="gender">
+                    <select required id="gender" class="input-field">
                         <option value="" disabled selected>Choose Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -83,16 +83,17 @@
                     <h3 class="header-3">Identification Card</h3>
                     <label class="custom-file-input">
                         <span>Attach your file here:</span><br>
-                        <input type="file" class="clickable-file">
+                        <input required type="file" class="clickable-file">
                     </label>
                 </div>
                 <div class="grid-content">
                     <h2 class="header-id">Clinic Hours</h2>
                     <p class="text-description-id">We're delighted to have you as a patient. Our clinic operates during the following hours except holidays. </p> <p class="text-bold"> <b>(7:00 am to 4:00 pm)</b></p>
                 </div>
+                <button id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm Appointment</button>
+                <button id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</button>
             </form>
-            <button id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm Appointment</button>
-            <button id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</button>
+            
             <!-- <a href="#" id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</a> -->
         </main>
 </body>

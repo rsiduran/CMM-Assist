@@ -315,7 +315,28 @@ body {
 
 .dashboard-bottom {
     margin-top: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
+}
+
+.btn-action {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.288);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.btn-action:hover {
+  filter: brightness(90%);
+}
+
+.btn-action:nth-child(1) {
+  background-color: blue;
+}
+
+.btn-action:nth-child(2) {
+  background-color: red;
 }
 
 section {

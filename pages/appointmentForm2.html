@@ -65,7 +65,6 @@
                     
                     <label for="contactNumber">Contact No:</label>
                     <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
-                    
                 </div>
                 <div class="grid-content-3">
                     <label for="middleName" class="grid-content">Middle Name:</label>
@@ -78,27 +77,23 @@
                         <option value="female">Female</option>
                     </select>
                 </div>
-            </form>
-            <div class="grid-container-text">
-                <div class="column-container">
-                    <h2 class="header-2">Identification Card</h2>
-                    <p class="text-description-only">Please upload a valid identification document. If the patient <br> does not possess one, please submit the guardian's ID instead.</p>
+                <div class="grid-content">
+                    <h2 class="header-id">Identification Card</h2>
+                    <p class="text-description-id">Please upload a valid identification document. If the patient does not possess one, please submit the guardian's ID instead.</p>
+                    <h3 class="header-3">Identification Card</h3>
+                    <label class="custom-file-input">
+                        <span>Attach your file here:</span><br>
+                        <input type="file" class="clickable-file">
+                    </label>
                 </div>
-                <div class="column-container">
-                    <h2 class="header-2">Clinic Hours</h2>
-                    <p class="text-description-only">We're delighted to have you as a patient. Our clinic operates <br> during the following hours except holidays. <br><b class="time-bold-text">(7:00 am to 4:00 pm)</b></p>
+                <div class="grid-content">
+                    <h2 class="header-id">Clinic Hours</h2>
+                    <p class="text-description-id">We're delighted to have you as a patient. Our clinic operates during the following hours except holidays. </p> <p class="text-bold"> <b>(7:00 am to 4:00 pm)</b></p>
                 </div>
-            </div>
-            <h3 class="header-3">Identification Card</h3>
-            <form action="" class="file-button">
-                <label class="custom-file-input">
-                    <span>Attach your file here:</span><br>
-                    <input type="file" class="clickable-file">
-                </label>
-                <a href="#" id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm Appointment</a>
-                <button id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</button>
             </form>
-            
+            <button id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm Appointment</button>
+            <button id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</button>
+            <!-- <a href="#" id="cancel-button" class="cancel-button" style="text-decoration: none;">Cancel Appointment</a> -->
         </main>
 </body>
 

@@ -669,3 +669,122 @@ thead th.active,tbody td.active {
     width: 2rem;
     height: auto;
 }
+
+/* form */
+
+.form-main {
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.left-form {
+  width: 35%;
+  background: linear-gradient(to right, #6EB4A9, #97C2BB);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-top {
+  text-align: left;
+  padding: 0 120px;
+  text-align: justify;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.left-bottom-img {
+  width: 100%;
+}
+
+.right-form {
+  width: 65%;
+  background: white;
+  padding: 50px; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px; 
+}
+
+.label-field {
+  margin-bottom: 5px; 
+  font-size: 18px;
+}
+
+.input-field {
+  font-size: 18px;
+  padding: 4px 8px;
+  outline: none;
+  border: 1px solid #6EB4A9;
+  border-radius: 4px;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 15px #97c2bba1;
+}
+
+.submit-button {
+  margin-top: 30px;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 1609px) {
+  .left-top {
+      padding: 0 90px;
+  }
+}
+
+@media (max-width: 1438px) {
+  .left-top {
+      padding: 0 70px;
+  }
+}
+
+@media (max-width: 1323px) {
+  .left-top {
+      padding: 0 40px;
+  }
+}
+@media (max-width: 1148px) {
+  .left-top {
+      padding: 0 20px;
+  }
+}
+@media (max-width: 1037px) {
+  .left-form {
+      display: none;
+  }
+  .right-form {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .right-form {
+    padding: 20px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* settings */

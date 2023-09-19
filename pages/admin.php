@@ -1,3 +1,18 @@
+<?php 
+session_start();
+    include '../backend/config.php';
+
+if(isset($_POST['search'])) {
+    $search = $_POST['search1'];
+    $search = mysqli_real_escape_string($connect, $search);
+} else {
+    $search = isset($_SESSION['search1']) ? $_SESSION['search1']: "";
+ } 
+
+ $query = "SELECT * FROM `inquiry` WHERE name LIKE '%$search%'";
+ $select_search = mysqli_query($connect, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -536,11 +551,15 @@
                         <article class="table__header">
                             <h1>Medicine Staff</h1>
                             <form action="" class="input-group">
-                                <input type="search" placeholder="Search Data...">
-                                <img src="../Assets/images/search.png" alt="">
+                                <input type="search" name="search1" placeholder="Search Data...">
+                                
+                                <img src="../Assets/images/search.png" alt="" type="submit" name="search">
                             </form>
                         </article>
                         <article class="table__body">
+                        <?php
+                            if (mysqli_num_rows($select_search) > 0){
+                        ?>
                             <table>
                                 <thead>
                                     <tr>
@@ -551,48 +570,39 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    while ($fetch = mysqli_fetch_assoc($select_search)){
+                                ?>
                                     <tr>
-                                        <td> 09 Sep, 2023 </td>
-                                        <td> Lorem Ipsum </td>
-                                        <td> Thisemail@gmail.com </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum excepturi, odit doloremque id laboriosam esse omnis, suscipit sint iure perferendis, quos dolore quis quibusdam voluptate cupiditate ad obcaecati non eveniet quia nemo voluptatem perspiciatis nobis iusto magni. Commodi error voluptates at rerum, tempora eius, obcaecati veritatis mollitia nemo autem repellat?
-                                        </td>
+                                        <td><?php echo $fetch['datestamp']; ?></td>
+                                        <td><?php echo $fetch['name']; ?></td>
+                                        <td><?php echo $fetch['email']; ?></td>
+                                        <td><?php echo $fetch['message']; ?></td>
                                     </tr>
-                                    <tr>
-                                        <td> 09 Sep, 2023 </td>
-                                        <td> Lorem Ipsum </td>
-                                        <td> Thisemail@gmail.com </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui doloremque nulla labore dolor accusantium expedita neque magni ab iste atque in obcaecati ducimus iure similique excepturi minima, autem blanditiis hic, vel odit laboriosam modi! Debitis, tempore expedita. Quibusdam earum, modi at quaerat laborum aliquid dolorem eligendi illo nemo consectetur doloremque!
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 09 Sep, 2023 </td>
-                                        <td> Lorem Ipsum </td>
-                                        <td> Thisemail@gmail.com </td>
-                                        <td>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minima unde tempore architecto corrupti, perferendis quis eveniet nostrum consectetur. Similique praesentium repellendus nam, incidunt perspiciatis blanditiis reprehenderit deleniti vero ipsa reiciendis cumque fugiat adipisci iure recusandae consequuntur mollitia laboriosam temporibus. Quos sunt repudiandae ad. Cupiditate nesciunt est odit fugit minus.
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 09 Sep, 2023 </td>
-                                        <td> Lorem Ipsum </td>
-                                        <td> Thisemail@gmail.com </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia vitae, dolorum saepe nulla nemo temporibus libero quisquam unde repellat adipisci! Suscipit, illo quod minima cum ratione corporis architecto doloribus laborum vitae dolor quia accusamus reprehenderit culpa fuga porro! Animi iure eaque suscipit temporibus ab. Nam eius laboriosam libero quaerat.
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 09 Sep, 2023 </td>
-                                        <td> Lorem Ipsum </td>
-                                        <td> Thisemail@gmail.com </td>
-                                        <td>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ex natus ad iste cumque, odit temporibus tempore voluptas tenetur quos laboriosam quo aut commodi error praesentium quia harum voluptatum architecto explicabo recusandae qui nesciunt porro exercitationem! Sed ad officiis vitae minima, modi aliquam aliquid est, ipsam ab doloribus facere ut.
-                                        </td>
-                                    </tr>
+                                    <?php 
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
+                            <?php
+                                } else {        
+                            ?>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th> Message Sent <span class="icon-arrow">&UpArrow;</span></th>
+                                        <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                                        <th> Contact <span class="icon-arrow">&UpArrow;</span></th>
+                                        <th> Message <span class="icon-arrow">&UpArrow;</span></th>
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                    </tbody>
+                            </table>
+                                <p>No results found</p>
+                            <?php
+                                }
+                            ?>
                         </article>
                     </main>
                 </div>

@@ -79,8 +79,7 @@ loginForm.addEventListener("submit", function (e) {
   const enteredPassword = passwordInput.value;
 
   if (enteredUsername === "admin" && enteredPassword === "admin") {
-    window.location.href = "../../pages/admin.html"; //live server
-    // window.location.href = "../../../CMM-Assist/pages/admin.html"; //php
+    window.location.href = "../../pages/admin.php";
   } else {
     errorMessage.textContent = "Invalid username or password. Try again.";
     usernameInput.value = "";

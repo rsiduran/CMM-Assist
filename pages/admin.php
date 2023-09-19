@@ -549,7 +549,7 @@ if(isset($_POST['search'])) {
                     <div class="line" style="margin-bottom: 20px;"></div>
                     <main class="table">
                         <article class="table__header">
-                            <h1>Medicine Staff</h1>
+                            <h1>Contact Messages</h1>
                             <form action="" class="input-group">
                                 <input type="search" name="search1" placeholder="Search Data...">
                                 

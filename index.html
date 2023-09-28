@@ -21,19 +21,19 @@
                 Kindly provide your credentials to access the secure portal. To proceed, please enter your account.
             </div>
             <div class="sign-in-inputs">
-                <form id="login-form" action="">
+                <form id="login-form" action="" method="POST">
                     <label class="label-field-sign-in" for="fullname">Username:</label><br>
                     <input class="sign-in-input" type="text" id="username" name="username" required><br><br>
-                  
+                
                     <label class="label-field-sign-in" for="password">Password:</label><br>
                     <input class="sign-in-input" type="password" id="password" name="password" required>
                     <p class="sign-in-forgot">Forgot password?</p>
-                  
-                    <div class="btn-container"> 
-                      <button class="log-in-btn" type="submit">Sign in</button>
+                
+                    <div class="btn-container">
+                        <button class="log-in-btn" type="submit">Sign in</button>
                     </div>
                     <p id="error-message" class="error-message" style="color: red; font-size: 12px;"></p>
-                </form>                  
+                </form>                   
             </div>
         </div>
     </div>
@@ -300,6 +300,28 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="Assets/js/main.js"></script>
-    
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const errorMessage = document.getElementById("error-message");
+
+        loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const enteredUsername = usernameInput.value;
+        const enteredPassword = passwordInput.value;
+
+        if (enteredUsername === "admin" && enteredPassword === "admin") {
+            window.location.href = "pages/admin.php";
+        } else {
+            errorMessage.textContent = "Invalid username or password. Try again.";
+            usernameInput.value = "";
+            passwordInput.value = "";
+        }
+        });
+    </script>
+
 </body>
 </html>

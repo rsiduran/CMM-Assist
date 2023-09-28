@@ -67,23 +67,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-const loginForm = document.getElementById("login-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
-const errorMessage = document.getElementById("error-message");
+// const loginForm = document.getElementById("login-form");
+// const usernameInput = document.getElementById("username");
+// const passwordInput = document.getElementById("password");
+// const errorMessage = document.getElementById("error-message");
 
-loginForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+// loginForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const enteredUsername = usernameInput.value;
-  const enteredPassword = passwordInput.value;
+//   const enteredUsername = usernameInput.value;
+//   const enteredPassword = passwordInput.value;
 
-  if (enteredUsername === "admin" && enteredPassword === "admin") {
-    window.location.href = "../../../CMM-Assist/pages/admin.php";
-  } else {
-    errorMessage.textContent = "Invalid username or password. Try again.";
-    usernameInput.value = "";
-    passwordInput.value = "";
-  }
-});
+//   if (enteredUsername === "admin" && enteredPassword === "admin") {
+//     window.location.href = "../../../CMM-Assist/pages/admin.php";
+//   } else {
+//     errorMessage.textContent = "Invalid username or password. Try again.";
+//     usernameInput.value = "";
+//     passwordInput.value = "";
+//   }
+// });
 

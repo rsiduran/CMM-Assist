@@ -1,6 +1,6 @@
 function showSection(sectionId) {
     // Get all sections
-    var sections = document.querySelectorAll('section');
+    var sections = document.querySelectorAll('.wrapper-right');
   
     // Hide all sections
     for (var i = 0; i < sections.length; i++) {

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/css/doctors.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" href="" type="image/x-icon" class="rounded-circle">
+    <title>CMM Doctors</title>
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <i class='bx bxs-heart'></i>
+            <span class="logo_name" style="white-space: nowrap;">Healer</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" onclick="showSection('dashboard')">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('accounts')">
+                    <i class="bx bxs-group"></i>
+                    <span class="link_name" style="white-space: nowrap;">Accounts</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('accounts')">Accounts</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('forms')">
+                    <i class='bx bx-notepad'></i>
+                    <span class="link_name" style="white-space: nowrap;">Form</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('forms')">Form</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('messages')">
+                    <i class='bx bxs-message'></i>
+                    <span class="link_name" style="white-space: nowrap;">Messages</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('messages')">Messages</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#" onclick="showSection('settings')">
+                        <i class='bx bxs-cog'></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                    <i class="bx bxs-chevron-down arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
+                    <li><a href="#" onclick="showSection('settings')">Change password</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <!--<img src="image/profile.jpg" alt="profileImg">-->
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name" style="white-space: nowrap;">CMM Assist</div>
+                        <div class="job">Admin</div>
+                    </div>
+                    <a href="../index.html"><i class="bx bx-log-out"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <main class="home-section">
+        <div class="home-content">
+            <i class="bx bx-menu"></i>
+
+        </div>
+        <div class="container-fluid">
+            <!-- Dashboard -->
+            <section id="dashboard" class="section-padding">
+                
+
+            </section>
+            <!-- Accounts  -->
+            <section id="accounts" class="section-padding">
+                
+            </section>
+            <!-- form  -->
+            <section id="forms" class="section-padding">
+                
+            </section>
+            <!-- messages  -->
+            <section id="messages" class="section-padding">
+                
+            </section>
+            <!-- settings  -->
+            <section id="settings" class="section-padding">
+                
+            </section>
+        </div>
+    </main>
+    <script src="../Assets/js/admin.js"></script>
+</body>
+</html>

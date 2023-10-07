@@ -9,6 +9,175 @@
     <title>CMM Doctors</title>
 </head>
 <body>
-    
+    <div class="sidebar close">
+        <div class="logo-details">
+            <i class='bx bxs-heart'></i>
+            <span class="logo_name" style="white-space: nowrap;">Healer</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" onclick="showSection('home')">
+                    <i class='bx bxs-home'></i>
+                    <span class="link_name">Home</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('home')">Home</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('records')">
+                    <i class="bx bxs-group"></i>
+                    <span class="link_name" style="white-space: nowrap;">Records</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('records')">Records</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('requests')">
+                    <i class='bx bx-notepad'></i>
+                    <span class="link_name" style="white-space: nowrap;">Requests</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('requests')">Requests</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('messages')">
+                    <i class='bx bxs-message'></i>
+                    <span class="link_name" style="white-space: nowrap;">Messages</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('messages')">Messages</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#" onclick="showSection('settings')">
+                        <i class='bx bxs-cog'></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                    <i class="bx bxs-chevron-down arrow"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
+                    <li><a href="#" onclick="showSection('settings')">Change password</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <!--<img src="image/profile.jpg" alt="profileImg">-->
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name" style="white-space: nowrap;">CMM Assist</div>
+                        <div class="job">{name of doctor}</div>
+                    </div>
+                    <a href="../index.html"><i class="bx bx-log-out"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <main class="home-section">
+        <div class="home-content">
+            <i class="bx bx-menu"></i>
+
+        </div>
+        <div class="container-fluid">
+            <!-- Home -->
+            <section id="home" class="section-padding">
+                <article class="home-left">
+                    <div class="flex-2">
+                        <div class="sched-container">Schedule</div>
+                        <div class="search-icon"><i class='bx bx-search'></i></div>
+                    </div> <br>
+                    <div class="details">
+                        <aside class="flex-detail-clickable">
+                            <div class="sched-detail">
+                                <i class='bx bx-building'></i>
+                                <div class="patient-name">Patient Name</div>
+                            </div>
+                            <div class="sched-time">
+                                Today, 6:00 am
+                            </div>
+                        </aside>
+                        <aside class="flex-detail-clickable">
+                            <div class="sched-detail">
+                                <i class='bx bx-building'></i>
+                                <div class="patient-name">Patient Name</div>
+                            </div>
+                            <div class="sched-time">
+                                Today, 6:00 am
+                            </div>
+                        </aside>
+                        <aside class="flex-detail-clickable">
+                            <div class="sched-detail">
+                                <i class='bx bx-building'></i>
+                                <div class="patient-name">Patient Name</div>
+                            </div>
+                            <div class="sched-time">
+                                Today, 6:00 am
+                            </div>
+                        </aside>
+                        <aside class="flex-detail-clickable">
+                            <div class="sched-detail">
+                                <i class='bx bx-building'></i>
+                                <div class="patient-name">Patient Name</div>
+                            </div>
+                            <div class="sched-time">
+                                Today, 6:00 am
+                            </div>
+                        </aside>
+                        <aside class="flex-detail-clickable">
+                            <div class="sched-detail">
+                                <i class='bx bx-building'></i>
+                                <div class="patient-name">Patient Name</div>
+                            </div>
+                            <div class="sched-time">
+                                Today, 6:00 am
+                            </div>
+                        </aside>
+                    </div>
+                </article>
+                <article class="home-right">
+                    <div class="log-details">
+                        <div class="details-flex-container">
+                            <h1 class="details-title">Details</h1>
+                            <div class="welcome-and-icon">
+                                <p>Welcome! <span>John Bravo</span></p>
+                                <img class="icon-detail-img" src="../Assets/images/male-placeholder.png" alt="asd"> <!--kapag may image ung doctors papalitan to pag wala default-->
+                            </div>
+                        </div>
+                        <div class="patient-profile">
+                            <div class="patient-icon">
+                                <img class="patient-picture-details" src="../Assets/images/female-placeholder.png" alt="patient-picture">
+                            </div>
+                            <div class="patient-name-contaierner">
+                                <div class="patient-name-details">Maria doe</div>
+                                <div class="patient-email-details">MariaDoe@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>  
+                </article>
+            </section>
+            <!-- Records  -->
+            <section id="records" class="section-padding">
+                
+            </section>
+            <!-- Requests  -->
+            <section id="requests" class="section-padding">
+                
+            </section>
+            <!-- messages  -->
+            <section id="messages" class="section-padding">
+                
+            </section>
+            <!-- settings  -->
+            <section id="settings" class="section-padding">
+                
+            </section>
+        </div>
+    </main>
+    <script src="../Assets/js/admin.js"></script>
 </body>
 </html>

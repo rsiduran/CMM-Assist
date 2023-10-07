@@ -403,3 +403,33 @@ section {
   font-size: 42px;
   font-weight: bold;
 }
+
+.sub-profile-details {
+  display: flex;
+  gap: 30px;
+  margin: -10px 20px 0 70px;
+  color: rgba(0, 0, 0, 0.445);
+}
+
+.identification-details, .service-details {
+  margin: 0 20px
+}
+
+.title {
+  font-size: 21px;
+}
+
+.id-img-container {
+  margin-top: 10px;
+  height: 210px;
+}
+
+.id-img {
+  height: 100%;
+}
+
+.service-test {
+  margin-left: 30px;
+  margin-top: 10px;
+  font-size: 18px;
+}

@@ -261,7 +261,7 @@ section {
 
 .home-class-home {
   display: flex; 
-
+  padding-bottom: 50px;
 }
 
 .home-left {

@@ -85,115 +85,126 @@
         </div>
         <div class="container-fluid">
             <!-- Home -->
-            <section id="home" class="section-padding">
-                <article class="home-left">
-                    <div class="flex-2">
-                        <div class="sched-container">Schedule</div>
-                        <div class="search-icon"><i class='bx bx-search'></i></div>
-                    </div> <br>
-                    <div class="details">
-                        <aside class="flex-detail-clickable">
-                            <div class="sched-detail">
-                                <i class='bx bx-building'></i>
-                                <div class="patient-name">Patient Name</div>
-                            </div>
-                            <div class="sched-time">
-                                Today, 6:00 am
-                            </div>
-                        </aside>
-                        <aside class="flex-detail-clickable">
-                            <div class="sched-detail">
-                                <i class='bx bx-building'></i>
-                                <div class="patient-name">Patient Name</div>
-                            </div>
-                            <div class="sched-time">
-                                Today, 6:00 am
-                            </div>
-                        </aside>
-                        <aside class="flex-detail-clickable">
-                            <div class="sched-detail">
-                                <i class='bx bx-building'></i>
-                                <div class="patient-name">Patient Name</div>
-                            </div>
-                            <div class="sched-time">
-                                Today, 6:00 am
-                            </div>
-                        </aside>
-                        <aside class="flex-detail-clickable">
-                            <div class="sched-detail">
-                                <i class='bx bx-building'></i>
-                                <div class="patient-name">Patient Name</div>
-                            </div>
-                            <div class="sched-time">
-                                Today, 6:00 am
-                            </div>
-                        </aside>
-                        <aside class="flex-detail-clickable">
-                            <div class="sched-detail">
-                                <i class='bx bx-building'></i>
-                                <div class="patient-name">Patient Name</div>
-                            </div>
-                            <div class="sched-time">
-                                Today, 6:00 am
-                            </div>
-                        </aside>
-                    </div>
-                </article>
-                <article class="home-right">
-                    <div class="log-details">
-                        <div class="details-flex-container">
-                            <h1 class="details-title">Details</h1>
-                            <div class="welcome-and-icon">
-                                <p>Welcome! <span>John Bravo</span></p>
-                                <img class="icon-detail-img" src="../Assets/images/male-placeholder.png" alt="asd"> <!--kapag may image ung doctors papalitan to pag wala default-->
-                            </div>
-                        </div>
-                        <div class="patient-profile">
-                            <div class="patient-icon">
-                                <img class="patient-picture-details" src="../Assets/images/female-placeholder.png" alt="patient-picture">
-                            </div>
-                            <div class="patient-name-contaierner">
-                                <div class="patient-name-details">Maria doe</div>
-                                <div class="patient-email-details">MariaDoe@gmail.com</div>
-                            </div>
-                        </div>
-                        <div class="sub-profile-details">
-                            <div class="contact-details">Contact: 09992348764</div>
-                            <div class="gender-details">Gender: Female</div>
-                            <div class="dob-details">Date of Birth: May 2, 2000</div>
+            <section id="home">
+                <div class="home-class-home">
+                    <article class="home-left">
+                        <div class="flex-2">
+                            <div class="sched-container">Schedule</div>
+                            <div class="search-icon"><i class='bx bx-search'></i></div>
                         </div>
                         <br>
-                        <div class="identification-details">
-                            <h1 class="title">Identification Card</h1>
-                            <div class="id-img-container">
-                                <img class="id-img" src="" alt="Patient ID Clickable">
+                        <div class="details">
+                            <aside class="flex-detail-clickable active" data-patient="MariaDoe">
+                                <div class="sched-detail">
+                                    <i class='bx bx-building'></i>
+                                    <div class="patient-name">Maria Doe</div>
+                                </div>
+                                <div class="sched-time">
+                                    Today, 6:00 am
+                                </div>
+                            </aside>
+                            <aside class="flex-detail-clickable" data-patient="JohnDoe">
+                                <div class="sched-detail">
+                                    <i class='bx bx-building'></i>
+                                    <div class="patient-name">John Doe</div>
+                                </div>
+                                <div class="sched-time">
+                                    Today, 9:00 am
+                                </div>
+                            </aside>
+                        </div>
+                    </article>
+                    <article class="home-right">
+                        <div class="log-details" id="MariaDoeDetails">
+                            <div class="details-flex-container">
+                                <h1 class="details-title">Details</h1>
+                                <div class="welcome-and-icon">
+                                    <p>Welcome! <span>John Bravo</span></p>
+                                    <img class="icon-detail-img" src="../Assets/images/male-placeholder.png" alt="asd"> <!--kapag may image ung doctors papalitan to pag wala default-->
+                                </div>
                             </div>
-                        </div>
-                        <div class="service-details">
-                            <h1 class="title">Test Service</h1>
-                            <p class="service-test"> - Pulmonology</p>
-                        </div>
-                    </div>  
-                </article>
+                            <div class="patient-profile">
+                                <div class="patient-icon">
+                                    <img class="patient-picture-details" src="../Assets/images/female-placeholder.png" alt="patient-picture">
+                                </div>
+                                <div class="patient-name-contaierner">
+                                    <div class="patient-name-details">Maria doe</div>
+                                    <div class="patient-email-details">MariaDoe@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="sub-profile-details">
+                                <div class="contact-details">Contact: 09992348764</div>
+                                <div class="gender-details">Gender: Female</div>
+                                <div class="dob-details">Date of Birth: May 2, 2000</div>
+                            </div>
+                            <br>
+                            <div class="identification-details">
+                                <h1 class="title">Identification Card</h1>
+                                <div class="id-img-container">
+                                    <img class="id-img" src="" alt="Patient ID Clickable">
+                                </div>
+                            </div>
+                            <div class="service-details">
+                                <h1 class="title">Test Service</h1>
+                                <p class="service-test"> - Pulmonology</p>
+                            </div>
+                        </div>  
+                        <div class="log-details" id="JohnDoeDetails" style="display: none;">
+                            <div class="details-flex-container">
+                                <h1 class="details-title">Details</h1>
+                                <div class="welcome-and-icon">
+                                    <p>Welcome! <span>Jane Smith</span></p>
+                                    <img class="icon-detail-img" src="../Assets/images/female-placeholder.png" alt="asd">
+                                </div>
+                            </div>
+                            <div class="patient-profile">
+                                <div class="patient-icon">
+                                    <img class="patient-picture-details" src="../Assets/images/male-placeholder.png" alt="patient-picture">
+                                </div>
+                                <div class="patient-name-contaierner">
+                                    <div class="patient-name-details">John Doe</div>
+                                    <div class="patient-email-details">JohnDoe@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="sub-profile-details">
+                                <div class="contact-details">Contact: 09876543210</div>
+                                <div class="gender-details">Gender: Male</div>
+                                <div class="dob-details">Date of Birth: September 15, 1985</div>
+                            </div>
+                            <br>
+                            <div class="identification-details">
+                                <h1 class="title">Identification Card</h1>
+                                <div class="id-img-container">
+                                    <img class="id-img" src="" alt="Patient ID Clickable">
+                                </div>
+                            </div>
+                            <div class="service-details">
+                                <h1 class="title">Test Service</h1>
+                                <p class="service-test"> - Cardiology</p>
+                            </div>
+                        </div>                    
+                    </article>
+                </div>
             </section>
             <!-- Records  -->
-            <section id="records" class="section-padding">
+            <section id="records" style="display: none;">
                 
             </section>
             <!-- Requests  -->
-            <section id="requests" class="section-padding">
+            <section id="requests" style="display: none;">
                 
             </section>
             <!-- messages  -->
-            <section id="messages" class="section-padding">
+            <section id="messages" style="display: none;">
                 
             </section>
             <!-- settings  -->
-            <section id="settings" class="section-padding">
+            <section id="settings" style="display: none;">
                 
             </section>
         </div>
     </main>
     <script src="../Assets/js/admin.js"></script>
+    <script src="../Assets/js/doctors.js"></script>
 </body>
 </html>

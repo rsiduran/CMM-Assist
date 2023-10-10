@@ -94,7 +94,7 @@
                             <div class="search-pop-up" id="search-pop-up">
                                 <div class=search-container>
                                     <a href="#" onclick="closePopup()"><i class='bx bx-x'></i></a><br>    
-                                    <input class="search-box" type="text" placeholder="   Search...">
+                                    <input class="search-box" type="text" placeholder="Search...">
                                 </div>
                             </div>
                         </div>

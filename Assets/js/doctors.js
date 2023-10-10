@@ -27,5 +27,3 @@ clickableElements.forEach((element) => {
         }
     });
 });
-
-

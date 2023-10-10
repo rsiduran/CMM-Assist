@@ -463,13 +463,16 @@ section {
 }
 
 .search-pop-up .search-container {
-  width: 30%;
-  margin-left:33%;
-  margin-top:30px;
+  max-width: 500px;
+  width: 500px;
+  position: fixed;
+  left:50%;
+  transform: translateX(-50%);
+  top:30px;
   background-color: white;
   padding: 25px 0;
   border-radius: 10px;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.158);
   border:0;
 }
 
@@ -479,6 +482,7 @@ section {
   left:40%;
   color: black;
   cursor: pointer;
+  
 }
 
 .search-pop-up i:hover{  
@@ -490,18 +494,21 @@ section {
   margin-top:50px;
   color:white;
   width:80%;
-  padding: 15px 10px;
+  padding: 15px 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px black;
-  background-color: #12be8e;
   border:0;
   transition: padding ease-in-out 0.2s;
+  outline: none;
+  border: #00b80f 1px solid;
 }
 
-.search-pop-up .search-box:hover {
-  font-size: 15px;
-  width:80%;
-  padding: 18px 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px black;
+.search-pop-up .search-box:focus {
+  box-shadow: 0 0 10px rgba(2, 211, 64, 0.664);
+  transition: all .3s ease;
+}
+
+@media screen and (max-width: 720px) {
+  .search-pop-up .search-container {
+    max-width: 400px;
+  }
 }

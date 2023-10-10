@@ -90,7 +90,13 @@
                     <article class="home-left">
                         <div class="flex-2">
                             <div class="sched-container">Schedule</div>
-                            <div class="search-icon"><i class='bx bx-search'></i></div>
+                            <div class="search-icon"><a onclick="openPopup()"><i class='bx bx-search'></i></a></div>
+                            <div class="search-pop-up" id="search-pop-up">
+                                <div class=search-container>
+                                    <a href="#" onclick="closePopup()"><i class='bx bx-x'></i></a><br>    
+                                    <input class="search-box" type="text" placeholder="   Search...">
+                                </div>
+                            </div>
                         </div>
                         <br>
                         <div class="details">
@@ -204,6 +210,17 @@
             </section>
         </div>
     </main>
+    <script>
+        let Submitpopup = document.getElementById("search-pop-up")
+        
+        function openPopup(){
+            Submitpopup.classList.add("open-pop-up")
+
+        }
+        function closePopup(){
+            Submitpopup.classList.remove("open-pop-up")
+        }
+    </script>
     <script src="../Assets/js/admin.js"></script>
     <script src="../Assets/js/doctors.js"></script>
 </body>

@@ -194,6 +194,7 @@
             </section>
             <!-- Records  -->
             <section id="records" style="display: none;">
+                
             </section>
             <!-- Requests  -->
             <section id="requests" style="display: none;">

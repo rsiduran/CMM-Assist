@@ -255,7 +255,7 @@ section {
 }
 
 /* home css */
-#home {
+#home, #records, #requests, #messages, #settings {
   max-width: 1780px;
 }
 

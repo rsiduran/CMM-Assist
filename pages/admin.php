@@ -505,36 +505,37 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="">
+                            <form action="../backend/doctorAcc.php" method="POST">
                                 <div class="form-group">
-                                    <label class="label-field" for="lname">Last name</label>
-                                    <input class="input-field" type="text" name="lname" id="">
+                                    <label class="label-field" for="lname">Last Name</label>
+                                    <input class="input-field" placeholder="Last Name:" type="text" name="lname" id="lname" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="fname">First name</label>
-                                    <input class="input-field" type="text" name="fname" id="">
+                                    <label class="label-field" for="fname">First Name</label>
+                                    <input class="input-field" placeholder="First Name:" type="text" name="fname" id="fname" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="username">Username</label>
-                                    <input class="input-field" type="text" name="username" id="">
+                                    <label class="label-field" for="uname">Username</label>
+                                    <input class="input-field" placeholder="Username:" type="text" name="uname" id="uname" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-field" for="pword">Password</label>
-                                    <input class="input-field" type="password" name="pword" id="">
+                                    <input class="input-field" placeholder="Password:" type="password" name="pword" id="pword" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="contact">Contact or Email</label>
-                                    <input class="input-field" type="email" name="contact" id="">
+                                    <label class="label-field" for="email">Email</label>
+                                    <input class="input-field" placeholder="Email:" type="email" name="email" id="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-field" for="occupation">Occupation</label>
-                                    <select class="input-field" name="occupation" id="occupation">
+                                    <select class="input-field" name="occupation" id="occupation" required>
+                                        <option value="null"></option>
                                         <option value="doctor">Doctor</option>
                                         <option value="nurse">Nurse</option>
                                         <option value="medical_staff">Medical Staff</option>
                                     </select>
                                     <div class="form-group">
-                                        <button type="submit" class="submit-button">Create Account</button>
+                                        <button type="submit" id="submit" class="submit-button">Create Account</button>
                                     </div>
                                 </div>
                             </form>

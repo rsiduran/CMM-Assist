@@ -505,7 +505,7 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="../backend/doctorAcc.php" method="POST">
+                            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                                 <div class="form-group">
                                     <label class="label-field" for="lname">Last Name</label>
                                     <input class="input-field" placeholder="Last Name:" type="text" name="lname" id="lname" required>
@@ -529,7 +529,7 @@ if(isset($_POST['search'])) {
                                 <div class="form-group">
                                     <label class="label-field" for="occupation">Occupation</label>
                                     <select class="input-field" name="occupation" id="occupation" required>
-                                        <option value="null"></option>
+                                        <option value="null" selected> </option>
                                         <option value="doctor">Doctor</option>
                                         <option value="nurse">Nurse</option>
                                         <option value="medical_staff">Medical Staff</option>

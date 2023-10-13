@@ -18,28 +18,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $doctor_occupation = htmlspecialchars($_POST["occupation"]);
 
     // if walang data inputs
-    if (empty($doctor_firstname) || empty($doctor_lastname) || empty($doctor_username) || empty($doctor_password) || empty($doctor_email) || empty($doctor_occupation)) {
-        exit();
-        header("Location: ../pages/admin.php");
-    };
-    
+    if (empty($doctor_firstname) || empty($doctor_lastname) || empty($doctor_username) || empty($doctor_password) || empty($doctor_email) || $doctor_occupation == "null") {
+        echo "<script>alert('Please fill-in all input fields.');</script>";
+    } else {
+
     //not sure pa kase di nagrurun lols
     $pasok_sa_sql = "INSERT INTO doctor_acc (doctor_firstname, doctor_lastname, doctor_username, doctor_password, doctor_email, doctor_occupation, account_created) VALUES (?, ?, ?, ?, ?, ?, NOW())";
     
     $stmt = $connect->prepare($pasok_sa_sql);
     $stmt->bind_param("ssssss", $doctor_firstname, $doctor_lastname, $doctor_username, $doctor_password, $doctor_email, $doctor_occupation);
-    // manonotify
+
+    // manonotify yung user
     if ($stmt->execute()) {
         echo "<script>alert('Account Successfully Created.');</script>";
     } else {
         echo "Error: " . $stmt->error;
     }
+
     // close the connection
     $stmt->close();
-    $connect->close();
+}
+$connect->close();
 
-} else {
-    header("Location: ../pages/admin.php");
 };
 
 
@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 //     };
 
 //     $pasok_sa_sql = mysqli_query($connect, "INSERT INTO `doctor_acc` (doctor_firstname, doctor_lastname, doctor_username, doctor_password, doctor_email, doctor_occupation) VALUES ('$doctor_firstname', '$doctor_lastname', '$doctor_username', '$doctor_password', '$doctor_email', '$doctor_occupation')") or die ('Query Failed');
-//     header("Location: ../index.html");
 
 // } else {
 //     header("Location: ../pages/admin.php");

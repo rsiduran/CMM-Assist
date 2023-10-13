@@ -66,4 +66,3 @@ function closePopup(recordId) {
     const popup = document.getElementById(`search-pop-up-${recordId}`);
     popup.classList.remove("open-pop-up");
 }
-

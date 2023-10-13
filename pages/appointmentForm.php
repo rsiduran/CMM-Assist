@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../Assets/css/appointment.css">
     <link rel="stylesheet" href="../Assets/css/calendarStyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    
     <title>CMM Assist Appointment</title>
 </head>
 
@@ -44,7 +43,7 @@
                 <ul class="days"></ul>
             </div>
         </div>
-        <form action="" onsubmit="return validateForm();">
+        <form action="checkAppoint.php" method="POST">
             <div class="wrapper-right" id="wrapper-right-1">
                 <h2 class="header-2">Choose Services</h2>
                 <p class="text-description-1">Our doctors are highly trained clinicians capable of diagnosing complex
@@ -55,41 +54,41 @@
                 <div class="grid-container">
                     <div class="grid-content">
                         <h3 class="titles">Specialty Consultations</h3>
-                        <label><input type="checkbox" name="specialty" value="Nephrology"> Nephrology</label>
-                        <label><input type="checkbox" name="specialty" value="Cardiology"> Cardiology</label>
-                        <label><input type="checkbox" name="specialty" value="Pulmonology"> Pulmonology</label>
-                        <label><input type="checkbox" name="specialty" value="Urology"> Urology</label>
-                        <label><input type="checkbox" name="specialty" value="Orthopedics"> Orthopedics</label>
-                        <label><input type="checkbox" name="specialty" value="Endocrinology"> Endocrinology</label>
-                        <label><input type="checkbox" name="specialty" value="Neurology"> Neurology</label>
-                        <label><input type="checkbox" name="specialty" value="Pediatrics"> Pediatrics</label>
+                        <label><input type="checkbox" name="Nephrology" value="Nephrology"> Nephrology</label>
+                        <label><input type="checkbox" name="Cardiology" value="Cardiology"> Cardiology</label>
+                        <label><input type="checkbox" name="Pulmonology" value="Pulmonology"> Pulmonology</label>
+                        <label><input type="checkbox" name="Urology" value="Urology"> Urology</label>
+                        <label><input type="checkbox" name="Orthopedics" value="Orthopedics"> Orthopedics</label>
+                        <label><input type="checkbox" name="Endocrinology" value="Endocrinology"> Endocrinology</label>
+                        <label><input type="checkbox" name="Neurology" value="Neurology"> Neurology</label>
+                        <label><input type="checkbox" name="Pediatrics" value="Pediatrics"> Pediatrics</label>
                     </div>
     
                     <div class="grid-content">
                         <h3 class="titles">Laboratory Tests</h3>
-                        <label><input type="checkbox" name="laboratory" value="Blood Test"> Blood Test</label>
-                        <label><input type="checkbox" name="laboratory" value="Antigen/Antibody Test"> Antigen/Antibody Test</label>
-                        <label><input type="checkbox" name="laboratory" value="Mircrobial Test"> Mircrobial Test</label>
-                        <label><input type="checkbox" name="laboratory" value="Semen Test"> Semen Test</label>
-                        <label><input type="checkbox" name="laboratory" value="Stool Test"> Stool Test</label>
-                        <label><input type="checkbox" name="laboratory" value="Urine Test"> Urine Test</label>
-                        <label><input type="checkbox" name="laboratory" value="RT-PCR Test"> RT-PCR Test</label>
-                        <label><input type="checkbox" name="laboratory" value="ECG"> ECG</label>
+                        <label><input type="checkbox" name="Blood" value="Blood Test"> Blood Test</label>
+                        <label><input type="checkbox" name="Antigen" value="Antigen/Antibody Test"> Antigen/Antibody Test</label>
+                        <label><input type="checkbox" name="Mircrobial" value="Mircrobial Test"> Mircrobial Test</label>
+                        <label><input type="checkbox" name="Semen" value="Semen Test"> Semen Test</label>
+                        <label><input type="checkbox" name="Stool" value="Stool Test"> Stool Test</label>
+                        <label><input type="checkbox" name="Urine" value="Urine Test"> Urine Test</label>
+                        <label><input type="checkbox" name="RT" value="RT-PCR Test"> RT-PCR Test</label>
+                        <label><input type="checkbox" name="ECG" value="ECG"> ECG</label>
                     </div>
     
                     <div class="grid-content">
                         <h3 class="titles">Imaging</h3>
-                        <label><input type="checkbox" name="imaging" value="X-Ray"> X-Ray</label>
-                        <label><input type="checkbox" name="imaging" value="General Ultrasound"> General Ultrasound</label>
-                        <label><input type="checkbox" name="imaging" value="OB Ultrasound"> OB Ultrasound</label>
-                        <label><input type="checkbox" name="imaging" value="CT Scan"> CT Scan</label>
-                        <label><input type="checkbox" name="imaging" value="MRI Option"> MRI Option</label>
+                        <label><input type="checkbox" name="X-Ray" value="X-Ray"> X-Ray</label>
+                        <label><input type="checkbox" name="General" value="General Ultrasound"> General Ultrasound</label>
+                        <label><input type="checkbox" name="OB" value="OB Ultrasound"> OB Ultrasound</label>
+                        <label><input type="checkbox" name="CT" value="CT Scan"> CT Scan</label>
+                        <label><input type="checkbox" name="MRI" value="MRI Option"> MRI Option</label>
                     </div>
     
                     <div class="grid-content">
                         <h3 class="titles">Date of Appointment</h3>
                         <label for="datetime">Select Date and Time:</label>
-                        <input type="datetime-local" id="datetime" name="datetime" required>
+                        <input type="datetime-local" id="datetime" name="datetime" >
                         <!-- <a href="#" id="showWrapperRight2" class="next-page-button" style="text-decoration: none;">Next</a> -->
                         <a id="next-page-button" class="next-page-button" style="text-decoration: none; font-size: 16px;" onclick="showSection('wrapper-right-2')">Next</a>
                     </div>
@@ -101,27 +100,27 @@
                 <div class="grid-container">
                     <div class="grid-content-1">
                         <label for="firstName" class="grid-content">First Name:</label>
-                        <input placeholder="Juan" class="input-field" type="text" id="firstName" name="firstName" required><br><br>
+                        <input placeholder="Juan" class="input-field" type="text" id="firstName" name="firstName" ><br><br>
                         
                         <label for="email" class="grid-content">Email:</label>
-                        <input placeholder="email@example.com" class="input-field" type="email" id="email" name="email" required><br><br>
+                        <input placeholder="email@example.com" class="input-field" type="email" id="email" name="email" ><br><br>
                         
                         <label for="dob">Date of Birth:</label>
-                        <input required class="input-field" type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()">
+                        <input  class="input-field" type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()">
                         <p id="dob-error" style="color: red;"></p>
                     </div>
                     <div class="grid-content-2">
                         <label for="lastName" class="grid-content">Last Name:</label>
-                        <input placeholder="Dela Cruz" class="input-field" type="text" id="lastName" name="lastName" required><br><br>     
+                        <input placeholder="Dela Cruz" class="input-field" type="text" id="lastName" name="lastName" ><br><br>     
                         <label for="contactNumber">Contact No:</label>
-                        <input placeholder="09*********" class="input-field" type="tel" id="contactNumber" name="contactNumber" required><br><br>
+                        <input placeholder="09*********" class="input-field" type="tel" id="contactNumber" name="contactNumber" ><br><br>
                     </div>
                     <div class="grid-content-3">
                         <label for="middleName" class="grid-content">Middle Name:</label>
-                        <input placeholder="Diaz" class="input-field" type="text" id="middleName" name="middleName" required><br><br>
+                        <input placeholder="Diaz" class="input-field" type="text" id="middleName" name="middleName" ><br><br>
     
                         <label for="gender">Gender:</label>
-                        <select required id="gender" class="input-field">
+                        <select  id="gender" class="input-field">
                             <option value="" disabled selected>Choose Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -133,14 +132,14 @@
                         <h3 class="header-3">Identification Card</h3>
                         <label class="custom-file-input">
                             <span>Attach your file here:</span><br>
-                            <input required type="file" class="clickable-file">
+                            <input  type="file" class="clickable-file">
                         </label>
                     </div>
                     <div class="grid-content">
                         <h2 class="header-id">Clinic Hours</h2>
                         <p class="text-description-id">We're delighted to have you as a patient. Our clinic operates during the following hours except holidays. </p> <p class="text-bold"> <b>(7:00 am to 4:00 pm)</b></p>
                     </div>
-                    <button id="cancel-button" class="cancel-button" style="text-decoration: none;" onclick="showSection('wrapper-right-1')">Back</button>
+                    <a id="cancel-button" class="cancel-button" style="text-decoration: none;" onclick="showSection('wrapper-right-1')">Back</a>
                     <button type="submit" id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm</button>
                 </div>
             </div>

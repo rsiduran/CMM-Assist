@@ -22,25 +22,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "<script>alert('Please fill-in all input fields.');</script>";
     } else {
 
-    //not sure pa kase di nagrurun lols
-    $pasok_sa_sql = "INSERT INTO doctor_acc (doctor_firstname, doctor_lastname, doctor_username, doctor_password, doctor_email, doctor_occupation, account_created) VALUES (?, ?, ?, ?, ?, ?, NOW())";
-    
-    $stmt = $connect->prepare($pasok_sa_sql);
-    $stmt->bind_param("ssssss", $doctor_firstname, $doctor_lastname, $doctor_username, $doctor_password, $doctor_email, $doctor_occupation);
+        // Hash the password
+        $hashed_password = password_hash($doctor_password, PASSWORD_DEFAULT);
 
-    // manonotify yung user
-    if ($stmt->execute()) {
-        echo "<script>alert('Account Successfully Created.');</script>";
-    } else {
-        echo "Error: " . $stmt->error;
+        $pasok_sa_sql = "INSERT INTO doctor_acc (doctor_firstname, doctor_lastname, doctor_username, doctor_password, doctor_email, doctor_occupation, account_created) VALUES (?, ?, ?, ?, ?, ?, NOW())";
+
+        $stmt = $connect->prepare($pasok_sa_sql);
+        $stmt->bind_param("ssssss", $doctor_firstname, $doctor_lastname, $doctor_username, $hashed_password, $doctor_email, $doctor_occupation);
+
+        // manonotify yung user
+        if ($stmt->execute()) {
+            echo "<script>alert('Account Successfully Created.');</script>";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        // close the connection
+        $stmt->close();
     }
-
-    // close the connection
-    $stmt->close();
+    $connect->close();
 }
-$connect->close();
-
-};
 
 
 // PACHECK DIN NITO IF NOT WORKING SA TAAS

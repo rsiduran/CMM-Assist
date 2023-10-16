@@ -507,12 +507,12 @@ if(isset($_POST['search'])) {
                         <div class="right-form">
                             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                                 <div class="form-group">
-                                    <label class="label-field" for="lname">Last Name</label>
-                                    <input class="input-field" placeholder="Last Name:" type="text" name="lname" id="lname" required>
-                                </div>
-                                <div class="form-group">
                                     <label class="label-field" for="fname">First Name</label>
                                     <input class="input-field" placeholder="First Name:" type="text" name="fname" id="fname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="label-field" for="lname">Last Name</label>
+                                    <input class="input-field" placeholder="Last Name:" type="text" name="lname" id="lname" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-field" for="uname">Username</label>

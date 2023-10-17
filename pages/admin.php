@@ -505,7 +505,7 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                            <form action="../backend/doctorAcc.php" method="POST">
                                 <div class="form-group">
                                     <label class="label-field" for="fname">First Name</label>
                                     <input class="input-field" placeholder="First Name:" type="text" name="fname" id="fname" required>

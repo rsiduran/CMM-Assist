@@ -1,3 +1,14 @@
+<?php
+session_start();
+include '../backend/config.php';
+
+if (isset($_SESSION["doctor_id"])) {
+    echo "<script>alert('Welcome to Nurse Dashboard!');</script>";
+} else {
+    // Redirect to the login page or display an error message
+    header("Location: ../index.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

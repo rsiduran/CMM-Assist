@@ -1,6 +1,13 @@
 <?php 
 session_start();
-    include '../backend/config.php';
+include '../backend/config.php';
+
+if (isset($_SESSION["admin_id"])) {
+    echo "<script>alert('Welcome to Admin Dashboard!');</script>";
+} else {
+    // Redirect to the login page or display an error message
+    header("Location: ../index.html");
+}
 
 if(isset($_POST['search'])) {
     $search = $_POST['search1'];

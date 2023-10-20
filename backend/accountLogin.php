@@ -42,34 +42,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION["doctor_id"] = $doctor_id;
                 $_SESSION["doctor_username"] = $doctor_username;
                 $_SESSION["doctor_occupation"] = $doctor_occupation;
-                
-                 // mapupunta sa designated occupation webpage               
-                if ($doctor_occupation === "doctor") {
-                    header("Location: ../pages/doctors.php");
-                } elseif ($doctor_occupation === "nurse") {
-                    header("Location: ../pages/nurse.php");
-                } elseif ($doctor_occupation === "medical_staff") {
-                    header("Location: mema.php");
-                } else {
-                    echo "<script>alert('Invalid occupation!');</script>";
-                }
 
-                // // Redirect based on occupation
-                // switch ($doctor_occupation) {
-                //     case "doctor":
-                //         header("Location: ../pages/doctors.php");
-                //         break;
-                //     case "nurse":
-                //         header("Location: ../pages/nurse.php");
-                //         break;
-                //     case "medical_staff":
-                //         header("Location: mema.php");
-                //         break;
-                //     default:
-                //         // Handle errors for invalid user occupation
-                //         echo "Invalid user occupation.";
-                //         break;
-                // }
+                // mapupunta sa designated occupation webpage
+                switch ($doctor_occupation) {
+                    case "doctor":
+                        header("Location: ../pages/doctors.php");
+                        break;
+                    case "nurse":
+                        header("Location: ../pages/nurse.php");
+                        break;
+                    case "medical_staff":
+                        header("Location: mema.php");
+                        break;
+                    default:
+                        // error handling
+                        echo "Invalid user occupation.";
+                        break;
+                }
             } else {
                 // invalid login
                 echo "<script>alert('Invalid Password!');</script>";

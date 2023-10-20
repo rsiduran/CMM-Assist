@@ -23,15 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (mysqli_num_rows($duplicate) > 0) {
         echo "<script>alert('Username or email already exists.');</script>";
         header("Location: ../pages/admin.php?message=Username or email already exists.");
-        exit; // Stop execution to prevent further processing.
+        exit; // will exit
     } else {
-
         // if walang data inputs
-        if (empty($doctor_firstname) || empty($doctor_lastname) || empty($doctor_username) || empty($doctor_password) || empty($doctor_email) || empty($doctor_occupation)) {
+        if (empty($doctor_firstname) || empty($doctor_lastname) || empty($doctor_username) || empty($doctor_password) || empty($doctor_email) || $doctor_occupation == "null") {
             echo "<script>alert('Please fill in all input fields.');</script>";
         } else {
             $pasok_sa_sql = "INSERT INTO doctor_acc (doctor_firstname, doctor_lastname, doctor_username, doctor_password, doctor_email, doctor_occupation, account_created) VALUES (?, ?, ?, ?, ?, ?, NOW())";
-
             $stmt = $connect->prepare($pasok_sa_sql);
             $stmt->bind_param("ssssss", $doctor_firstname, $doctor_lastname, $doctor_username, $doctor_password, $doctor_email, $doctor_occupation);
 
@@ -39,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($stmt->execute()) {
                 echo "<script>alert('Account Successfully Created.');</script>";
                 header("Location: ../pages/admin.php?message=Account Successfully Created.");
-                exit; // Stop execution to prevent further processing.
+                exit; // will exit
             } else {
                 echo "Error: " . $stmt->error;
             }

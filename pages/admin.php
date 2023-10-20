@@ -5,8 +5,9 @@ include '../backend/config.php';
 if (isset($_SESSION["admin_id"])) {
     echo "<script>alert('Welcome to Admin Dashboard!');</script>";
 } else {
-    // Redirect to the login page or display an error message
+    // redirect to the login page and display an error message
     header("Location: ../index.html");
+    echo "<script>alert('The admin is not logged in.');</script>";
 }
 
 if(isset($_POST['search'])) {
@@ -34,6 +35,7 @@ if(isset($_POST['search'])) {
 </head>
 
 <body>
+
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bxs-heart'></i>
@@ -98,7 +100,7 @@ if(isset($_POST['search'])) {
                         <div class="profile_name" style="white-space: nowrap;">CMM Assist</div>
                         <div class="job">Admin</div>
                     </div>
-                    <a href="../index.html"><i class="bx bx-log-out"></i></a>
+                    <a href="../backend/logout.php"><i class="bx bx-log-out"></i></a>
                 </div>
             </li>
         </ul>
@@ -107,7 +109,6 @@ if(isset($_POST['search'])) {
     <main class="home-section">
         <div class="home-content">
             <i class="bx bx-menu"></i>
-
         </div>
         <div class="container-fluid">
             <!-- Dashboard -->
@@ -536,7 +537,6 @@ if(isset($_POST['search'])) {
                                 <div class="form-group">
                                     <label class="label-field" for="occupation">Occupation</label>
                                     <select class="input-field" name="occupation" id="occupation" required>
-                                        <option value="null" selected> </option>
                                         <option value="doctor">Doctor</option>
                                         <option value="nurse">Nurse</option>
                                         <option value="medical_staff">Medical Staff</option>

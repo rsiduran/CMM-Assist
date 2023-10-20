@@ -3,11 +3,10 @@ session_start();
 include '../backend/config.php';
 
 if (isset($_SESSION["admin_id"])) {
-    echo "<script>alert('Welcome to Admin Dashboard!');</script>";
+    
 } else {
     // redirect to the login page and display an error message
-    header("Location: ../index.html");
-    echo "<script>alert('The admin is not logged in.');</script>";
+    header("Location: ../index.html?error=notloggedin");
 }
 
 if(isset($_POST['search'])) {
@@ -30,12 +29,20 @@ if(isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Assets/css/admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../Assets/css/popup.css">
     <link rel="icon" href="" type="image/x-icon" class="rounded-circle">
     <title>CMM Admin</title>
 </head>
 
 <body>
-
+    <div id="pop-up-log-in">
+        <div class="pop-info-top">&#10003;</div>
+        <div class="pop-info-center">
+            <h1>Welcome Back!</h1>
+            <p>You have been successfully logged in.</p>
+        </div>
+        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+    </div>
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bxs-heart'></i>

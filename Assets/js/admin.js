@@ -27,3 +27,10 @@ function showSection(sectionId) {
       selectedSection.style.display = 'block';
   }
 }
+
+function popUpVanish() {
+  const popup = document.getElementById("pop-up-log-in")
+  if(popup) {
+    popup.style.display = 'none';
+  }
+}

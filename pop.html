@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body onload="openPopup()">
+    <nav class="navbar">
+        <div class="nav-title">
+            <h2>CMM assist</h2>
+        </div>
+        <div class="nav-sections">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Doctors</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact us</a></li>
+                <li class="nav-item"><a href="#" class="btn-sign-in nav-link" id="signInLink">SIGN IN</a></li>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <main id="home">
+        <div class="bg-front">
+            <div class="bg-front-background">
+            </div>
+        </div>
+    </main>
+    <div class="submit-pop-up" id="submit-pop-up">
+        <img class="pop-up-img" src="Assets/images/check.png">
+        <h2 class="message">Thank You!</h2>
+        <p>Your message has been process.</p>
+        <button class="btn-ok" onclick="location.href='index.html'">OK</button>
+    </div>
+
+</section>
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="Assets/js/main.js"></script>
+    <script>
+        const Submitpopup = document.getElementById("submit-pop-up")
+
+        function openPopup(){
+            Submitpopup.classList.add("open-pop-up")
+        }
+    </script>
+</body>s
+</html>

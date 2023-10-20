@@ -17,7 +17,8 @@ if(isset($_POST['submit'])) {
     $datestamp = $date_time->format('Y-m-d H:i:s');
 
     $inquiry = mysqli_query($connect, "INSERT INTO `inquiry` (name, email, message, datestamp) VALUES ('$inquiry_name', '$inquiry_email', '$inquiry_message', '$datestamp')") or die ('Query Failed');
-    header("Location: ../index.html");
+    header("Location: ../pop.html");
+    exit;
 }   
 
 ?>

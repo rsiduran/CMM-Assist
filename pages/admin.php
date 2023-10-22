@@ -35,14 +35,26 @@ if(isset($_POST['search'])) {
 </head>
 
 <body>
-    <div id="pop-up-log-in">
-        <div class="pop-info-top">&#10003;</div>
-        <div class="pop-info-center">
-            <h1>Welcome Back!</h1>
-            <p>You have been successfully logged in.</p>
-        </div>
-        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
-    </div>
+    <?php // in this code its checking whether an error occured after getting it 
+        if(isset($_GET['error'])) { // it has two purpose 1 for sign in and 1 for sign up
+        $error = $_GET['error']; 
+        if($error === 'successlogin') {  // if the error statement is equal to none it would create account
+            echo '  <div id="pop-up-log-in">
+                        <div class="pop-info-top">&#10003;</div>
+                        <div class="pop-info-center">
+                            <h1>Welcome Back!</h1>
+                            <p>You have been successfully logged in.</p>
+                        </div>
+                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                    </div>  ';
+                    $error = 'none';
+        }
+        else { 
+            
+        }
+        }
+    ?>
+    
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bxs-heart'></i>

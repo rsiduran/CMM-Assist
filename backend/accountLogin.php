@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["admin_username"] = $admin_username;
 
             // will go to the admin dashboard
-            header("Location: ../pages/admin.php");
+            header("Location: ../pages/admin.php?error=successlogin");
         } else {
             $stmt->close();
             // account created login
@@ -46,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // mapupunta sa designated occupation webpage
                 switch ($doctor_occupation) {
                     case "doctor":
-                        header("Location: ../pages/doctors.php");
+                        header("Location: ../pages/doctors.php?error=successlogin");
                         break;
                     case "nurse":
-                        header("Location: ../pages/nurse.php");
+                        header("Location: ../pages/nurse.php?error=successlogin");
                         break;
                     case "medical_staff":
                         header("Location: mema.php");

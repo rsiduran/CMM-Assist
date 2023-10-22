@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             } else {
                 // invalid login
                 echo "<script>alert('Invalid Password!');</script>";
-                header("Location: ../index.html");
+                header("Location: ../index.php?error=error");
             }
             
             $stmt->close();

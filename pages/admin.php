@@ -634,7 +634,7 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="">
+                            <form action="../backend/adminpassword.php" method="POST">
                                 <div class="form-group">
                                     <label class="label-field" for="admin">Admin Account</label>
                                     <input disabled class="input-field" type="text" name="admin" id="" value="Admin">

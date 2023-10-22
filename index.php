@@ -9,9 +9,28 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Assets/css/popup.css">
 </head>
 
 <body>
+    <?php // in this code its checking whether an error occured after getting it 
+        if(isset($_GET['error'])) { // it has two purpose 1 for sign in and 1 for sign up
+        $error = $_GET['error']; 
+        if($error === 'success') {  // if the error statement is equal to none it would create account
+            echo '  <div id="pop-up-log-in">
+                        <div class="pop-info-top">&#10003;</div>
+                        <div class="pop-info-center">
+                            <h1 style="font-size: 48px;">Thank You!</h1><br>
+                            <p>You message is successfully submitted. Thanks!</p>
+                        </div>
+                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                    </div>  ';
+        }
+        else { 
+            
+        }
+        }
+    ?>
     <div class="sign-container">
         <div class="sign-in-pop-up" id="signInPopUp">
             <i class="bx bx-x bx-md ekis-icon" id="ekis-icon"></i>
@@ -35,7 +54,19 @@
                     <div class="btn-container">
                         <button class="log-in-btn" type="submit">Sign in</button>
                     </div>
-                    <p id="error-message" class="error-message" style="color: red; font-size: 12px"></p>
+                    <p id="error-message" class="error-message" style="color: red; font-size: 12px">
+                        <?php // in this code its checking whether an error occured after getting it 
+                            if(isset($_GET['error'])) { // it has two purpose 1 for sign in and 1 for sign up
+                            $error = $_GET['error']; 
+                            if($error === 'none') {  // if the error statement is equal to none it would create account
+                                echo "<script>alert('Account Created');</script>";
+                            }
+                            else { // otherwise its having its error with its value error that we get using $_GET to collect the data
+                                echo 'Invalid username or password. Try again.';
+                            }
+                            }
+                        ?>
+                    </p>
                 </form>
             </div>
         </div>
@@ -387,6 +418,12 @@
         //         passwordInput.value = "";
         //     }
         // });
+        function popUpVanish() {
+        const popup = document.getElementById("pop-up-log-in")
+        if(popup) {
+            popup.style.display = 'none';
+        }
+        }
     </script>
 </body>
 

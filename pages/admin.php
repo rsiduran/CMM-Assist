@@ -6,7 +6,7 @@ if (isset($_SESSION["admin_id"])) {
     
 } else {
     // redirect to the login page and display an error message
-    header("Location: ../index.html?error=notloggedin");
+    header("Location: ../index.php?error=notloggedin");
 }
 
 if(isset($_POST['search'])) {
@@ -35,23 +35,57 @@ if(isset($_POST['search'])) {
 </head>
 
 <body>
-    <?php // in this code its checking whether an error occured after getting it 
-        if(isset($_GET['error'])) { // it has two purpose 1 for sign in and 1 for sign up
+    <?php 
+        if(isset($_GET['error'])) { 
         $error = $_GET['error']; 
-        if($error === 'successlogin') {  // if the error statement is equal to none it would create account
-            echo '  <div id="pop-up-log-in">
-                        <div class="pop-info-top">&#10003;</div>
-                        <div class="pop-info-center">
-                            <h1>Welcome Back!</h1>
-                            <p>You have been successfully logged in.</p>
-                        </div>
-                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
-                    </div>  ';
-                    $error = 'none';
+        
+            if($error === 'successlogin') {  
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1>Welcome Back!</h1>
+                                <p>You have been successfully logged in.</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            } else {
+
+            } 
         }
-        else { 
-            
-        }
+
+        if(isset($_GET['message'])) { 
+        $message = $_GET['message']; 
+
+            if($message === 'Wrong Current Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Error!</h1><br>
+                                <p>Your current password is wrong. Try Again!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
+            else if($message === 'Successfully Changed Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Thank You!</h1><br>
+                                <p>Your password has been changed. Thanks!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
+            else if($message === 'Failed to Update Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Error!</h1><br>
+                                <p>Your password is failed to update. Try Again!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
         }
     ?>
     

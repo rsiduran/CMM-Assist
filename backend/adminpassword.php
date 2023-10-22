@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (mysqli_num_rows($myPass) == 0) {
         echo "<script>alert('Wrong Password');</script>";
-        header("Location: ../pages/admin.php?message=Wrong Password.");
+        header("Location: ../pages/admin.php?message=Wrong Current Password.");
         exit;
     } else {
         if ($newPass == $retypeNewPass) {
             $sqlUpdate = "UPDATE `admin` SET admin_password = '$newPass'";
             $result = mysqli_query($connect, $sqlUpdate);
             if ($result) {
-                header("Location: ../pages/admin.php?message=Successfully Changed.");
+                header("Location: ../pages/admin.php?message=Successfully Changed Password.");
             } else {
                 header("Location: ../pages/admin.php?message=Failed to Update Password.");
             }

@@ -95,7 +95,7 @@
 <body>
     <header>
         <div class="left-header">
-            <a href="../index.html" class="bold">Home</a>
+            <a href="../index.php" class="bold">Home</a>
             <span class="lineY"></span>
             <p class="light">Appointment Form</p>
         </div>

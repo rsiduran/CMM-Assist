@@ -6,7 +6,7 @@ if (isset($_SESSION["doctor_id"])) {
 
 } else {
     // redirect to the login page and display an error message
-    header("Location: ../index.html?error=notloggedin");
+    header("Location: ../index.php?error=notloggedin");
 }
 ?>
 

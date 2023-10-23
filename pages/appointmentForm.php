@@ -120,10 +120,10 @@
                         <input placeholder="Diaz" class="input-field" type="text" id="middleName" name="middleName" ><br><br>
     
                         <label for="gender">Gender:</label>
-                        <select  id="gender" class="input-field">
+                        <select  id="gender" name="gender" class="input-field">
                             <option value="" disabled selected>Choose Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                     <div class="grid-content" style="margin-top: 7px;">
@@ -132,7 +132,7 @@
                         <h3 class="header-3">Identification Card</h3>
                         <label class="custom-file-input">
                             <span>Attach your file here:</span><br>
-                            <input  type="file" class="clickable-file">
+                            <input name="identification"  type="file" class="clickable-file">
                         </label>
                     </div>
                     <div class="grid-content">

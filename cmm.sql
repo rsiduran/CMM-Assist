@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2023 at 01:25 AM
+-- Generation Time: Oct 23, 2023 at 03:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,6 +39,24 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`) VALUES
 (1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointments`
+--
+
+CREATE TABLE `appointments` (
+  `appointment_id` int(11) NOT NULL,
+  `firstName` varchar(100) NOT NULL,
+  `lastName` varchar(100) NOT NULL,
+  `middleName` varchar(100) NOT NULL,
+  `contactEmail` varchar(100) NOT NULL,
+  `dob` varchar(100) NOT NULL,
+  `contactNumber` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `services` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,7 +102,8 @@ CREATE TABLE `inquiry` (
 --
 
 INSERT INTO `inquiry` (`id`, `name`, `email`, `message`, `datestamp`) VALUES
-(2, 'Rsidy', 'rsi@gmail.com', 'The services are good and also the doctors and nurse', '2023-10-20 23:22:44');
+(2, 'Rsidy', 'rsi@gmail.com', 'The services are good and also the doctors and nurse', '2023-10-20 23:22:44'),
+(3, 'Rsidy', 'rsidy@gmail.com', 'pop up example', '2023-10-22 10:31:08');
 
 --
 -- Indexes for dumped tables
@@ -95,6 +114,12 @@ INSERT INTO `inquiry` (`id`, `name`, `email`, `message`, `datestamp`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `appointments`
+--
+ALTER TABLE `appointments`
+  ADD PRIMARY KEY (`appointment_id`);
 
 --
 -- Indexes for table `doctor_acc`
@@ -119,6 +144,12 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `doctor_acc`
 --
 ALTER TABLE `doctor_acc`
@@ -128,7 +159,7 @@ ALTER TABLE `doctor_acc`
 -- AUTO_INCREMENT for table `inquiry`
 --
 ALTER TABLE `inquiry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

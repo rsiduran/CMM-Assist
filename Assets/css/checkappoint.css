@@ -19,6 +19,7 @@ h2 {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
+    position: relative;
 }
 
 .textdetails {
@@ -53,7 +54,8 @@ h2 {
 }
 
 .service-content {
-    background-color: #D9D9D9;
+    /* active - background-color: #30b830cc; */
+    background-color: #d9d9d9;
     height: 80px;
     border-radius: 10px;
     position: relative;
@@ -69,6 +71,68 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     font-size: 35px;
+}
+
+.circle-container {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.circle {
+    height: 10px;
+    width: 30px;
+    background-color: #30b830cc;
+}
+
+.personal-details-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 80px;
+}
+
+.personal-text {
+    font-size: 18px;
+}
+
+.date-value {
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.personal-content-2 {
+    display: flex;
+    gap: 50px;
+}
+
+.confirm-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #30b830cc;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.confirm-btn:hover {
+    filter: brightness(90%);
 }
 
 @media (max-width: 768px) {

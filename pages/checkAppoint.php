@@ -1,4 +1,5 @@
 <?php
+
     // services //Specialty Consultation
     $Nephrology = isset($_POST['Nephrology']) ? $_POST['Nephrology'] : '';
     $Cardiology = isset($_POST['Cardiology']) ? $_POST['Cardiology'] : '';
@@ -43,6 +44,9 @@
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; //if $gender == '' then nothing color change else color change in style property in my html
+
+    // Identification Card
+    
 ?>
 
 <!DOCTYPE html>
@@ -73,43 +77,47 @@
         <div class="service-details">
             <h1>Services</h1>
             <p class="text-services">Specialty Consultations</p>
+            <div class="circle-container">
+                <div class="circle"></div>
+                <div class="circle-value">Selected Services</div>
+            </div>
             <div class="specialty-consultations service-grid">
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Nephrology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Nephrology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Cardiology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Cardiology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Pulmonology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Pulmonology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Urology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Urology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Orthopedics)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Orthopedics</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Endocrinology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Endocrinology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Neurology)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Neurology</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
-                <div class="service-content" style="">
+                <div class="service-content" style="<?php if (!empty($Pediatrics)) { echo 'background-color: #30b830cc;';} ?>">
                     <h2 class="text-center">Pediatrics</h2>
                     <p class="text-center">1 Hour</p>
                     <i class='bx bxs-error-alt icon-right'></i>
@@ -117,16 +125,105 @@
             </div>
             <p class="text-services">Laboratory Tests</p>
             <div class="laboratory-tests service-grid">
-
+                <div class="service-content" style="<?php if (!empty($Blood)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Blood Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($Antigen)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Antigen</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($Mircrobial)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Mircrobial Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($Semen)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Semen Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($Stool)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Stool Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($Urine)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Urine Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($RT)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">RT-PCR Test</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($ECG)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">ECG</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
             </div>
             <p class="text-services">Imaging Tests</p>
             <div class="imaging-tests service-grid">
-
+                <div class="service-content" style="<?php if (!empty($Xray)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">X-Ray</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($General)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">Gen. Ultrasound</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($OB)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">OB Ultrasound</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($CT)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">CT Scan</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="<?php if (!empty($MRI)) { echo 'background-color: #30b830cc;';} ?>">
+                    <h2 class="text-center">MRI Option</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
             </div>
         </div>
         <div class="personal-details">
             <h1>Information</h1>
+            <div class="personal-details-container">
+                <div class="personal-content">
+                    <p class="personal-text">Date & Time Appointed</p>
+                    <div class="date-value personal-text"><?php echo $datetime; ?></div>
+                </div>
+                <div class="personal-content personal-content-2">
+                    <div class="personal-content-child">
+                        <p class="personal-text">Full Name:</p>
+                        <p class="personal-text">Email:</p>
+                        <p class="personal-text">Date of Birth:</p>
+                        <p class="personal-text">Contact Number:</p>
+                        <p class="personal-text">Gender:</p>
+                    </div>
+                    <div class="personal-content-child personal-text">
+                        <p><?php echo $firstName . " " . $middleName . " " . $lastName;?></p>
+                        <p><?php echo $email;?></p>
+                        <p><?php echo $dob;?></p>
+                        <p><?php echo $contactNumber;?></p>
+                        <p><?php echo $gender;?></p>  
+                    </div>
+                </div>
+            </div>
         </div>
+        <button class="confirm-btn">Confirm Appointment</button>
+        <br><br>
     </div>
+    <br>
+    <br>
 </body>
 </html>

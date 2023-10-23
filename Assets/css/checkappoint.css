@@ -1,0 +1,78 @@
+h1 {
+    font-size: 26px;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+}
+
+.textH1Details {
+    text-align: center;
+    font-size: 28px;
+}
+
+.container-details {
+    background-color: #fff;
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.textdetails {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3333339d;
+    text-align: center;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.text-services {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333e5;
+}
+
+.specialty-consultations, .laboratory-tests, .imaging-tests {
+    padding: 20px 0;
+}
+
+.service-details {
+    position: relative;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+}
+
+.service-content {
+    background-color: #D9D9D9;
+    height: 80px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}

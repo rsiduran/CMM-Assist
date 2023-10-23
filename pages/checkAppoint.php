@@ -42,7 +42,7 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; //if $gender == '' then nothing color change else color change in style property in my html
 ?>
 
 <!DOCTYPE html>
@@ -51,45 +51,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Assets/css/appointment.css">
-    <link rel="stylesheet" href="../Assets/css/calendarStyle.css">
+    <link rel="stylesheet" href="../Assets/css/checkappoint.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <style>
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            background-color: #fff;
-            max-width: 60%;
-            margin: 20px auto;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 2px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .label {
-            font-weight: bold;
-        }
-
-        .appointment-details {
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <title>CMM Assist Appointment</title>
 </head>
 <body>
@@ -103,43 +67,65 @@
             <img class="cmm-logo" src="../Assets/images/CMM LOGO.png" alt="CMM logo">
         </div>
     </header>
-    <div class="container">
-        <h1>Appointment Details</h1>
-        <p>Below are the details of the appointment:</p>
+    <h1 class="textH1Details">Appointment Details</h1>
+        <p class="textdetails">Below are the details of the appointment:</p>
+    <div class="container-details">
+        <div class="service-details">
+            <h1>Services</h1>
+            <p class="text-services">Specialty Consultations</p>
+            <div class="specialty-consultations service-grid">
+                <div class="service-content" style="">
+                    <h2 class="text-center">Nephrology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Cardiology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Pulmonology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Urology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Orthopedics</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Endocrinology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Neurology</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+                <div class="service-content" style="">
+                    <h2 class="text-center">Pediatrics</h2>
+                    <p class="text-center">1 Hour</p>
+                    <i class='bx bxs-error-alt icon-right'></i>
+                </div>
+            </div>
+            <p class="text-services">Laboratory Tests</p>
+            <div class="laboratory-tests service-grid">
 
-        <div class="appointment-details">
-            <p class="label">Specialty Consultations:</p>
-            <p><?php echo $specialty; ?></p>
+            </div>
+            <p class="text-services">Imaging Tests</p>
+            <div class="imaging-tests service-grid">
 
-            <p class="label">Laboratory Tests:</p>
-            <p><?php echo $laboratory; ?></p>
-
-            <p class="label">Imaging:</p>
-            <p><?php echo $imaging; ?></p>
-
-            <p class="label">Date and Time of Appointment:</p>
-            <p><?php echo $datetime; ?></p>
-
-            <p class="label">First Name:</p>
-            <p><?php echo $firstName; ?></p>
-
-            <p class="label">Last Name:</p>
-            <p><?php echo $lastName; ?></p>
-
-            <p class="label">Middle Name:</p>
-            <p><?php echo $middleName; ?></p>
-
-            <p class="label">Email:</p>
-            <p><?php echo $email; ?></p>
-
-            <p class="label">Date of Birth:</p>
-            <p><?php echo $dob; ?></p>
-
-            <p class="label">Contact Number:</p>
-            <p><?php echo $contactNumber; ?></p>
-
-            <p class="label">Gender:</p>
-            <p><?php echo $gender; ?></p>
+            </div>
+        </div>
+        <div class="personal-details">
+            <h1>Information</h1>
         </div>
     </div>
 </body>

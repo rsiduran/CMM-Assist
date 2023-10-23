@@ -13,3 +13,33 @@ function showSection(sectionId) {
         selectedSection.style.display = 'block';
     }
   }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const checkbox = document.querySelectorAll('input[type="checkbox"]');
+    const nextBtn = document.getElementById("next-page-button");
+    const dateTime = document.getElementById("datetime");
+
+    function checkedBoxes() {
+    let checked = false;
+
+    for (let checkboxes of checkbox) {
+        if(checkboxes.checked) {
+           checked = true;
+           break;
+        }
+    }
+
+    const dateTimeValue = dateTime.value;
+    if(checked) {
+        if(dateTimeValue) {
+        showSection('wrapper-right-2');
+        } else {
+            alert("Please select the date and time of the appointment.");
+        return;
+        }
+    } else {
+        alert("Please select at least one service.");
+    }
+}
+nextBtn.addEventListener("click", checkedBoxes);
+});

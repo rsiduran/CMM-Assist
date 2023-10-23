@@ -88,9 +88,9 @@
                     <div class="grid-content">
                         <h3 class="titles">Date of Appointment</h3>
                         <label for="datetime">Select Date and Time:</label>
-                        <input type="datetime-local" id="datetime" name="datetime" >
+                        <input type="datetime-local" id="datetime" name="datetime">
                         <!-- <a href="#" id="showWrapperRight2" class="next-page-button" style="text-decoration: none;">Next</a> -->
-                        <a id="next-page-button" class="next-page-button" style="text-decoration: none; font-size: 16px;" onclick="showSection('wrapper-right-2')">Next</a>
+                        <button id="next-page-button" class="next-page-button" style="text-decoration: none; font-size: 16px;">Next</button>
                     </div>
                 </div>
             </div>
@@ -100,28 +100,28 @@
                 <div class="grid-container">
                     <div class="grid-content-1">
                         <label for="firstName" class="grid-content">First Name:</label>
-                        <input placeholder="Juan" class="input-field" type="text" id="firstName" name="firstName" ><br><br>
+                        <input placeholder="Juan" class="input-field" type="text" id="firstName" name="firstName" required><br><br>
                         
                         <label for="email" class="grid-content">Email:</label>
-                        <input placeholder="email@example.com" class="input-field" type="email" id="email" name="email" ><br><br>
+                        <input placeholder="email@example.com" class="input-field" type="email" id="email" name="email" required><br><br>
                         
                         <label for="dob">Date of Birth:</label>
-                        <input  class="input-field" type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()">
+                        <input  class="input-field" type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" onchange="validateDate()" required>
                         <p id="dob-error" style="color: red;"></p>
                     </div>
                     <div class="grid-content-2">
                         <label for="lastName" class="grid-content">Last Name:</label>
-                        <input placeholder="Dela Cruz" class="input-field" type="text" id="lastName" name="lastName" ><br><br>     
+                        <input placeholder="Dela Cruz" class="input-field" type="text" id="lastName" name="lastName" required><br><br>     
                         <label for="contactNumber">Contact No:</label>
-                        <input placeholder="09*********" class="input-field" type="tel" id="contactNumber" name="contactNumber" ><br><br>
+                        <input placeholder="09*********" class="input-field" type="number" id="contactNumber" name="contactNumber" required><br><br>
                     </div>
                     <div class="grid-content-3">
                         <label for="middleName" class="grid-content">Middle Name:</label>
-                        <input placeholder="Diaz" class="input-field" type="text" id="middleName" name="middleName" ><br><br>
+                        <input placeholder="Diaz" class="input-field" type="text" id="middleName" name="middleName" required><br><br>
     
                         <label for="gender">Gender:</label>
-                        <select  id="gender" name="gender" class="input-field">
-                            <option value="" disabled selected>Choose Gender</option>
+                        <select  id="gender" name="gender" class="input-field" required>
+                            <option value="" disabled selected >Choose Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -132,7 +132,7 @@
                         <h3 class="header-3">Identification Card</h3>
                         <label class="custom-file-input">
                             <span>Attach your file here:</span><br>
-                            <input name="identification"  type="file" class="clickable-file">
+                            <input name="identification" type="file" class="clickable-file" required>
                         </label>
                     </div>
                     <div class="grid-content">
@@ -146,7 +146,7 @@
         </form>
     </main>
     <script src="../Assets/js/calendarScript.js" defer></script>
-    <script src="../Assets/js/appointment.js"></script>
+    <script src="../Assets/js/appointment.js" defer></script>
 </body>
 
 </html>

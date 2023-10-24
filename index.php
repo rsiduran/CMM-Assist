@@ -31,6 +31,24 @@
         }
         }
     ?>
+    <?php 
+        if(isset($_GET['message'])) { 
+        $error = $_GET['message']; 
+        if($error === 'Successfully Appointed.') {  
+            echo '  <div id="pop-up-log-in">
+                        <div class="pop-info-top">&#10003;</div>
+                        <div class="pop-info-center">
+                            <h1 style="font-size: 48px;">Thank You!</h1><br>
+                            <p>Your appointment is successful. Thanks!</p>
+                        </div>
+                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                    </div>  ';
+        }
+        else { 
+            
+        }
+        }
+    ?>
     <div class="sign-container">
         <div class="sign-in-pop-up" id="signInPopUp">
             <i class="bx bx-x bx-md ekis-icon" id="ekis-icon"></i>

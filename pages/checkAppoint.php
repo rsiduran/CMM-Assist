@@ -44,6 +44,42 @@
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; 
+
+    // Identification Card
+
+    $services = array();
+    if (!empty($Nephrology)) { $services[] = $Nephrology; } if (!empty($Cardiology)) { $services[] = $Cardiology; } if (!empty($Pulmonology)) { $services[] = $Pulmonology; } if (!empty($Urology)) { $services[] = $Urology; } if (!empty($Orthopedics)) { $services[] = $Orthopedics; } if (!empty($Endocrinology)) { $services[] = $Endocrinology; } if (!empty($Neurology)) { $services[] = $Neurology; } if (!empty($Pediatrics)) { $services[] = $Pediatrics;  } if (!empty($Blood)) { $services[] = $Blood; } if (!empty($Antigen)) { $services[] = $Antigen; } if (!empty($Mircrobial)) { $services[] = $Mircrobial; } if (!empty($Semen)) { $services[] = $Semen; } if (!empty($Stool)) { $services[] = $Stool; } if (!empty($Urine)) { $services[] = $Urine; } if (!empty($RT)) { $services[] = $RT; } if (!empty($ECG)) { $services[] = $ECG; } if (!empty($Xray)) { $services[] = $Xray; } if (!empty($General)) { $services[] = $General; } if (!empty($OB)) { $services[] = $OB; } if (!empty($CT)) { $services[] = $CT; } if (!empty($MRI)) { $services[] = $MRI; }
+
+    if (isset($_POST['confirm-btn'])) {
+        $firstName = mysqli_real_escape_string($connect, $_POST["firstName"]);
+        $lastName = mysqli_real_escape_string($connect, $_POST["lastName"]);
+        $middleName = mysqli_real_escape_string($connect, $_POST["middleName"]);
+        $email = mysqli_real_escape_string($connect, $_POST["email"]);
+        $dob = mysqli_real_escape_string($connect, $_POST["dob"]);
+        $contactNumber = mysqli_real_escape_string($connect, $_POST["contactNumber"]);
+        $gender = mysqli_real_escape_string($connect, $_POST["gender"]);
+        $id = mysqli_real_escape_string($connect, $_POST["identification"]);
+        $datetime = mysqli_real_escape_string($connect, $_POST["datetime"]);
+        
+        $services = isset($_POST['services']) ? $_POST['services'] : [];
+        $services = array_filter($services);
+
+        foreach ($services as $service) {
+            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, datetime) VALUES (' $firstName', '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$id', '$service', '$datetime')";
+            $stmt = mysqli_prepare($connect, $query);
+            
+            if($stmt) {
+                
+            }
+            if(mysqli_query($connect, $query)) {
+                header("Location: ../index.php?message=Successfully Appointed.");
+            } else {
+                echo '<script>alert("Not added!")</script>'; 
+            }
+        }
+    }
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -217,7 +253,40 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="confirm-btn" name="confirm-btn">Confirm Appointment</button>
+        
+        <form method="post">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Nephrology ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Cardiology ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Pulmonology ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Urology ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Orthopedics ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Endocrinology ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Neurology ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Pediatrics ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Blood ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Antigen ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Mircrobial ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Semen ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Stool ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Urine ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $RT ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $ECG ?>">
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $Xray ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $General ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $OB ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $CT ?>"> 
+            <input style="display: none;" type="text" name="services[]" value="<?php echo $MRI ?>"> 
+            <input style="display: none;" type="text" name="datetime" value="<?php echo $datetime ?>">
+            <input style="display: none;" type="text" name="firstName" value="<?php echo $firstName ?>">
+            <input style="display: none;" type="text" name="email" value="<?php echo $email ?>">
+            <input style="display: none;" type="text" name="dob" value="<?php echo $dob ?>">
+            <input style="display: none;" type="text" name="lastName" value="<?php echo $lastName ?>">   
+            <input style="display: none;" type="text" name="contactNumber" value="<?php echo $contactNumber ?>">
+            <input style="display: none;" type="text" name="middleName" value="<?php echo $middleName ?>">
+            <input style="display: none;" type="text" name="gender" value="<?php echo $gender ?>">
+            <input style="display: none;" type="file" name="identification" value="<?php echo $id ?>">
+            <button class="confirm-btn" type="submit" name="confirm-btn">Confirm Appointment</button>
+        </form>
         <br><br>
     </div>
     <br>

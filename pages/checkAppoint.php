@@ -44,6 +44,7 @@
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; 
+    $id = isset($_POST['identification']) ? $_POST['identification'] : ''; 
 
     // Identification Card
 
@@ -249,6 +250,7 @@
                         <p><?php echo $dob;?></p>
                         <p><?php echo $contactNumber;?></p>
                         <p><?php echo $gender;?></p>  
+                        
                     </div>
                 </div>
             </div>
@@ -284,7 +286,7 @@
             <input style="display: none;" type="text" name="contactNumber" value="<?php echo $contactNumber ?>">
             <input style="display: none;" type="text" name="middleName" value="<?php echo $middleName ?>">
             <input style="display: none;" type="text" name="gender" value="<?php echo $gender ?>">
-            <input style="display: none;" type="file" name="identification" value="<?php echo $id ?>">
+            <input style="display: none;" type="text" name="identification" value="<?php echo $id ?>">
             <button class="confirm-btn" type="submit" name="confirm-btn">Confirm Appointment</button>
         </form>
         <br><br>

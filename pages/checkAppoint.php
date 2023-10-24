@@ -22,8 +22,8 @@
     $RT = isset($_POST['RT']) ? $_POST['RT'] : '';
     $ECG = isset($_POST['ECG']) ? $_POST['ECG'] : '';
 
-    // Use implode to join the values with a comma
-    $laboratory = implode(', ', array_filter([$Blood, $Antigen, $Mircrobial, $Semen, $Stool, $Urine, $RT, $ECG]));
+    // Use implode to join the values with a comma 
+    $laboratory = implode(', ', array_filter([$Blood, $Antigen, $Mircrobial, $Semen, $Stool, $Urine, $RT, $ECG])); // can be deleted or minimize the code
 
     $Xray = isset($_POST['X-Ray']) ? $_POST['X-Ray'] : '';
     $General = isset($_POST['General']) ? $_POST['General'] : '';
@@ -44,9 +44,10 @@
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; 
-    $id = isset($_POST['identification']) ? $_POST['identification'] : ''; 
-
+    
     // Identification Card
+    $id = isset($_POST['identification']) ? $_POST['identification'] : ''; 
+    
 
     $services = array();
     if (!empty($Nephrology)) { $services[] = $Nephrology; } if (!empty($Cardiology)) { $services[] = $Cardiology; } if (!empty($Pulmonology)) { $services[] = $Pulmonology; } if (!empty($Urology)) { $services[] = $Urology; } if (!empty($Orthopedics)) { $services[] = $Orthopedics; } if (!empty($Endocrinology)) { $services[] = $Endocrinology; } if (!empty($Neurology)) { $services[] = $Neurology; } if (!empty($Pediatrics)) { $services[] = $Pediatrics;  } if (!empty($Blood)) { $services[] = $Blood; } if (!empty($Antigen)) { $services[] = $Antigen; } if (!empty($Mircrobial)) { $services[] = $Mircrobial; } if (!empty($Semen)) { $services[] = $Semen; } if (!empty($Stool)) { $services[] = $Stool; } if (!empty($Urine)) { $services[] = $Urine; } if (!empty($RT)) { $services[] = $RT; } if (!empty($ECG)) { $services[] = $ECG; } if (!empty($Xray)) { $services[] = $Xray; } if (!empty($General)) { $services[] = $General; } if (!empty($OB)) { $services[] = $OB; } if (!empty($CT)) { $services[] = $CT; } if (!empty($MRI)) { $services[] = $MRI; }

@@ -1,5 +1,5 @@
 <?php
-
+include '../backend/config.php';
     // services //Specialty Consultation
     $Nephrology = isset($_POST['Nephrology']) ? $_POST['Nephrology'] : '';
     $Cardiology = isset($_POST['Cardiology']) ? $_POST['Cardiology'] : '';
@@ -45,9 +45,34 @@
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; //if $gender == '' then nothing color change else color change in style property in my html
 
-    // Identification Card
+
+    if (isset($_POST['confirm-button'])) {
+        $firstName = mysqli_real_escape_string($connect, $_POST["firstName"]);
+        $lastName = mysqli_real_escape_string($connect, $_POST["lastName"]);
+        $middleName = mysqli_real_escape_string($connect, $_POST["middleName"]);
+        $email = mysqli_real_escape_string($connect, $_POST["email"]);
+        $dob = mysqli_real_escape_string($connect, $_POST["dob"]);
+        $contactNumber = mysqli_real_escape_string($connect, $_POST["contactNumber"]);
+        $gender = mysqli_real_escape_string($connect, $_POST["gender"]);
+        $id = mysqli_real_escape_string($connect, $_POST["identification"]);
+        $datetime = mysqli_real_escape_string($connect, $_POST["datetime"]);
+
+        $service = isset($_POST['services']) ? $_POST["services"] : [];
+        foreach ($service as $services) {
+            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, datetime) VALUES (' $firstName', '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$id', '$services', '$datetime')";
     
-?>
+        $stmt = mysqli_prepare($connect, $query);
+        
+        if($stmt) {
+            
+        }
+        if(mysqli_query($connect, $query)) {
+            echo '<script>alert("Succefullty added!")</script>';
+        } else {
+            echo '<script>alert("Not added!")</script>';
+        
+    }}}
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +96,8 @@
             <img class="cmm-logo" src="../Assets/images/CMM LOGO.png" alt="CMM logo">
         </div>
     </header>
-    <h1 class="textH1Details">Appointment Details</h1>
+    <h1 class="textH1Details">Appointment successfully added!</h1><br>
+    <h2 class="textH1Details">Appointment Details</h1>
         <p class="textdetails">Below are the details of the appointment:</p>
     <div class="container-details">
         <div class="service-details">

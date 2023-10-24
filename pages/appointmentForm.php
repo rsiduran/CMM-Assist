@@ -54,35 +54,35 @@
                 <div class="grid-container">
                     <div class="grid-content">
                         <h3 class="titles">Specialty Consultations</h3>
-                        <label><input type="checkbox" name="Nephrology" value="Nephrology"> Nephrology</label>
-                        <label><input type="checkbox" name="Cardiology" value="Cardiology"> Cardiology</label>
-                        <label><input type="checkbox" name="Pulmonology" value="Pulmonology"> Pulmonology</label>
-                        <label><input type="checkbox" name="Urology" value="Urology"> Urology</label>
-                        <label><input type="checkbox" name="Orthopedics" value="Orthopedics"> Orthopedics</label>
-                        <label><input type="checkbox" name="Endocrinology" value="Endocrinology"> Endocrinology</label>
-                        <label><input type="checkbox" name="Neurology" value="Neurology"> Neurology</label>
-                        <label><input type="checkbox" name="Pediatrics" value="Pediatrics"> Pediatrics</label>
+                        <label><input type="checkbox" name="services[]" value="Nephrology"> Nephrology</label>
+                        <label><input type="checkbox" name="services[]" value="Cardiology"> Cardiology</label>
+                        <label><input type="checkbox" name="services[]" value="Pulmonology"> Pulmonology</label>
+                        <label><input type="checkbox" name="services[]" value="Urology"> Urology</label>
+                        <label><input type="checkbox" name="services[]" value="Orthopedics"> Orthopedics</label>
+                        <label><input type="checkbox" name="services[]" value="Endocrinology"> Endocrinology</label>
+                        <label><input type="checkbox" name="services[]" value="Neurology"> Neurology</label>
+                        <label><input type="checkbox" name="services[]" value="Pediatrics"> Pediatrics</label>
                     </div>
     
                     <div class="grid-content">
                         <h3 class="titles">Laboratory Tests</h3>
-                        <label><input type="checkbox" name="Blood" value="Blood Test"> Blood Test</label>
-                        <label><input type="checkbox" name="Antigen" value="Antigen/Antibody Test"> Antigen/Antibody Test</label>
-                        <label><input type="checkbox" name="Mircrobial" value="Mircrobial Test"> Mircrobial Test</label>
-                        <label><input type="checkbox" name="Semen" value="Semen Test"> Semen Test</label>
-                        <label><input type="checkbox" name="Stool" value="Stool Test"> Stool Test</label>
-                        <label><input type="checkbox" name="Urine" value="Urine Test"> Urine Test</label>
-                        <label><input type="checkbox" name="RT" value="RT-PCR Test"> RT-PCR Test</label>
-                        <label><input type="checkbox" name="ECG" value="ECG"> ECG</label>
+                        <label><input type="checkbox" name="services[]" value="Blood Test"> Blood Test</label>
+                        <label><input type="checkbox" name="services[]" value="Antigen/Antibody Test"> Antigen/Antibody Test</label>
+                        <label><input type="checkbox" name="services[]" value="Mircrobial Test"> Mircrobial Test</label>
+                        <label><input type="checkbox" name="services[]" value="Semen Test"> Semen Test</label>
+                        <label><input type="checkbox" name="services[]" value="Stool Test"> Stool Test</label>
+                        <label><input type="checkbox" name="services[]" value="Urine Test"> Urine Test</label>
+                        <label><input type="checkbox" name="services[]" value="RT-PCR Test"> RT-PCR Test</label>
+                        <label><input type="checkbox" name="services[]" value="ECG"> ECG</label>
                     </div>
     
                     <div class="grid-content">
                         <h3 class="titles">Imaging</h3>
-                        <label><input type="checkbox" name="X-Ray" value="X-Ray"> X-Ray</label>
-                        <label><input type="checkbox" name="General" value="General Ultrasound"> General Ultrasound</label>
-                        <label><input type="checkbox" name="OB" value="OB Ultrasound"> OB Ultrasound</label>
-                        <label><input type="checkbox" name="CT" value="CT Scan"> CT Scan</label>
-                        <label><input type="checkbox" name="MRI" value="MRI Option"> MRI Option</label>
+                        <label><input type="checkbox" name="services[]" value="X-Ray"> X-Ray</label>
+                        <label><input type="checkbox" name="services[]" value="General Ultrasound"> General Ultrasound</label>
+                        <label><input type="checkbox" name="services[]" value="OB Ultrasound"> OB Ultrasound</label>
+                        <label><input type="checkbox" name="services[]" value="CT Scan"> CT Scan</label>
+                        <label><input type="checkbox" name="services[]" value="MRI Option"> MRI Option</label>
                     </div>
     
                     <div class="grid-content">
@@ -140,7 +140,7 @@
                         <p class="text-description-id">We're delighted to have you as a patient. Our clinic operates during the following hours except holidays. </p> <p class="text-bold"> <b>(7:00 am to 4:00 pm)</b></p>
                     </div>
                     <a id="cancel-button" class="cancel-button" style="text-decoration: none;" onclick="showSection('wrapper-right-1')">Back</a>
-                    <button type="submit" id="confirm-button" class="confirm-button" style="text-decoration: none;">Confirm</button>
+                    <button type="submit" name="confirm-button" id="confirm-button" class="confirm-button" style="text-decoration: none;" onclick="return confirm('Are you sure you want to submit this?')">Confirm</button>
                 </div>
             </div>
         </form>

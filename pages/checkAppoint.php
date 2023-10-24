@@ -1,5 +1,5 @@
 <?php
-
+    include '../backend/config.php';
     // services //Specialty Consultation
     $Nephrology = isset($_POST['Nephrology']) ? $_POST['Nephrology'] : '';
     $Cardiology = isset($_POST['Cardiology']) ? $_POST['Cardiology'] : '';
@@ -43,10 +43,7 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; //if $gender == '' then nothing color change else color change in style property in my html
-
-    // Identification Card
-    
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; 
 ?>
 
 <!DOCTYPE html>
@@ -220,7 +217,7 @@
                 </div>
             </div>
         </div>
-        <button class="confirm-btn">Confirm Appointment</button>
+        <button type="submit" class="confirm-btn" name="confirm-btn">Confirm Appointment</button>
         <br><br>
     </div>
     <br>

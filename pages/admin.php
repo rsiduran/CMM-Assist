@@ -294,6 +294,12 @@ if(isset($_POST['search'])) {
                                 </form>
                             </article>
                             <article class="table__body">
+                            <?php
+                                    $doctor_query = "SELECT * FROM `doctor_acc` WHERE doctor_occupation ='doctor'";
+                                    $doctor = mysqli_query($connect, $doctor_query);
+
+                                    if (mysqli_num_rows($doctor) > 0){ 
+                                ?>
                                 <table>
                                     <thead>
                                         <tr>
@@ -306,68 +312,30 @@ if(isset($_POST['search'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    while ($fetch_doctor = mysqli_fetch_assoc($doctor)){
+                                    ?>
                                         <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
+                                            <td><?php echo $fetch_doctor['doctor_id']; ?></td>
+                                            <td><?php echo $fetch_doctor['account_created']; ?></td>
+                                            <td><?php echo $fetch_doctor['doctor_firstname'];
+                                            echo ' '; echo $fetch_doctor['doctor_lastname'];?></td>
+                                            <td><?php echo $fetch_doctor['doctor_username']; ?></td>
+                                            <td><?php echo $fetch_doctor['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
                                                 <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
                                                 <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <?php 
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
+                                <?php
+                                    }       
+                            ?>
                             </article>
                         </main>
                     </div>
@@ -381,6 +349,12 @@ if(isset($_POST['search'])) {
                                 </form>
                             </article>
                             <article class="table__body">
+                            <?php
+                                    $nurse_query = "SELECT * FROM `doctor_acc` WHERE doctor_occupation ='nurse'";
+                                    $nurse = mysqli_query($connect, $nurse_query);
+
+                                    if (mysqli_num_rows($nurse) > 0){ 
+                                ?>
                                 <table>
                                     <thead>
                                         <tr>
@@ -393,68 +367,30 @@ if(isset($_POST['search'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    while ($fetch_nurse = mysqli_fetch_assoc($nurse)){
+                                    ?>
                                         <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
+                                            <td><?php echo $fetch_nurse ['doctor_id']; ?></td>
+                                            <td><?php echo $fetch_nurse ['account_created']; ?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_firstname'];
+                                            echo ' '; echo $fetch_nurse ['doctor_lastname'];?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_username']; ?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
                                                 <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
                                                 <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <?php 
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
+                                <?php
+                                    }       
+                            ?>
                             </article>
                         </main>
                     </div>
@@ -468,6 +404,12 @@ if(isset($_POST['search'])) {
                                 </form>
                             </article>
                             <article class="table__body">
+                            <?php
+                                    $medicine_query = "SELECT * FROM `doctor_acc` WHERE doctor_occupation ='medical_staff'";
+                                    $medicine = mysqli_query($connect, $medicine_query);
+
+                                    if (mysqli_num_rows($medicine) > 0){ 
+                                ?>
                                 <table>
                                     <thead>
                                         <tr>
@@ -480,68 +422,30 @@ if(isset($_POST['search'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    while ($fetch_medicine = mysqli_fetch_assoc($medicine)){
+                                    ?>
                                         <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
+                                            <td><?php echo $fetch_medicine['doctor_id']; ?></td>
+                                            <td><?php echo $fetch_medicine['account_created']; ?></td>
+                                            <td><?php echo $fetch_medicine['doctor_firstname'];
+                                            echo ' '; echo $fetch_medicine['doctor_lastname'];?></td>
+                                            <td><?php echo $fetch_medicine['doctor_username']; ?></td>
+                                            <td><?php echo $fetch_medicine['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
                                                 <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
                                                 <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> 1 </td>
-                                            <td> 09 Sep, 2023 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Lorem </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td style="white-space: nowrap;">
-                                                <a href="#" class="btn-action">Reset Account</a>
-                                                <!-- whatever password u have it will be 123 -->
-                                                <a href="#" class="btn-action">Delete</a>
-                                            </td>
-                                        </tr>
+                                        <?php 
+                                        }
+                                    ?>
                                     </tbody>
                                 </table>
+                                <?php
+                                    }       
+                            ?>
                             </article>
                         </main>
                     </div>

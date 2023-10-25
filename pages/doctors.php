@@ -1,14 +1,25 @@
 <?php
-session_start();
-include '../backend/config.php';
+    session_start();
+    include '../backend/config.php';
 
-if (isset($_SESSION["doctor_id"])) {
-    
-} else {
-    // redirect to the login page and display an error message
-    header("Location: ../index.php?error=notloggedin");
-    echo "<script>alert('The doctor is not logged in.');</script>";
-}
+    if (isset($_SESSION["doctor_id"])) {
+        
+    } else {
+        // redirect to the login page and display an error message
+        header("Location: ../index.php?error=notloggedin");
+        echo "<script>alert('The doctor is not logged in.');</script>";
+    }
+?>
+
+<?php
+    $doctorAccount = $_SESSION["doctor_username"];
+    $query = "SELECT * FROM doctor_acc WHERE `doctor_username`='$doctorAccount'";
+    $result = mysqli_query($connect, $query);
+
+    while ($row = mysqli_fetch_array($result)) {
+        $docName = $row["doctor_firstname"] . ' ' . $row["doctor_lastname"];
+        $doc = $row["doctor_firstname"];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +42,7 @@ if (isset($_SESSION["doctor_id"])) {
                         <div class="pop-info-top">&#10003;</div>
                         <div class="pop-info-center">
                             <h1>Welcome Back!</h1>
-                            <p>You have been successfully logged in.</p>
+                            <p>You have been successfully logged in '. $doc .'.</p>
                         </div>
                         <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
                     </div>  ';
@@ -103,7 +114,7 @@ if (isset($_SESSION["doctor_id"])) {
                     </div>
                     <div class="name-job">
                         <div class="profile_name" style="white-space: nowrap;">CMM Assist</div>
-                        <div class="job">{name of doctor}</div>
+                        <div class="job"><?php echo $docName; ?></div>
                     </div>
                     <a href="../backend/logout.php"><i class="bx bx-log-out"></i></a>
                 </div>
@@ -157,7 +168,7 @@ if (isset($_SESSION["doctor_id"])) {
                             <div class="details-flex-container">
                                 <h1 class="details-title">Details</h1>
                                 <div class="welcome-and-icon">
-                                    <p>Welcome! <span>John Bravo</span></p>
+                                    <p>Welcome! <span><?php echo $docName; ?></span></p>
                                     <img class="icon-detail-img" src="../Assets/images/male-placeholder.png" alt="asd"> <!--kapag may image ung doctors papalitan to pag wala default-->
                                 </div>
                             </div>

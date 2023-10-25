@@ -131,6 +131,15 @@ h2 {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
+.upload-image-container {
+    height: 250px;
+    margin-top: 10px;
+}
+
+.upload-img {
+    height: 100%;
+}
+
 .confirm-btn:hover {
     filter: brightness(90%);
 }

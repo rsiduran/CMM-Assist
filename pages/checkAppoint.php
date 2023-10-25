@@ -62,15 +62,15 @@
                 $img_upload_path = 'uploads/' . $new_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
             } else {
-                $em = "Your file is too large.";
+                $em = "<script>alert('Your file is too large.')</script>";
                 header("Location: appointmentForm.php?error=$em");
             }
         } else {
-            $em = "Only JPG, JPEG, and PNG files are allowed.";
+            $em = "<script>alert('Only JPG, JPEG, and PNG files are allowed.')</script>";
             header("Location: appointmentForm.php?error=$em");
         }
     } else {
-        $em = "Unknown error occurred!";
+        $em = "<script>alert('Unknown error occurred!')</script>";
         header("Location: appointmentForm.php?error=$em");
     }
     
@@ -252,7 +252,7 @@
                     <i class='bx bxs-error-alt icon-right'></i>
                 </div>
             </div>
-        </div>
+        </div> <br>
         <div class="personal-details">
             <h1>Information</h1>
             <div class="personal-details-container">
@@ -274,13 +274,18 @@
                         <p><?php echo $email;?></p>
                         <p><?php echo $dob;?></p>
                         <p><?php echo $contactNumber;?></p>
-                        <p><?php echo $gender;?></p>  
-                        
+                        <p><?php echo $gender;?></p>
                     </div>
                 </div>
             </div>
+        </div><br><br><br><br>
+        <div class="identification-details">
+            <h1>Identification Information</h1>
+            <div class="upload-image-container">
+                <img class="upload-img" src="uploads/<?php echo $new_name; ?>" alt="Identification Card">
+            </div>
         </div>
-        
+
         <form method="post">
             <input style="display: none;" type="text" name="services[]" value="<?php echo $Nephrology ?>">
             <input style="display: none;" type="text" name="services[]" value="<?php echo $Cardiology ?>"> 
@@ -312,7 +317,6 @@
             <input style="display: none;" type="text" name="middleName" value="<?php echo $middleName ?>">
             <input style="display: none;" type="text" name="gender" value="<?php echo $gender ?>">
             <input style="display: none;" type="text" name="identification" value="<?php echo $new_name ?>" >
-            <img src="uploads/<?php echo $new_name; ?>" alt="Identification Card">
             <button class="confirm-btn" type="submit" name="confirm-btn">Confirm Appointment</button>
         </form>
         <br><br>

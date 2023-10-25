@@ -45,10 +45,35 @@
     $contactNumber = isset($_POST['contactNumber']) ? $_POST['contactNumber'] : '';
     $gender = isset($_POST['gender']) ? $_POST['gender'] : ''; 
     
-    // Identification Card
-    $id = isset($_POST['identification']) ? $_POST['identification'] : ''; 
-    
 
+    $img_name = $_FILES['identification']['name'];
+    $img_size = $_FILES['identification']['size'];
+    $tmp_name = $_FILES['identification']['tmp_name'];
+    $error = $_FILES['identification']['error'];
+    
+    if ($error === 0) {
+        $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+        $img_ex_lc = strtolower($img_ex);
+        $allowed_exs = array("jpg", "jpeg", "png");
+    
+        if (in_array($img_ex_lc, $allowed_exs)) {
+            if ($img_size <= 125000) {
+                $new_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
+                $img_upload_path = 'uploads/' . $new_name;
+                move_uploaded_file($tmp_name, $img_upload_path);
+            } else {
+                $em = "Your file is too large.";
+                header("Location: appointmentForm.php?error=$em");
+            }
+        } else {
+            $em = "Only JPG, JPEG, and PNG files are allowed.";
+            header("Location: appointmentForm.php?error=$em");
+        }
+    } else {
+        $em = "Unknown error occurred!";
+        header("Location: appointmentForm.php?error=$em");
+    }
+    
     $services = array();
     if (!empty($Nephrology)) { $services[] = $Nephrology; } if (!empty($Cardiology)) { $services[] = $Cardiology; } if (!empty($Pulmonology)) { $services[] = $Pulmonology; } if (!empty($Urology)) { $services[] = $Urology; } if (!empty($Orthopedics)) { $services[] = $Orthopedics; } if (!empty($Endocrinology)) { $services[] = $Endocrinology; } if (!empty($Neurology)) { $services[] = $Neurology; } if (!empty($Pediatrics)) { $services[] = $Pediatrics;  } if (!empty($Blood)) { $services[] = $Blood; } if (!empty($Antigen)) { $services[] = $Antigen; } if (!empty($Mircrobial)) { $services[] = $Mircrobial; } if (!empty($Semen)) { $services[] = $Semen; } if (!empty($Stool)) { $services[] = $Stool; } if (!empty($Urine)) { $services[] = $Urine; } if (!empty($RT)) { $services[] = $RT; } if (!empty($ECG)) { $services[] = $ECG; } if (!empty($Xray)) { $services[] = $Xray; } if (!empty($General)) { $services[] = $General; } if (!empty($OB)) { $services[] = $OB; } if (!empty($CT)) { $services[] = $CT; } if (!empty($MRI)) { $services[] = $MRI; }
 
@@ -60,14 +85,14 @@
         $dob = mysqli_real_escape_string($connect, $_POST["dob"]);
         $contactNumber = mysqli_real_escape_string($connect, $_POST["contactNumber"]);
         $gender = mysqli_real_escape_string($connect, $_POST["gender"]);
-        $id = mysqli_real_escape_string($connect, $_POST["identification"]);
         $datetime = mysqli_real_escape_string($connect, $_POST["datetime"]);
-        
+        $new_name = mysqli_real_escape_string($connect, $_POST["identification"]);
+
         $services = isset($_POST['services']) ? $_POST['services'] : [];
         $services = array_filter($services);
 
         foreach ($services as $service) {
-            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, datetime) VALUES (' $firstName', '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$id', '$service', '$datetime')";
+            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, datetime) VALUES (' $firstName', '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$new_name', '$service', '$datetime')";
             $stmt = mysqli_prepare($connect, $query);
             
             if($stmt) {
@@ -80,8 +105,6 @@
             }
         }
     }
-    
-    
 ?>
 
 <!DOCTYPE html>
@@ -240,6 +263,7 @@
                 <div class="personal-content personal-content-2">
                     <div class="personal-content-child">
                         <p class="personal-text">Full Name:</p>
+                        <p class="personal-text">Full Name:</p>
                         <p class="personal-text">Email:</p>
                         <p class="personal-text">Date of Birth:</p>
                         <p class="personal-text">Contact Number:</p>
@@ -287,7 +311,8 @@
             <input style="display: none;" type="text" name="contactNumber" value="<?php echo $contactNumber ?>">
             <input style="display: none;" type="text" name="middleName" value="<?php echo $middleName ?>">
             <input style="display: none;" type="text" name="gender" value="<?php echo $gender ?>">
-            <input style="display: none;" type="text" name="identification" value="<?php echo $id ?>">
+            <input style="display: none;" type="text" name="identification" value="<?php echo $new_name ?>" >
+            <img src="uploads/<?php echo $new_name; ?>" alt="Identification Card">
             <button class="confirm-btn" type="submit" name="confirm-btn">Confirm Appointment</button>
         </form>
         <br><br>

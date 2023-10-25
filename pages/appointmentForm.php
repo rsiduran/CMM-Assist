@@ -1,3 +1,6 @@
+<?php if (isset($_GET['error'])): ?>
+		<p><?php echo $_GET['error']; ?></p>
+	<?php endif ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +46,7 @@
                 <ul class="days"></ul>
             </div>
         </div>
-        <form action="checkAppoint.php" method="POST" onsubmit="return validateInfo()">
+        <form action="checkAppoint.php" method="POST" onsubmit="return validateInfo()" enctype="multipart/form-data">
             <div class="wrapper-right" id="wrapper-right-1">
                 <h2 class="header-2">Choose Services</h2>
                 <p class="text-description-1">Our doctors are highly trained clinicians capable of diagnosing complex

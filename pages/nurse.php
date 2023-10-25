@@ -3,13 +3,13 @@ session_start();
 include '../backend/config.php';
 
 if (isset($_SESSION["doctor_id"])) {
-    
+
 } else {
     // redirect to the login page and display an error message
     header("Location: ../index.php?error=notloggedin");
-    echo "<script>alert('The doctor is not logged in.');</script>";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -226,6 +226,7 @@ if (isset($_SESSION["doctor_id"])) {
             </section>
             <!-- Records  -->
             <section id="records" style="display: none;">
+                
             </section>
             <!-- Requests  -->
             <section id="requests" style="display: none;">

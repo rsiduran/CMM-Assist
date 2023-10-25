@@ -13,3 +13,65 @@ function showSection(sectionId) {
         selectedSection.style.display = 'block';
     }
   }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const checkbox = document.querySelectorAll('input[type="checkbox"]');
+    const nextBtn = document.getElementById("next-page-button");
+    const dateTime = document.getElementById("datetime");
+
+    function checkedBoxes() {
+    let checked = false;
+
+    for (let checkboxes of checkbox) {
+        if(checkboxes.checked) {
+           checked = true;
+           break;
+        }
+    }
+
+    const dateTimeValue = dateTime.value;
+    if(checked) {
+        if(dateTimeValue) {
+        showSection('wrapper-right-2');
+        } else {
+            alert("Please select the date and time of the appointment.");
+        return;
+        }
+    } else {
+        alert("Please select at least one service.");
+    }
+}
+nextBtn.addEventListener("click", checkedBoxes);
+});
+
+
+function validateInfo() {
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var middleName = document.getElementById("middleName").value;
+    var contactNumber = document.getElementById("contactNumber").value;
+
+    var textValidation = /^[a-zA-Z.]+(?:\s[a-zA-Z.]+)*$/;
+    var numberValidation = /^[0-9]{11}$/;
+
+    if(!textValidation.test(firstName)) {
+        alert("Invalid first name");
+        return false;
+    }
+
+    if(!textValidation.test(lastName)) {
+        alert("Invalid last name");
+        return false;
+    }
+
+    if(!textValidation.test(middleName)) {
+        alert("Invalid middle name");
+        return false;
+    }
+
+    if(!numberValidation.test(contactNumber)) {
+        alert("Invalid contact number");
+        return false;
+    }
+    return true;
+}

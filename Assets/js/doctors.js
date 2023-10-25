@@ -27,3 +27,42 @@ clickableElements.forEach((element) => {
         }
     });
 });
+
+const recordClickableElements = document.querySelectorAll(".record-detail-clickable");
+
+// Add click event listener to each clickable element in the Records section
+recordClickableElements.forEach((element) => {
+    element.addEventListener("click", () => {
+        // Remove active class from all clickable elements in the Records section
+        recordClickableElements.forEach((el) => {
+            el.classList.remove("active");
+        });
+
+        // Add active class to the clicked element
+        element.classList.add("active");
+
+        const recordId = element.getAttribute("data-record");
+        const recordDetails = document.getElementById(recordId + "Details");
+
+        // Hide all record details in the Records section first
+        const allRecordDetails = document.querySelectorAll(".record-details");
+        allRecordDetails.forEach((detail) => {
+            detail.style.display = "none";
+        });
+
+        // Show the record details for the clicked element
+        if (recordDetails) {
+            recordDetails.style.display = "block";
+        }
+    });
+});
+
+function openPopup(recordId) {
+    const popup = document.getElementById(`search-pop-up-${recordId}`);
+    popup.classList.add("open-pop-up");
+}
+
+function closePopup(recordId) {
+    const popup = document.getElementById(`search-pop-up-${recordId}`);
+    popup.classList.remove("open-pop-up");
+}

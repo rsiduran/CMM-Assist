@@ -1,6 +1,13 @@
 <?php 
 session_start();
-    include '../backend/config.php';
+include '../backend/config.php';
+
+if (isset($_SESSION["admin_id"])) {
+    
+} else {
+    // redirect to the login page and display an error message
+    header("Location: ../index.php?error=notloggedin");
+}
 
 if(isset($_POST['search'])) {
     $search = $_POST['search1'];
@@ -22,11 +29,66 @@ if(isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Assets/css/admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../Assets/css/popup.css">
     <link rel="icon" href="" type="image/x-icon" class="rounded-circle">
     <title>CMM Admin</title>
 </head>
 
 <body>
+    <?php 
+        if(isset($_GET['error'])) { 
+        $error = $_GET['error']; 
+        
+            if($error === 'successlogin') {  
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1>Welcome Back!</h1>
+                                <p>You have been successfully logged in.</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            } else {
+
+            } 
+        }
+
+        if(isset($_GET['message'])) { 
+        $message = $_GET['message']; 
+
+            if($message === 'Wrong Current Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Error!</h1><br>
+                                <p>Your current password is wrong. Try Again!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
+            else if($message === 'Successfully Changed Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Thank You!</h1><br>
+                                <p>Your password has been changed. Thanks!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
+            else if($message === 'Failed to Update Password.') { 
+                echo '  <div id="pop-up-log-in">
+                            <div class="pop-info-top">&#10003;</div>
+                            <div class="pop-info-center">
+                                <h1 style="font-size: 48px;">Error!</h1><br>
+                                <p>Your password is failed to update. Try Again!</p>
+                            </div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                        </div>  ';
+            }
+        }
+    ?>
+    
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bxs-heart'></i>
@@ -91,7 +153,7 @@ if(isset($_POST['search'])) {
                         <div class="profile_name" style="white-space: nowrap;">CMM Assist</div>
                         <div class="job">Admin</div>
                     </div>
-                    <a href="../index.html"><i class="bx bx-log-out"></i></a>
+                    <a href="../backend/logout.php"><i class="bx bx-log-out"></i></a>
                 </div>
             </li>
         </ul>
@@ -100,7 +162,6 @@ if(isset($_POST['search'])) {
     <main class="home-section">
         <div class="home-content">
             <i class="bx bx-menu"></i>
-
         </div>
         <div class="container-fluid">
             <!-- Dashboard -->
@@ -505,36 +566,36 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="">
+                            <form action="../backend/doctorAcc.php" method="POST">
                                 <div class="form-group">
-                                    <label class="label-field" for="lname">Last name</label>
-                                    <input class="input-field" type="text" name="lname" id="">
+                                    <label class="label-field" for="fname">First Name</label>
+                                    <input class="input-field" placeholder="First Name:" type="text" name="fname" id="fname" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="fname">First name</label>
-                                    <input class="input-field" type="text" name="fname" id="">
+                                    <label class="label-field" for="lname">Last Name</label>
+                                    <input class="input-field" placeholder="Last Name:" type="text" name="lname" id="lname" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="username">Username</label>
-                                    <input class="input-field" type="text" name="username" id="">
+                                    <label class="label-field" for="uname">Username</label>
+                                    <input class="input-field" placeholder="Username:" type="text" name="uname" id="uname" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-field" for="pword">Password</label>
-                                    <input class="input-field" type="password" name="pword" id="">
+                                    <input class="input-field" placeholder="Password:" type="password" name="pword" id="pword" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="label-field" for="contact">Contact or Email</label>
-                                    <input class="input-field" type="email" name="contact" id="">
+                                    <label class="label-field" for="email">Email</label>
+                                    <input class="input-field" placeholder="Email:" type="email" name="email" id="email" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="label-field" for="occupation">Occupation</label>
-                                    <select class="input-field" name="occupation" id="occupation">
+                                    <select class="input-field" name="occupation" id="occupation" required>
                                         <option value="doctor">Doctor</option>
                                         <option value="nurse">Nurse</option>
                                         <option value="medical_staff">Medical Staff</option>
                                     </select>
                                     <div class="form-group">
-                                        <button type="submit" class="submit-button">Create Account</button>
+                                        <button type="submit" id="submit" class="submit-button">Create Account</button>
                                     </div>
                                 </div>
                             </form>
@@ -619,7 +680,7 @@ if(isset($_POST['search'])) {
                             </div>
                         </div>
                         <div class="right-form">
-                            <form action="">
+                            <form action="../backend/adminpassword.php" method="POST">
                                 <div class="form-group">
                                     <label class="label-field" for="admin">Admin Account</label>
                                     <input disabled class="input-field" type="text" name="admin" id="" value="Admin">

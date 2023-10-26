@@ -27,10 +27,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/css/doctors.css">
+    <link rel="stylesheet" href="../Assets/css/account.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="icon" href="" type="image/x-icon" class="rounded-circle">
     <link rel="stylesheet" href="../Assets/css/popup.css">
+    <link rel="stylesheet" href="../Assets/css/doctors.css">
     <title>CMM Doctors</title>
 </head>
 <body>
@@ -100,12 +101,7 @@
                         <i class='bx bxs-cog'></i>
                         <span class="link_name">Settings</span>
                     </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
                 </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
-                    <li><a href="#" onclick="showSection('settings')">Change password</a></li>
-                </ul>
             </li>
             <li>
                 <div class="profile-details">
@@ -237,6 +233,36 @@
             </section>
             <!-- Records  -->
             <section id="records" style="display: none;">
+                <h1>Records</h1>
+                <hr style="opacity: 0.2;"> <br>
+                <div class="records-container">
+                    <table>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                            <th>Header 4</th>
+                            <th>Header 5</th>
+                            <th>Header 6</th>
+                        </tr>
+                        <tr>
+                            <td>Row 1, Cell 1</td>
+                            <td>Row 1, Cell 2</td>
+                            <td>Row 1, Cell 3</td>
+                            <td>Row 1, Cell 3</td>
+                            <td>Row 1, Cell 3</td>
+                            <td>Row 1, Cell 3</td>
+                        </tr>
+                        <tr>
+                            <td>Row 2, Cell 1</td>
+                            <td>Row 2, Cell 2</td>
+                            <td>Row 2, Cell 3</td>
+                            <td>Row 2, Cell 3</td>
+                            <td>Row 2, Cell 3</td>
+                            <td>Row 2, Cell 3</td>
+                        </tr>
+                    </table>
+                </div>
             </section>
             <!-- Requests  -->
             <section id="requests" style="display: none;">

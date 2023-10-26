@@ -137,12 +137,7 @@ if(isset($_POST['search'])) {
                         <i class='bx bxs-cog'></i>
                         <span class="link_name">Settings</span>
                     </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
                 </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
-                    <li><a href="#" onclick="showSection('settings')">Change password</a></li>
-                </ul>
             </li>
             <li>
                 <div class="profile-details">

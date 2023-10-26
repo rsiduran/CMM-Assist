@@ -16,7 +16,7 @@ if (isset($_SESSION["doctor_id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/css/doctors.css">
+    <link rel="stylesheet" href="../Assets/css/account.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="icon" href="" type="image/x-icon" class="rounded-circle">
     <link rel="stylesheet" href="../Assets/css/popup.css">

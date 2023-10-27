@@ -48,10 +48,26 @@
                         <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
                     </div>  ';
         }
-        else { 
-            
+        else if($error === 'none') { 
+            echo '  <div id="pop-up-log-in">
+                        <div class="pop-info-top">&#10003;</div>
+                        <div class="pop-info-center">
+                            <h1>Submitted</h1>
+                            <p>New record has been saved. Thanks! '. $doc .'.</p>
+                        </div>
+                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+                    </div>  ';
+        } else if($error === 'error') { 
+            echo '  <div id="pop-up-log-in">
+                        <div class="pop-info-top" style="background-color: red; font-size: 72px;">&times;</div>
+                        <div class="pop-info-center">
+                            <h1>ERROR!!!</h1>
+                            <p>Records Didnt saved. Try Again! '. $doc .'.</p>
+                        </div>
+                        <div class="pop-info-bottom"><button class="pop-info-bottom-button" style="background-color: red;" onclick="popUpVanish()">Ok</button></div>
+                    </div>  ';
         }
-        }
+    }
     ?>
     <div class="sidebar close">
         <div class="logo-details">
@@ -232,38 +248,143 @@
                 </div>
             </section>
             <!-- Records  -->
+            <?php
+                $dataQuery = "SELECT * FROM `records`";
+                $doctor = mysqli_query($connect, $dataQuery);
+
+                if (mysqli_num_rows($doctor) > 0){ 
+            ?>
             <section id="records" style="display: none;">
                 <h1>Records</h1>
-                <hr style="opacity: 0.2;"> <br>
-                <div class="records-container">
-                    <table>
-                        <tr>
-                            <th>Header 1</th>
-                            <th>Header 2</th>
-                            <th>Header 3</th>
-                            <th>Header 4</th>
-                            <th>Header 5</th>
-                            <th>Header 6</th>
-                        </tr>
-                        <tr>
-                            <td>Row 1, Cell 1</td>
-                            <td>Row 1, Cell 2</td>
-                            <td>Row 1, Cell 3</td>
-                            <td>Row 1, Cell 3</td>
-                            <td>Row 1, Cell 3</td>
-                            <td>Row 1, Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>Row 2, Cell 1</td>
-                            <td>Row 2, Cell 2</td>
-                            <td>Row 2, Cell 3</td>
-                            <td>Row 2, Cell 3</td>
-                            <td>Row 2, Cell 3</td>
-                            <td>Row 2, Cell 3</td>
-                        </tr>
-                    </table>
+                <hr style="opacity: 0.2;"><br>
+                <div class="add-container"><a onclick="addRecord()" id="add-record" class="add-record">Add Record</a></div>
+                <div class="records-container" id="records-container">
+                    <div class="table-wrapper">
+                        <table>
+                            <tr>
+                                <th><div class="theader">Name<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Address<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Gender<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Age<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
+                            </tr>
+                            <?php
+                                    while ($fetch_doctor = mysqli_fetch_assoc($doctor)){
+                                    ?>
+                            <tr>
+                                <td><?php echo $fetch_doctor['names']; ?></td>
+                                <td><?php echo $fetch_doctor['addresss']; ?></td>
+                                <td><?php echo $fetch_doctor['gender']; ?></td>
+                                <td><?php echo $fetch_doctor['phoneNumber']; ?></td>
+                                <td><?php echo $fetch_doctor['edad']; ?></td>
+                                <td>
+                                    <a class="bx-icon-1"><i class='bx bxs-detail'></i></a>
+                                    <a class="bx-icon-2"><i class='bx bxs-edit'></i></a>
+                                    <a class="bx-icon-3"><i class='bx bxs-trash'></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="add-records-container" id="add-form">
+                    <form action="../backend/AddRecord.php" method="POST">
+                        <h1 style="margin-top: -15px;">Patient Details</h1><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="name">Name</label>
+                                <input required type="text" name="name" placeholder="Firstname Lastname">
+                            </div>
+                            <div class="label-input">
+                                <label for="gender">Gender</label>
+                                <select required name="gender">
+                                    <option disabled>Choose Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="label-input">
+                                <label for="contact">Contact Email</label>
+                                <input required type="email" name="contact" placeholder="example@gmail.com">
+                            </div>
+                        </div><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="age">Age</label>
+                                <input required type="text" name="age" placeholder="Edad">
+                            </div>
+                            <div class="label-input">
+                                <label for="height">Height-CM</label>
+                                <input required type="number" max="300" min="0" name="height" placeholder="CM">
+                            </div>
+                            <div class="label-input">
+                                <label for="weight">Weight-LBS</label>
+                                <input required type="number" max="300" min="0" name="weight" placeholder="LBS">
+                            </div>
+                        </div><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="phone">Phone number</label>
+                                <input required type="text" name="phone" placeholder="09123456789">
+                            </div>
+                            <div class="label-input" style="width: 66.5%;">
+                                <label for="address">Address</label>
+                                <input required type="text" name="address" placeholder="# Street City">
+                            </div>
+                        </div><br><br>
+                        <h1>Patient Medical Records</h1><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="allergies">Allergies</label>
+                                <input required type="text" name="allergies" placeholder="Food / Drinks / Medicine">
+                            </div>
+                            <div class="label-input" style="width: 66.5%;">
+                                <label for="medication">Patient recently medication taken or none</label>
+                                <input required type="text" name="medication" placeholder="Biogesic, Paracetamol, Etc.">
+                            </div>
+                        </div><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="conditions">Past conditions</label>
+                                <input required type="text" name="conditions" placeholder="Covid-19">
+                            </div>
+                            <div class="label-input">
+                                <label for="contactPerson">Contact Person</label>
+                                <input required type="text" name="contactPerson" placeholder="Relatives, Guardian, Parents">
+                            </div>
+                            <div class="label-input">
+                                <label for="contactPersonNumber">Contact Person Number</label>
+                                <input required type="text" name="contactPersonNumber" placeholder="09123456789">
+                            </div>
+                        </div><br>
+                        <div class="form-contain">
+                            <div class="label-input">
+                                <label for="alcohol">Last taking alcohol (ALAK)</label>
+                                <select required name="alcohol">
+                                    <option disabled>Choose days</option>
+                                    <option value="Non-drinker">Non-drinker</option>
+                                    <option value="1 day ago">1 day ago</option>
+                                    <option value="2 days ago">2 days ago</option>
+                                    <option value="3 days ago">3 days ago</option>
+                                    <option value="4 days ago">4 days ago</option>
+                                    <option value="5 days ago">5 days ago</option>
+                                    <option value="6 days ago">6 days ago</option>
+                                    <option value="7 days ago">7 days ago</option>
+                                </select>
+                            </div>
+                            <div class="label-input" style="width: 66.5%;">
+                                <label for="presentConditions">Present conditions</label>
+                                <input required type="text" name="presentConditions" placeholder="SARS VIRUS">
+                            </div>
+                        </div><br>
+                        <button type="submit" class="add-form-btn">Submit</button>
+                    </form>
                 </div>
             </section>
+            <?php 
+                }
+            }
+            ?>
             <!-- Requests  -->
             <section id="requests" style="display: none;">
                 
@@ -288,6 +409,24 @@
         function closePopup(){
             Submitpopup.classList.remove("open-pop-up")
         }
+
+        let addButton = document.getElementById("add-record")
+        let addForm = document.getElementById("add-form")
+        let recordContainer = document.getElementById("records-container")
+
+        function addRecord() {
+            if(addButton.innerHTML == "BACK") {
+                addForm.style.display = "none";
+                recordContainer.style.display = "block";
+                addButton.innerHTML = "Add Record";
+            } else {
+                addForm.style.display = "block";
+                recordContainer.style.display = "none";
+                addButton.innerHTML = "BACK";
+            }
+        }
+
+
     </script>
     <script src="../Assets/js/admin.js"></script>
     <script src="../Assets/js/doctors.js"></script>

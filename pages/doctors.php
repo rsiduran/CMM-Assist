@@ -280,7 +280,7 @@
                                 <td><?php echo $fetch_doctor['edad']; ?></td>
                                 <td>
                                     <a class="bx-icon-2" href="RecordUpdate.php?update=<?php echo $fetch_doctor['record_id']; ?>"><i class='bx bxs-edit'></i></a>
-                                    <a class="bx-icon-3" href="../backend/delete.php?delete=<?php echo $fetch_doctor['record_id']; ?>"><i class='bx bxs-trash'></i></a>
+                                    <a class="bx-icon-3" href="../backend/delete.php?delete=<?php echo $fetch_doctor['record_id']; ?>" onclick="return  confirm('You want to delete this file?')"><i class='bx bxs-trash'></i></a>
                                 </td>
                             </tr>
                                 <?php 

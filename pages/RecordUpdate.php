@@ -165,7 +165,7 @@
                         <input value="<?php echo $fetch_doctor['presentConditions']; ?>" required type="text" name="presentConditions" placeholder="SARS VIRUS">
                     </div>
                 </div><br>
-                <button type="submit" name="submit" class="add-form-btn">Update</button>
+                <button type="submit" name="submit" class="add-form-btn" onclick="return  confirm('You want to update this info?')">Update</button>
             </form>
         </div>
     </div>   

@@ -151,5 +151,43 @@
     <script src="../Assets/js/calendarScript.js" defer></script>
     <script src="../Assets/js/appointment.js" defer></script>
 </body>
+<script>
 
+// Appointment date and time
+const dateTimeInput = document.getElementById("datetime");
+let dateTime;
+
+const defaultDate = new Date();
+defaultDate.setDate(defaultDate.getDate() + 2);
+const defaultDateString = defaultDate.toISOString().slice(0, 16);
+dateTimeInput.min = defaultDateString;
+
+dateTimeInput.addEventListener("input", function (event) {
+  const selectedDateTime = new Date(this.value);
+  const minTime = new Date(selectedDateTime);
+  minTime.setHours(7, 0, 0, 0);
+  const maxTime = new Date(selectedDateTime);
+  maxTime.setHours(16, 0, 0, 0);
+
+  const timeValid = selectedDateTime >= minTime && selectedDateTime <= maxTime;
+
+  if (!timeValid) {
+    alert("The clinic is open only from 7:00 AM to 4:00 PM.");
+    event.preventDefault();
+    this.value = this.value.split("T")[0] + "T07:00";
+  } else {
+    dateTime = this.value;
+  }
+});
+
+
+// date of birth
+var dobDate = document.getElementById("dob");
+
+    var dobDefault = new Date();   
+    var formatteddobDefault = dobDefault.toISOString().slice(0, 10);
+
+    dobDate.setAttribute("max", formatteddobDefault);
+
+</script>
 </html>

@@ -279,8 +279,7 @@
                                 <td><?php echo $fetch_doctor['phoneNumber']; ?></td>
                                 <td><?php echo $fetch_doctor['edad']; ?></td>
                                 <td>
-                                    <a class="bx-icon-1"><i class='bx bxs-detail'></i></a>
-                                    <a class="bx-icon-2"><i class='bx bxs-edit'></i></a>
+                                    <a class="bx-icon-2" href="RecordUpdate.php?update=<?php echo $fetch_doctor['record_id']; ?>"><i class='bx bxs-edit'></i></a>
                                     <a class="bx-icon-3"><i class='bx bxs-trash'></i></a>
                                 </td>
                             </tr>
@@ -380,6 +379,7 @@
                         <button type="submit" class="add-form-btn">Submit</button>
                     </form>
                 </div>
+                <br>
             </section>
             <?php 
                 }

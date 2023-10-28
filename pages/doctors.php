@@ -388,7 +388,34 @@
             
             <!-- Requests  -->
             <section id="requests" style="display: none;">
-                
+            <h1>Appointment Requests</h1>
+                <hr style="opacity: 0.2;"><br>
+                <div class="records-container" id="records-container">
+                    <div class="table-wrapper">
+                        <table>
+                            <tr>
+                                <th><div class="theader">Name<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Date of Appointment<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Service Appointment<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Gender<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
+                                <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
+                            </tr>
+                           
+                            <tr>
+                                <td>column</td>
+                                <td>column</td>
+                                <td>column</td>
+                                <td>column</td>
+                                <td>column</td>
+                                <td>
+                                    <a class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
+                                    <a class="bx-icon-3" style="font-size: 32px;"><i class='bx bx-x'></i></i></a>
+                                </td>
+                            </tr>      
+                        </table>
+                    </div>
+                </div>
             </section>
             <!-- messages  -->
             <section id="messages" style="display: none;">

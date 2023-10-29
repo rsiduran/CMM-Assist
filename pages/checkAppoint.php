@@ -34,7 +34,8 @@
     // Use implode to join the values with a comma
     $imaging = implode(', ', array_filter([$Xray, $General, $OB, $CT, $MRI]));
 
-    $datetime = isset($_POST['datetime']) ? $_POST['datetime'] : '';
+    $appointmentDate = isset($_POST['appointmentDate']) ? $_POST['appointmentDate'] : '';
+    $appointmentTime = isset($_POST['appointmentTime']) ? $_POST['appointmentTime'] : ''; 
 
     // Personal details
     $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : '';
@@ -85,14 +86,16 @@
         $dob = mysqli_real_escape_string($connect, $_POST["dob"]);
         $contactNumber = mysqli_real_escape_string($connect, $_POST["contactNumber"]);
         $gender = mysqli_real_escape_string($connect, $_POST["gender"]);
-        $datetime = mysqli_real_escape_string($connect, $_POST["datetime"]);
+        $appointmentDate = mysqli_real_escape_string($connect, $_POST["appointmentDate"]);
+        $appointmentTime = mysqli_real_escape_string($connect, $_POST["appointmentTime"]);
         $new_name = mysqli_real_escape_string($connect, $_POST["identification"]);
 
         $services = isset($_POST['services']) ? $_POST['services'] : [];
         $services = array_filter($services);
 
         foreach ($services as $service) {
-            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, datetime) VALUES (' $firstName', '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$new_name', '$service', '$datetime')";
+            $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, appointmentDate, appointmentTime) VALUES (' $firstName', 
+            '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$new_name', '$service', '$appointmentDate', '$appointmentTime')";
             $stmt = mysqli_prepare($connect, $query);
             
             if($stmt) {
@@ -258,11 +261,10 @@
             <div class="personal-details-container">
                 <div class="personal-content">
                     <p class="personal-text">Date & Time Appointed</p>
-                    <div class="date-value personal-text"><?php echo $datetime; ?></div>
+                    <div class="date-value personal-text"><?php echo $appointmentDate . " " . $appointmentTime; ?></div>
                 </div>
                 <div class="personal-content personal-content-2">
                     <div class="personal-content-child">
-                        <p class="personal-text">Full Name:</p>
                         <p class="personal-text">Full Name:</p>
                         <p class="personal-text">Email:</p>
                         <p class="personal-text">Date of Birth:</p>
@@ -308,7 +310,8 @@
             <input style="display: none;" type="text" name="services[]" value="<?php echo $OB ?>"> 
             <input style="display: none;" type="text" name="services[]" value="<?php echo $CT ?>"> 
             <input style="display: none;" type="text" name="services[]" value="<?php echo $MRI ?>"> 
-            <input style="display: none;" type="text" name="datetime" value="<?php echo $datetime ?>">
+            <input style="display: none;" type="text" name="appointmentDate" value="<?php echo $appointmentDate ?>">
+            <input style="display: none;" type="text" name="appointmentTime" value="<?php echo $appointmentTime ?>">
             <input style="display: none;" type="text" name="firstName" value="<?php echo $firstName ?>">
             <input style="display: none;" type="text" name="email" value="<?php echo $email ?>">
             <input style="display: none;" type="text" name="dob" value="<?php echo $dob ?>">
@@ -324,4 +327,7 @@
     <br>
     <br>
 </body>
+
+<script>
+</script>
 </html>

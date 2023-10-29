@@ -89,9 +89,23 @@
                     </div>
     
                     <div class="grid-content">
-                        <h3 class="titles">Date of Appointment</h3>
-                        <label for="datetime">Select Date and Time:</label>
-                        <input type="datetime-local" id="datetime" name="datetime">
+                        <h3 class="titles">Date and Time of Appointment</h3>
+                        <label for="date">Select Date and Time:</label>
+                        <input type="date" id="appointmentDate" name="appointmentDate" placeholder="MM/DD/YYYY">
+                      
+                        <select  id="appointmentTime" name="appointmentTime">
+                            <option value="" disabled selected >Choose Time</option>
+                            <option value="07:00 AM">07:00 AM</option>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 AM">12:00 AM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                        </select>
                         <!-- <a href="#" id="showWrapperRight2" class="next-page-button" style="text-decoration: none;">Next</a> -->
                         <button id="next-page-button" class="next-page-button" style="text-decoration: none; font-size: 16px;">Next</button>
                     </div>
@@ -153,33 +167,14 @@
 </body>
 <script>
 
-// Appointment date and time
-const dateTimeInput = document.getElementById("datetime");
-let dateTime;
+// appointment time
+var defaultDate = document.getElementById("appointmentDate");
 
-const defaultDate = new Date();
-defaultDate.setDate(defaultDate.getDate() + 2);
-const defaultDateString = defaultDate.toISOString().slice(0, 16);
-dateTimeInput.min = defaultDateString;
+var newDate = new Date();
+newDate.setDate(newDate.getDate() + 2);
+var formattednewDate = newDate.toISOString().slice(0, 10);
 
-dateTimeInput.addEventListener("input", function (event) {
-  const selectedDateTime = new Date(this.value);
-  const minTime = new Date(selectedDateTime);
-  minTime.setHours(7, 0, 0, 0);
-  const maxTime = new Date(selectedDateTime);
-  maxTime.setHours(16, 0, 0, 0);
-
-  const timeValid = selectedDateTime >= minTime && selectedDateTime <= maxTime;
-
-  if (!timeValid) {
-    alert("The clinic is open only from 7:00 AM to 4:00 PM.");
-    event.preventDefault();
-    this.value = this.value.split("T")[0] + "T07:00";
-  } else {
-    dateTime = this.value;
-  }
-});
-
+defaultDate.setAttribute("min", formattednewDate);
 
 // date of birth
 var dobDate = document.getElementById("dob");
@@ -188,6 +183,7 @@ var dobDate = document.getElementById("dob");
     var formatteddobDefault = dobDefault.toISOString().slice(0, 10);
 
     dobDate.setAttribute("max", formatteddobDefault);
+
 
 </script>
 </html>

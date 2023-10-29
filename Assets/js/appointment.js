@@ -14,34 +14,41 @@ function showSection(sectionId) {
     }
   }
 
-document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     const checkbox = document.querySelectorAll('input[type="checkbox"]');
     const nextBtn = document.getElementById("next-page-button");
-    const dateTime = document.getElementById("datetime");
+    const dateInput = document.getElementById("appointmentDate");
+    const timeInput = document.getElementById("appointmentTime");
 
     function checkedBoxes() {
-    let checked = false;
+        let checked = false;
 
-    for (let checkboxes of checkbox) {
-        if(checkboxes.checked) {
-           checked = true;
-           break;
+        for (let checkboxes of checkbox) {
+            if (checkboxes.checked) {
+                checked = true;
+                break;
+            }
         }
-    }
 
-    const dateTimeValue = dateTime.value;
-    if(checked) {
-        if(dateTimeValue) {
-        showSection('wrapper-right-2');
+        const dateValue = dateInput.value;
+        const timeValue = timeInput.value;
+
+        if (checked) {
+            if (dateValue) {
+                if (timeValue) {
+                    showSection('wrapper-right-2');
+                } else {
+                    alert("Please select the time of the appointment.");
+                }
+            } else {
+                alert("Please select the date of the appointment.");
+            }
         } else {
-            alert("Please select the date and time of the appointment.");
-        return;
+            alert("Please select at least one service.");
         }
-    } else {
-        alert("Please select at least one service.");
     }
-}
-nextBtn.addEventListener("click", checkedBoxes);
+
+    nextBtn.addEventListener("click", checkedBoxes);
 });
 
 

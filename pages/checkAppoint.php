@@ -58,7 +58,7 @@
         $allowed_exs = array("jpg", "jpeg", "png");
     
         if (in_array($img_ex_lc, $allowed_exs)) {
-            if ($img_size <= 125000) {
+            if ($img_size <= 1250000) {
                 $new_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
                 $img_upload_path = 'uploads/' . $new_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
@@ -261,7 +261,7 @@
             <div class="personal-details-container">
                 <div class="personal-content">
                     <p class="personal-text">Date & Time Appointed</p>
-                    <div class="date-value personal-text"><?php echo $appointmentDate . " " . $appointmentTime; ?></div>
+                    <div class="date-value personal-text"><?php echo $appointmentDate . ", " . $appointmentTime; ?></div>
                 </div>
                 <div class="personal-content personal-content-2">
                     <div class="personal-content-child">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2023 at 02:37 AM
+-- Generation Time: Oct 29, 2023 at 10:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `admin_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`) VALUES
+(1, 'admin', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -51,8 +58,19 @@ CREATE TABLE `appointments` (
   `id` varchar(255) NOT NULL,
   `services` varchar(255) NOT NULL,
   `appointmentDate` varchar(100) NOT NULL,
-  `appointmentTime` varchar(100) NOT NULL
+  `appointmentTime` varchar(100) NOT NULL,
+  `accountpw` varchar(255) NOT NULL,
+  `appointmentStatus` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`appointment_id`, `firstName`, `lastName`, `middleName`, `email`, `dob`, `contactNumber`, `gender`, `id`, `services`, `appointmentDate`, `appointmentTime`, `accountpw`, `appointmentStatus`) VALUES
+(106, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'Nephrology', '2023-10-31', '07:00 AM', '', ''),
+(107, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'Blood Test', '2023-10-31', '07:00 AM', '', ''),
+(108, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'X-Ray', '2023-10-31', '07:00 AM', '', '');
 
 -- --------------------------------------------------------
 
@@ -71,6 +89,17 @@ CREATE TABLE `doctor_acc` (
   `account_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `doctor_acc`
+--
+
+INSERT INTO `doctor_acc` (`doctor_id`, `doctor_firstname`, `doctor_lastname`, `doctor_username`, `doctor_password`, `doctor_email`, `doctor_occupation`, `account_created`) VALUES
+(1, 'rsidy', 'duran', 'rsiduran', '$2y$10$BgJe9g4u6SD.E2n0Nj5UT.0dT5pQTBBEWeNgZvGXJCuhl/sZeivMq', 'rsiduran@gmail.com', 'doctor', '2023-10-29 06:15:37'),
+(2, 'ezilvin', 'labastida', 'ezil', '$2y$10$WGBVNHhF0tfYw9zjkEWs6uycyJRFpswHn82InIxpOS9QqrrLid8ou', 'ezil@gmail.com', 'nurse', '2023-10-29 08:58:16'),
+(3, 'Angeline', 'Mercado', 'angee', '$2y$10$yfLE4gyydw5WjzXWXIPL3OU4DFAI1fGdSYMHEf/0JOrmtH97wCoZu', 'ange@gmail.com', 'medical_staff', '2023-10-29 09:00:35'),
+(4, 'zared', 'mallillin', 'zared', '$2y$10$iLQa2RyVimgkhFA/LklQzux2KkVqku.IdS.jTTn4WpKOilhE1UhKG', 'zared@gmail.com', 'nurse', '2023-10-29 09:01:00'),
+(5, 'Perseus', 'Daracan', 'percyy', '$2y$10$v35xsA.ezjy9id8FZzX5N.EyS0M4Bme8m1X57iUYfxZdzZTWHId7K', 'percy@gmail.com', 'medical_staff', '2023-10-29 09:01:16');
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +113,45 @@ CREATE TABLE `inquiry` (
   `message` varchar(255) NOT NULL,
   `datestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `inquiry`
+--
+
+INSERT INTO `inquiry` (`id`, `name`, `email`, `message`, `datestamp`) VALUES
+(1, 'Rsiduran', 'rsiduran@gmail.com', 'How this system work?', '2023-10-29 06:17:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `records`
+--
+
+CREATE TABLE `records` (
+  `record_id` int(255) NOT NULL,
+  `names` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `contactEmail` text NOT NULL,
+  `edad` int(255) NOT NULL,
+  `height` int(255) NOT NULL,
+  `weightlbs` int(255) NOT NULL,
+  `phoneNumber` varchar(255) NOT NULL,
+  `addresss` varchar(255) NOT NULL,
+  `allergies` text NOT NULL,
+  `medication` text NOT NULL,
+  `pastConditions` text NOT NULL,
+  `contactPerson` text NOT NULL,
+  `contactPersonNumber` varchar(255) NOT NULL,
+  `alak` varchar(255) NOT NULL,
+  `presentConditions` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `records`
+--
+
+INSERT INTO `records` (`record_id`, `names`, `gender`, `contactEmail`, `edad`, `height`, `weightlbs`, `phoneNumber`, `addresss`, `allergies`, `medication`, `pastConditions`, `contactPerson`, `contactPersonNumber`, `alak`, `presentConditions`) VALUES
+(1, 'Juan Delacruz', 'Male', 'example@gmail.com', 23, 172, 80, '09123456789', '#123 Street Valenzuela City', 'Strawberry', 'Biogesic, Paracetamol', 'Covid-19', 'Guardian', '09123456789', '1 day ago', 'SARS VIRUS');
 
 --
 -- Indexes for dumped tables
@@ -114,6 +182,12 @@ ALTER TABLE `inquiry`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `records`
+--
+ALTER TABLE `records`
+  ADD PRIMARY KEY (`record_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -121,25 +195,31 @@ ALTER TABLE `inquiry`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `doctor_acc`
 --
 ALTER TABLE `doctor_acc`
-  MODIFY `doctor_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `doctor_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `inquiry`
 --
 ALTER TABLE `inquiry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `records`
+--
+ALTER TABLE `records`
+  MODIFY `record_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

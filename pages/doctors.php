@@ -301,7 +301,7 @@
                             <div class="label-input">
                                 <label for="gender">Gender</label>
                                 <select required name="gender">
-                                    <option disabled>Choose Gender</option>
+                                    <option selected disabled>Choose Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
@@ -364,7 +364,7 @@
                             <div class="label-input">
                                 <label for="alcohol">Last taking alcohol (ALAK)</label>
                                 <select required name="alcohol">
-                                    <option disabled>Choose days</option>
+                                    <option selected disabled>Choose days</option>
                                     <option value="Non-drinker">Non-drinker</option>
                                     <option value="1 day ago">1 day ago</option>
                                     <option value="2 days ago">2 days ago</option>
@@ -387,6 +387,12 @@
             </section>
             
             <!-- Requests  -->
+            <?php
+                $dataAppointment = "SELECT * FROM `appointments`";
+                $appointment = mysqli_query($connect, $dataAppointment);
+
+                if (mysqli_num_rows($doctor) > 0){ 
+            ?>
             <section id="requests" style="display: none;">
             <h1>Appointment Requests</h1>
                 <hr style="opacity: 0.2;"><br>
@@ -401,18 +407,25 @@
                                 <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
                                 <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
                             </tr>
-                           
+                            <?php
+                                while ($fetch_appointment = mysqli_fetch_assoc($appointment)){
+                            ?>
                             <tr>
-                                <td>column</td>
-                                <td>column</td>
-                                <td>column</td>
-                                <td>column</td>
-                                <td>column</td>
+                                <td><?php echo $fetch_appointment['firstName'] . ' ' . $fetch_appointment['middleName'] . ' ' . $fetch_appointment['lastName']; ?></td>
+                                <td><?php echo $fetch_appointment['appointmentDate'] . ', ' . $fetch_appointment['appointmentTime']; ?></td>
+                                <td><?php echo $fetch_appointment['services']; ?></td>
+                                <td><?php echo $fetch_appointment['gender']; ?></td>
+                                <td><?php echo $fetch_appointment['email']; ?></td>
                                 <td>
+                                    <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
                                     <a class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
                                     <a class="bx-icon-3" style="font-size: 32px;"><i class='bx bx-x'></i></i></a>
                                 </td>
-                            </tr>      
+                            </tr> 
+                            <?php 
+                                }
+                            }
+                            ?>     
                         </table>
                     </div>
                 </div>

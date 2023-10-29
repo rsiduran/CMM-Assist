@@ -93,7 +93,7 @@
                         <label for="date">Select Date and Time:</label>
                         <input type="date" id="appointmentDate" name="appointmentDate" placeholder="MM/DD/YYYY">
                       
-                        <select  id="appointmentTime" name="appointmentTime">
+                        <select style="padding: 1px 5px; border-radius: 2px; margin-left: 2px; background: white; border: 1px solid rgba(0, 0, 0, 0.403);"  id="appointmentTime" name="appointmentTime">
                             <option value="" disabled selected >Choose Time</option>
                             <option value="07:00 AM">07:00 AM</option>
                             <option value="08:00 AM">08:00 AM</option>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2023 at 10:02 AM
+-- Generation Time: Oct 29, 2023 at 11:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -68,9 +68,13 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`appointment_id`, `firstName`, `lastName`, `middleName`, `email`, `dob`, `contactNumber`, `gender`, `id`, `services`, `appointmentDate`, `appointmentTime`, `accountpw`, `appointmentStatus`) VALUES
-(106, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'Nephrology', '2023-10-31', '07:00 AM', '', ''),
-(107, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'Blood Test', '2023-10-31', '07:00 AM', '', ''),
-(108, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'X-Ray', '2023-10-31', '07:00 AM', '', '');
+(108, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'X-Ray', '2023-10-31', '07:00 AM', '$2y$10$ppFSNBK7MlhfcoZES2aIlOiwDFOHyfG.8pl/26q0JsXp87zny1IIK', 'ON'),
+(109, ' qwe', 'qweqwe', 'qweqwe', 'qweasd@gmail.com', ' 2023-10-04', ' 09123465897', 'Male', 'IMG-653e293d8af0b1.61782368.jpg', 'Nephrology', '2023-11-01', '08:00 AM', '$2y$10$K6deyHIoOFkWvbmEGigw3.c0fdEeamsh.2CY4bwhvyYHz8tce5r7e', 'ON'),
+(110, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Nephrology', '2023-11-01', '09:00 AM', '$2y$10$OC.wde0aizq.c0flMuBSuez.wdu7s6wd2gmwy6ths70hzjWhXmzO2', 'ON'),
+(111, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Cardiology', '2023-11-01', '09:00 AM', '$2y$10$V6R9tcRj8uWT8rLn1a1IY..EpSrXViswcRCbSJQSICGD5kEzZxDWW', 'ON'),
+(112, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Mircrobial Test', '2023-11-01', '09:00 AM', '', ''),
+(113, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Semen Test', '2023-11-01', '09:00 AM', '', ''),
+(114, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'General Ultrasound', '2023-11-01', '09:00 AM', '', '');
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `doctor_acc`

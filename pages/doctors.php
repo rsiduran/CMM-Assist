@@ -66,6 +66,15 @@
                         </div>
                         <div class="pop-info-bottom"><button class="pop-info-bottom-button" style="background-color: red;" onclick="popUpVanish()">Ok</button></div>
                     </div>  ';
+        } else if($error === 'confirmed appointment') { 
+            echo '  <div id="pop-up-log-in">
+                <div class="pop-info-top">&#10003;</div>
+                <div class="pop-info-center">
+                    <h1>Thank you!</h1>
+                    <p>The appointment has been Confirmed. Thanks! '. $doc .'.</p>
+                </div>
+                <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+            </div>  ';
         }
     }
     ?>
@@ -388,7 +397,7 @@
             
             <!-- Requests  -->
             <?php
-                $dataAppointment = "SELECT * FROM `appointments`";
+                $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = ''";
                 $appointment = mysqli_query($connect, $dataAppointment);
 
                 if (mysqli_num_rows($doctor) > 0){ 
@@ -418,7 +427,7 @@
                                 <td><?php echo $fetch_appointment['email']; ?></td>
                                 <td>
                                     <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
-                                    <a class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
+                                    <a href="../backend/appointmentUpdate.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" onclick="return  confirm('You want to confirm this appointment?')" class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
                                     <a class="bx-icon-3" style="font-size: 32px;"><i class='bx bx-x'></i></i></a>
                                 </td>
                             </tr> 

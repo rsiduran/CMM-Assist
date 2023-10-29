@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         header("Location: ../pages/nurse.php?error=successlogin");
                         break;
                     case "medical_staff":
-                        header("Location: mema.php");
+                        header("Location: ../pages/med.php?error=successlogin");
                         break;
                     default:
                         // error handling

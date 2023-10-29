@@ -149,6 +149,14 @@
         </div>
         <div class="container-fluid">
             <!-- Home -->
+            <?php
+                $dataPatient = "SELECT * FROM `appointments` WHERE appointmentStatus = 'ON'"; // need pa ng another condition na dapata date today lang
+                $data = mysqli_query($connect, $dataPatient);
+
+                if (mysqli_num_rows($data) > 0){ 
+
+            ?>
+            
             <section id="home">
                 <div class="home-class-home">
                     <article class="home-left">
@@ -163,29 +171,35 @@
                             </div>
                         </div>
                         <br>
+                        <?php
+                                while ($fetch_data = mysqli_fetch_assoc($data)){
+                            ?>
                         <div class="details">
-                            <aside class="flex-detail-clickable active" data-patient="MariaDoe">
+                            <aside class="flex-detail-clickable" data-patient="<?php echo $fetch_data['firstName']; ?>">
                                 <div class="sched-detail">
                                     <i class='bx bx-building'></i>
-                                    <div class="patient-name">Maria Doe</div>
+                                    <div class="patient-name"><?php echo $fetch_data['firstName'] . ' ' . $fetch_data['middleName'] . ' ' . $fetch_data['lastName']; ?></div>
                                 </div>
                                 <div class="sched-time">
-                                    Today, 6:00 am
-                                </div>
-                            </aside>
-                            <aside class="flex-detail-clickable" data-patient="JohnDoe">
-                                <div class="sched-detail">
-                                    <i class='bx bx-building'></i>
-                                    <div class="patient-name">John Doe</div>
-                                </div>
-                                <div class="sched-time">
-                                    Today, 9:00 am
+                                    Today, <?php echo $fetch_data['appointmentTime']; ?>
                                 </div>
                             </aside>
                         </div>
+                        <?php
+                            }
+                        }
+                        ?>
                     </article>
+                   
                     <article class="home-right">
-                        <div class="log-details" id="MariaDoeDetails">
+                        <?php
+                                $dataDetails = "SELECT * FROM `appointments` WHERE appointmentStatus = 'ON'"; // need pa ng another condition na dapata date today lang
+                                $dataDetail = mysqli_query($connect, $dataDetails);
+                
+                                if (mysqli_num_rows($dataDetail) > 0){ 
+                                    while ($fetch_detail = mysqli_fetch_assoc($dataDetail)){
+                            ?>
+                        <div class="log-details"  id="<?php echo $fetch_detail['firstName'] . 'Details'; ?>" style="display: none;">
                             <div class="details-flex-container">
                                 <h1 class="details-title">Details</h1>
                                 <div class="welcome-and-icon">
@@ -198,71 +212,36 @@
                                     <img class="patient-picture-details" src="../Assets/images/female-placeholder.png" alt="patient-picture">
                                 </div>
                                 <div class="patient-name-contaierner">
-                                    <div class="patient-name-details">Maria doe</div>
-                                    <div class="patient-email-details">MariaDoe@gmail.com</div>
+                                    <div class="patient-name-details"><?php echo $fetch_detail['firstName'] . ' ' . $fetch_detail['middleName'] . ' ' . $fetch_detail['lastName']; ?></div>
+                                    <div class="patient-email-details"><?php echo $fetch_detail['email']; ?></div>
                                 </div>
                             </div>
                             <div class="sub-profile-details">
-                                <div class="contact-details">Contact: 09992348764</div>
-                                <div class="gender-details">Gender: Female</div>
-                                <div class="dob-details">Date of Birth: May 2, 2000</div>
+                                <div class="contact-details">Contact: <?php echo $fetch_detail['contactNumber']; ?></div>
+                                <div class="gender-details">Gender: <?php echo $fetch_detail['gender']; ?></div>
+                                <div class="dob-details">Date of Birth: <?php echo $fetch_detail['dob']; ?></div>
                             </div>
                             <br>
                             <div class="identification-details">
                                 <h1 class="title">Identification Card</h1>
                                 <div class="id-img-container">
-                                    <img class="id-img" src="" alt="Patient ID Clickable">
+                                    <img class="id-img" src="uploads/<?php echo $fetch_detail['id']; ?>" alt="Patient ID Clickable">
                                 </div>
                             </div>
                             <div class="service-details">
                                 <h1 class="title">Test Service</h1>
-                                <p class="service-test"> - Pulmonology</p>
+                                <p class="service-test"> - <?php echo $fetch_detail['services']; ?></p>
                             </div>
-                        </div>  
-                        <div class="log-details" id="JohnDoeDetails" style="display: none;">
-                            <div class="details-flex-container">
-                                <h1 class="details-title">Details</h1>
-                                <div class="welcome-and-icon">
-                                    <p>Welcome! <span>Jane Smith</span></p>
-                                    <img class="icon-detail-img" src="../Assets/images/female-placeholder.png" alt="asd">
-                                </div>
-                            </div>
-                            <div class="patient-profile">
-                                <div class="patient-icon">
-                                    <img class="patient-picture-details" src="../Assets/images/male-placeholder.png" alt="patient-picture">
-                                </div>
-                                <div class="patient-name-contaierner">
-                                    <div class="patient-name-details">John Doe</div>
-                                    <div class="patient-email-details">JohnDoe@gmail.com</div>
-                                </div>
-                            </div>
-                            <div class="sub-profile-details">
-                                <div class="contact-details">Contact: 09876543210</div>
-                                <div class="gender-details">Gender: Male</div>
-                                <div class="dob-details">Date of Birth: September 15, 1985</div>
-                            </div>
-                            <br>
-                            <div class="identification-details">
-                                <h1 class="title">Identification Card</h1>
-                                <div class="id-img-container">
-                                    <img class="id-img" src="" alt="Patient ID Clickable">
-                                </div>
-                            </div>
-                            <div class="service-details">
-                                <h1 class="title">Test Service</h1>
-                                <p class="service-test"> - Cardiology</p>
-                            </div>
-                        </div>                    
+                        </div>     
+                        <?php 
+                            }
+                        }
+                        ?>         
                     </article>
-                </div>
+                </div>      
             </section>
             <!-- Records  -->
-            <?php
-                $dataQuery = "SELECT * FROM `records`";
-                $doctor = mysqli_query($connect, $dataQuery);
-
-                if (mysqli_num_rows($doctor) > 0){ 
-            ?>
+            
             <section id="records" style="display: none;">
                 <h1>Records</h1>
                 <hr style="opacity: 0.2;"><br>
@@ -278,6 +257,12 @@
                                 <th><div class="theader">Age<i class='bx bx-chevrons-down'></i></div></th>
                                 <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
                             </tr>
+                            <?php
+                                $dataQuery = "SELECT * FROM `records`";
+                                $doctor = mysqli_query($connect, $dataQuery);
+
+                                if (mysqli_num_rows($doctor) > 0){ 
+                            ?>
                             <?php
                                     while ($fetch_doctor = mysqli_fetch_assoc($doctor)){
                                     ?>
@@ -396,12 +381,7 @@
             </section>
             
             <!-- Requests  -->
-            <?php
-                $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = ''";
-                $appointment = mysqli_query($connect, $dataAppointment);
-
-                if (mysqli_num_rows($doctor) > 0){ 
-            ?>
+           
             <section id="requests" style="display: none;">
             <h1>Appointment Requests</h1>
                 <hr style="opacity: 0.2;"><br>
@@ -416,6 +396,12 @@
                                 <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
                                 <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
                             </tr>
+                            <?php
+                                $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = ''";
+                                $appointment = mysqli_query($connect, $dataAppointment);
+
+                                if (mysqli_num_rows($appointment) > 0){ 
+                            ?>
                             <?php
                                 while ($fetch_appointment = mysqli_fetch_assoc($appointment)){
                             ?>

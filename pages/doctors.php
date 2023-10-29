@@ -274,7 +274,7 @@
                                 <td><?php echo $fetch_doctor['edad']; ?></td>
                                 <td>
                                     <a class="bx-icon-2" href="RecordUpdate.php?update=<?php echo $fetch_doctor['record_id']; ?>"><i class='bx bxs-edit'></i></a>
-                                    <a class="bx-icon-3" href="../backend/delete.php?delete=<?php echo $fetch_doctor['record_id']; ?>" onclick="return  confirm('You want to delete this file?')"><i class='bx bxs-trash'></i></a>
+                                    <a class="bx-icon-3" href="../backend/delete.php?delete=<?php echo $fetch_doctor['record_id']; ?>" onclick="return  confirm('Are you want to delete this file?')"><i class='bx bxs-trash'></i></a>
                                 </td>
                             </tr>
                                 <?php 
@@ -414,7 +414,7 @@
                                 <td>
                                     <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
                                     <a href="../backend/appointmentUpdate.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" onclick="return  confirm('You want to confirm this appointment?')" class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
-                                    <a class="bx-icon-3" style="font-size: 32px;"><i class='bx bx-x'></i></i></a>
+                                    <a href="../backend/delete.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" class="bx-icon-3" style="font-size: 32px;" onclick="return  confirm('You want to delete this file?')"><i class='bx bx-x'></i></i></a>
                                 </td>
                             </tr> 
                             <?php 

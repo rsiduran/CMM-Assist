@@ -92,8 +92,8 @@
 
         $services = isset($_POST['services']) ? $_POST['services'] : [];
         $services = array_filter($services);
-
-        foreach ($services as $service) {
+        $service = implode(', ', $services);
+        
             $query = "INSERT INTO appointments (firstName, lastName, middleName, email, dob, contactNumber, gender, id, services, appointmentDate, appointmentTime) VALUES (' $firstName', 
             '$lastName', '$middleName', '$email', ' $dob', ' $contactNumber', '$gender', '$new_name', '$service', '$appointmentDate', '$appointmentTime')";
             $stmt = mysqli_prepare($connect, $query);
@@ -106,7 +106,7 @@
             } else {
                 echo '<script>alert("Not added!")</script>'; 
             }
-        }
+        
     }
 ?>
 

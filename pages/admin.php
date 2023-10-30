@@ -179,28 +179,68 @@ if(isset($_POST['search'])) {
                             <div class="dashboard-left blue"><i class='bx bxs-user-detail'></i></i></div>
                             <div class="dashboard-right">
                                 <div class="dashboard-top-text">Appointments</div>
-                                <div class="dashboard-bottom-text">108</div>
+                                <div class="dashboard-bottom-text">
+                                    <?php
+                                        $i = 0;
+                                        $numberAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = 'ON'";
+                                        $numberApp = mysqli_query($connect, $numberAppointment);
+                                        if ($numberApp) { // Check if the query was executed successfully
+                                            $i = mysqli_num_rows($numberApp);
+                                        }
+                                        echo $i;
+                                    ?>
+                                </div>
                             </div>
                         </div>
                         <div class="dashboard-item">
                             <div class="dashboard-left green"><i class='bx bxs-group'></i></div>
                             <div class="dashboard-right">
                                 <div class="dashboard-top-text">Total Doctors</div>
-                                <div class="dashboard-bottom-text">13</div>
+                                <div class="dashboard-bottom-text">
+                                    <?php
+                                        $i = 0;
+                                        $numberDoctors = "SELECT * FROM `doctor_acc` WHERE doctor_occupation = 'doctor'";
+                                        $numberDoc = mysqli_query($connect, $numberDoctors);
+                                        if ($numberDoc) { // Check if the query was executed successfully
+                                            $i = mysqli_num_rows($numberDoc);
+                                        }
+                                        echo $i;
+                                    ?>
+                                </div>
                             </div>
                         </div>
                         <div class="dashboard-item">
                             <div class="dashboard-left pink"><i class='bx bxs-user'></i></i></div>
                             <div class="dashboard-right">
                                 <div class="dashboard-top-text">Total Nurses</div>
-                                <div class="dashboard-bottom-text">27</div>
+                                <div class="dashboard-bottom-text">
+                                    <?php
+                                        $i = 0;
+                                        $numberNurse = "SELECT * FROM `doctor_acc` WHERE doctor_occupation = 'nurse'";
+                                        $numberNur = mysqli_query($connect, $numberNurse);
+                                        if ($numberNur) { // Check if the query was executed successfully
+                                            $i = mysqli_num_rows($numberNur);
+                                        }
+                                        echo $i;
+                                    ?>
+                                </div>
                             </div>
                         </div>
                         <div class="dashboard-item">
                             <div class="dashboard-left yellow"><i class='bx bx-plus-medical'></i></div>
                             <div class="dashboard-right">
                                 <div class="dashboard-top-text">Medicine Staff</div>
-                                <div class="dashboard-bottom-text">16</div>
+                                <div class="dashboard-bottom-text">
+                                    <?php
+                                        $i = 0;
+                                        $numberMedStaff = "SELECT * FROM `doctor_acc` WHERE doctor_occupation = 'medical_staff'";
+                                        $numberMed = mysqli_query($connect, $numberMedStaff);
+                                        if ($numberMed) { // Check if the query was executed successfully
+                                            $i = mysqli_num_rows($numberMed);
+                                        }
+                                        echo $i;
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,56 +266,32 @@ if(isset($_POST['search'])) {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                        $yesterday = date("Y-m-d", strtotime("yesterday"));
+                                        $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = 'OFF' OR appointmentDate = '$yesterday'";
+                                        $appointment = mysqli_query($connect, $dataAppointment);
+
+                                        if (mysqli_num_rows($appointment) > 0){ 
+                                    ?>
+                                    <?php
+                                        while ($fetch_appointment = mysqli_fetch_assoc($appointment)){
+                                    ?>
                                         <tr>
-                                            <td> 1 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td> 05 Sep, 2023 </td>
+                                            <td> <?php echo $fetch_appointment['appointment_id']; ?> </td>
+                                            <td> <?php echo $fetch_appointment['firstName'] . ' ' . $fetch_appointment['middleName'] . ' ' . $fetch_appointment['lastName']; ?> </td>
+                                            <td> <?php echo $fetch_appointment['email']; ?> </td>
+                                            <td> <?php echo $fetch_appointment['appointmentDate'] . ', ' . $fetch_appointment['appointmentTime']; ?> </td>
                                             <td>
-                                                <p class="status delivered">Finished</p>
+                                                <p class="status delivered" style="<?php if($fetch_appointment['appointmentStatus'] == 'OFF') { echo 'background-color: red; color: white;'; } ?>"><?php if($fetch_appointment['appointmentStatus'] == 'ON') { echo 'Finished'; } else { echo 'Cancelled'; }; ?></p>
                                             </td>
-                                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="ID"></td>
-                                        </tr>
-                                        <tr>
-                                            <td> 2 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td> 05 Sep, 2023 </td>
-                                            <td>
-                                                <p class="status delivered">Finished</p>
+                                            <td> 
+                                                <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
                                             </td>
-                                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="ID"></td>
                                         </tr>
-                                        <tr>
-                                            <td> 3 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td> 05 Sep, 2023 </td>
-                                            <td>
-                                                <p class="status delivered">Finished</p>
-                                            </td>
-                                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="ID"></td>
-                                        </tr>
-                                        <tr>
-                                            <td> 4 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td> 05 Sep, 2023 </td>
-                                            <td>
-                                                <p class="status delivered">Finished</p>
-                                            </td>
-                                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="ID"></td>
-                                        </tr>
-                                        <tr>
-                                            <td> 5 </td>
-                                            <td> Lorem Ipsum </td>
-                                            <td> Thisemail@gmail.com </td>
-                                            <td> 05 Sep, 2023 </td>
-                                            <td>
-                                                <p class="status delivered">Finished</p>
-                                            </td>
-                                            <td> <img src="images/Zinzu Chan Lee.jpg" alt="ID"></td>
-                                        </tr>
+                                        <?php 
+                                            }
+                                        }
+                                        ?>  
                                     </tbody>
                                 </table>
                             </article>

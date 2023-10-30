@@ -149,13 +149,7 @@
         </div>
         <div class="container-fluid">
             <!-- Home -->
-            <?php
-                $dataPatient = "SELECT * FROM `appointments` WHERE appointmentStatus = 'ON'"; // need pa ng another condition na dapata date today lang
-                $data = mysqli_query($connect, $dataPatient);
-
-                if (mysqli_num_rows($data) > 0){ 
-
-            ?>
+            
             
             <section id="home">
                 <div class="home-class-home">
@@ -172,10 +166,15 @@
                         </div>
                         <br>
                         <?php
+                            $dataPatient = "SELECT * FROM `appointments` WHERE appointmentStatus = 'ON' AND appointmentDate = CURDATE()"; // need pa ng another condition na dapata date today lang
+                            $data = mysqli_query($connect, $dataPatient);
+
+                            if (mysqli_num_rows($data) > 0){ 
+                                $i = 1;
                                 while ($fetch_data = mysqli_fetch_assoc($data)){
                             ?>
                         <div class="details">
-                            <aside class="flex-detail-clickable" data-patient="<?php echo $fetch_data['firstName']; ?>">
+                            <aside class="flex-detail-clickable"  data-patient="<?php echo $fetch_data['firstName']; ?>">
                                 <div class="sched-detail">
                                     <i class='bx bx-building'></i>
                                     <div class="patient-name"><?php echo $fetch_data['firstName'] . ' ' . $fetch_data['middleName'] . ' ' . $fetch_data['lastName']; ?></div>
@@ -383,51 +382,83 @@
             <!-- Requests  -->
            
             <section id="requests" style="display: none;">
-            <h1>Appointment Requests</h1>
-                <hr style="opacity: 0.2;"><br>
-                <div class="records-container" id="records-container">
-                    <div class="table-wrapper">
-                        <table>
-                            <tr>
-                                <th><div class="theader">Name<i class='bx bx-chevrons-down'></i></div></th>
-                                <th><div class="theader">Date of Appointment<i class='bx bx-chevrons-down'></i></div></th>
-                                <th><div class="theader">Service Appointment<i class='bx bx-chevrons-down'></i></div></th>
-                                <th><div class="theader">Gender<i class='bx bx-chevrons-down'></i></div></th>
-                                <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
-                                <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
-                            </tr>
-                            <?php
-                                $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = ''";
-                                $appointment = mysqli_query($connect, $dataAppointment);
+                <h1>Appointment Requests</h1>
+                    <hr style="opacity: 0.2;"><br>
+                    <div class="records-container" id="records-container">
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th><div class="theader">Name<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Date of Appointment<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Service Appointment<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Gender<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Action<i class='bx bx-chevrons-down'></i></div></th>
+                                </tr>
+                                <?php
+                                    $dataAppointment = "SELECT * FROM `appointments` WHERE appointmentStatus = ''";
+                                    $appointment = mysqli_query($connect, $dataAppointment);
 
-                                if (mysqli_num_rows($appointment) > 0){ 
-                            ?>
-                            <?php
-                                while ($fetch_appointment = mysqli_fetch_assoc($appointment)){
-                            ?>
-                            <tr>
-                                <td><?php echo $fetch_appointment['firstName'] . ' ' . $fetch_appointment['middleName'] . ' ' . $fetch_appointment['lastName']; ?></td>
-                                <td><?php echo $fetch_appointment['appointmentDate'] . ', ' . $fetch_appointment['appointmentTime']; ?></td>
-                                <td><?php echo $fetch_appointment['services']; ?></td>
-                                <td><?php echo $fetch_appointment['gender']; ?></td>
-                                <td><?php echo $fetch_appointment['email']; ?></td>
-                                <td>
-                                    <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
-                                    <a href="../backend/appointmentUpdate.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" onclick="return  confirm('You want to confirm this appointment?')" class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
-                                    <a href="../backend/delete.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" class="bx-icon-3" style="font-size: 32px;" onclick="return  confirm('You want to delete this file?')"><i class='bx bx-x'></i></i></a>
-                                </td>
-                            </tr> 
-                            <?php 
+                                    if (mysqli_num_rows($appointment) > 0){ 
+                                ?>
+                                <?php
+                                    while ($fetch_appointment = mysqli_fetch_assoc($appointment)){
+                                ?>
+                                <tr>
+                                    <td><?php echo $fetch_appointment['firstName'] . ' ' . $fetch_appointment['middleName'] . ' ' . $fetch_appointment['lastName']; ?></td>
+                                    <td><?php echo $fetch_appointment['appointmentDate'] . ', ' . $fetch_appointment['appointmentTime']; ?></td>
+                                    <td><?php echo $fetch_appointment['services']; ?></td>
+                                    <td><?php echo $fetch_appointment['gender']; ?></td>
+                                    <td><?php echo $fetch_appointment['email']; ?></td>
+                                    <td>
+                                        <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>
+                                        <a href="../backend/appointmentUpdate.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" onclick="return  confirm('You want to confirm this appointment?')" class="bx-icon-2" style="font-size: 32px;"><i class='bx bx-check'></i></a>
+                                        <a href="../backend/delete.php?msg=<?php echo $fetch_appointment['appointment_id']; ?>" class="bx-icon-3" style="font-size: 32px;" onclick="return  confirm('You want to delete this file?')"><i class='bx bx-x'></i></i></a>
+                                    </td>
+                                </tr> 
+                                <?php 
+                                    }
                                 }
-                            }
-                            ?>     
-                        </table>
+                                ?>     
+                            </table>
+                        </div>
                     </div>
-                </div>
             </section>
             <!-- messages  -->
             <section id="messages" style="display: none;">
-                
+            <h1>Messages</h1>
+                    <hr style="opacity: 0.2;"><br>
+                    <div class="records-container" id="records-container">
+                        <div class="table-wrapper">
+                            <table>
+                                <tr>
+                                    <th><div class="theader">Message sent<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Name<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Contact<i class='bx bx-chevrons-down'></i></div></th>
+                                    <th><div class="theader">Message<i class='bx bx-chevrons-down'></i></div></th>
+                                </tr>
+                                <?php
+                                    $dataInquiry = "SELECT * FROM `inquiry`";
+                                    $inquiry = mysqli_query($connect, $dataInquiry);
+
+                                    if (mysqli_num_rows($inquiry) > 0){ 
+                                ?>
+                                <?php
+                                    while ($fetch_inquiry = mysqli_fetch_assoc($inquiry)){
+                                ?>
+                                <tr>
+                                    <td><?php echo $fetch_inquiry['datestamp']; ?></td>
+                                    <td><?php echo $fetch_inquiry['name']; ?></td>
+                                    <td><?php echo $fetch_inquiry['email']; ?></td>
+                                    <td><?php echo $fetch_inquiry['message']; ?></td>
+                                </tr> 
+                                <?php 
+                                    }
+                                }
+                                ?>     
+                            </table>
+                        </div>
+                    </div>
             </section>
             <!-- settings  -->
             <section id="settings" style="display: none;">

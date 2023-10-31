@@ -514,7 +514,7 @@
                                         <label for="profile-pic" class="pen-icon">
                                             <i style="font-size: 30px;" class='bx bxs-edit'></i>
                                         </label>
-                                        <input type="file" id="profile-pic" class="hidden-input">
+                                        <input required type="file" id="profile-pic" class="hidden-input">
                                         <button type="submit" class="profile-pic-save-btn" onclick="return  confirm('Are you sure you want to save this picture?')">Save</button>
                                     </form>
                                 </div>
@@ -551,15 +551,15 @@
                                 <form action="../backend/changePW.php?doc=<?php echo $docID; ?>" method="POST">
                                     <div class="pw-container">
                                         <label for="current-pw">Current password</label>
-                                        <input type="password" name="current-pw" placeholder="Your old password">
+                                        <input required type="password" name="current-pw" placeholder="Your old password">
                                     </div>
                                     <div class="pw-container">
                                         <label for="now-pw">New password</label>
-                                        <input type="password" name="new-pw" placeholder="Your new password">
+                                        <input required type="password" name="new-pw" placeholder="Your new password">
                                     </div>
                                     <div class="pw-container">
                                         <label for="retype-pw">Retype new password</label>
-                                        <input type="password" name="retype-new-pw" placeholder="Repeat your new password">
+                                        <input required type="password" name="retype-new-pw" placeholder="Repeat your new password">
                                     </div>
                                     <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this password?')">Save</button>
                                 </form>

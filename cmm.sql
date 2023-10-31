@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2023 at 11:02 AM
+-- Generation Time: Oct 31, 2023 at 06:27 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -68,13 +68,10 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`appointment_id`, `firstName`, `lastName`, `middleName`, `email`, `dob`, `contactNumber`, `gender`, `id`, `services`, `appointmentDate`, `appointmentTime`, `accountpw`, `appointmentStatus`) VALUES
-(108, ' Juan', 'Delacruz', 'Midie', 'juan@gmail.com', ' 2022-08-16', ' 09123456789', 'Male', 'IMG-653df697d16685.37509465.jpg', 'X-Ray', '2023-10-31', '07:00 AM', '$2y$10$ppFSNBK7MlhfcoZES2aIlOiwDFOHyfG.8pl/26q0JsXp87zny1IIK', 'ON'),
-(109, ' qwe', 'qweqwe', 'qweqwe', 'qweasd@gmail.com', ' 2023-10-04', ' 09123465897', 'Male', 'IMG-653e293d8af0b1.61782368.jpg', 'Nephrology', '2023-11-01', '08:00 AM', '$2y$10$K6deyHIoOFkWvbmEGigw3.c0fdEeamsh.2CY4bwhvyYHz8tce5r7e', 'ON'),
-(110, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Nephrology', '2023-11-01', '09:00 AM', '$2y$10$OC.wde0aizq.c0flMuBSuez.wdu7s6wd2gmwy6ths70hzjWhXmzO2', 'ON'),
-(111, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Cardiology', '2023-11-01', '09:00 AM', '$2y$10$V6R9tcRj8uWT8rLn1a1IY..EpSrXViswcRCbSJQSICGD5kEzZxDWW', 'ON'),
-(112, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Mircrobial Test', '2023-11-01', '09:00 AM', '', ''),
-(113, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'Semen Test', '2023-11-01', '09:00 AM', '', ''),
-(114, ' Santa', 'Claus', 'Merry', 'Santa@gmail.com', ' 2023-10-25', ' 09123456789', 'Female', 'IMG-653e2966b29195.71729915.png', 'General Ultrasound', '2023-11-01', '09:00 AM', '', '');
+(115, ' Bell', 'liam', 'Beton', 'Bell@gmail.om', ' 1991-03-19', ' 09789465132', 'Female', 'IMG-653e411fd14c65.83406781.png', 'Nephrology, Cardiology, Pulmonology', '2023-10-29', '09:00 AM', '$2y$10$kpfaRS6WhZ82S8NI1grAkeD6/Dvi8CgpdRCPNvM1PrqSEZdnwVOmW', 'ON'),
+(116, ' Santa', 'Claus', 'Blessings', 'Santa@gmail.com', ' 2023-10-18', ' 09456789123', 'Female', 'IMG-653e43e974d8e8.15368089.png', 'Nephrology, Blood Test', '2023-10-29', '11:00 AM', '$2y$10$fx1K7REbEkCX8932r0oriOwnGRr6putvYnmrb9/UUJ6vK9Hegazaq', 'ON'),
+(117, ' Terni', 'Cruz', 'Keraste', 'terni@gmail.com', ' 2023-10-26', ' 09123987456', 'Female', 'IMG-653e54771f8e10.61642285.png', 'Nephrology, Blood Test, General Ultrasound', '2023-10-30', '02:00 PM', '$2y$10$Z6nzV55cSDZfnVHCo8THfelCpy55fFr12VifkTDcDF/PAXfe3cTeu', 'ON'),
+(119, ' Babe', 'Kyut', 'Dizon', 'babe@gmail.com', ' 2023-09-27', ' 09123456789', 'Male', 'IMG-653f3db021e950.55874023.png', 'Nephrology, Semen Test, Stool Test, Urine Test', '2023-11-03', '07:00 AM', '', '');
 
 -- --------------------------------------------------------
 
@@ -205,7 +202,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `doctor_acc`

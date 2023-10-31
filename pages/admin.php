@@ -142,12 +142,13 @@ if(isset($_POST['search'])) {
                 </ul>
             </li>
             <li>
-                <div class="iocn-link">
-                    <a href="#" onclick="showSection('settings')">
-                        <i class='bx bxs-cog'></i>
-                        <span class="link_name">Settings</span>
-                    </a>
-                </div>
+                <a href="#" onclick="showSection('settings')">
+                    <i class='bx bxs-cog'></i>
+                    <span class="link_name" style="white-space: nowrap;">Settings</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
+                </ul>
             </li>
             <li>
                 <div class="profile-details">

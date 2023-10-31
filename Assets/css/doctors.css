@@ -135,3 +135,98 @@ table tr th, table tr td {
 .bx-icon-3 {
     color: red;
 }
+
+.settings-container {
+    display: flex;
+    gap: 60px;
+}
+
+.settings-container-all {
+    position: absolute;
+    left: 50%;
+    top: 21%;
+    transform: translate(-50%, 0);
+    background: white;
+    padding: 60px 80px 110px 80px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.135);
+}
+
+.wrapper-pic {
+    margin-top: 15px;
+    width: 300px;
+    height: 400px;
+    border-radius: 25px;
+    position: relative;
+    border: 2px solid rgba(43, 199, 43, 0.43);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.pen-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.hidden-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.profile-pic-save-btn {
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.settings-right {
+    position: relative;
+    width: 420px;
+}
+
+.pw-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.pw-container label {
+    font-size: 20px;
+}
+
+.pw-container input, select {
+    outline: none;
+    border: 1px solid rgb(43, 199, 43);
+    padding: 5px 8px;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.pw-container input:focus {
+    box-shadow: 0 0 15px rgba(119, 250, 119, 0.66);
+}
+
+
+.change-pw-btn {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    padding: 7px 20px;
+    cursor: pointer;
+}

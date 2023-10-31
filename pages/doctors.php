@@ -121,12 +121,13 @@
                 </ul>
             </li>
             <li>
-                <div class="iocn-link">
-                    <a href="#" onclick="showSection('settings')">
-                        <i class='bx bxs-cog'></i>
-                        <span class="link_name">Settings</span>
-                    </a>
-                </div>
+                <a href="#" onclick="showSection('settings')">
+                    <i class='bx bxs-cog'></i>
+                    <span class="link_name" style="white-space: nowrap;">Settings</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
+                </ul>
             </li>
             <li>
                 <div class="profile-details">
@@ -464,7 +465,69 @@
             </section>
             <!-- settings  -->
             <section id="settings" style="display: none;">
-                
+                <h1>Profile Settings</h1>
+                    <hr style="opacity: 0.2;"><br>
+                    <p>Changing your password and profile settings is an integral part of maintaining your online security and personalization</p><br><br><br>
+                    <div class="settings-container-all">
+                        <div class="settings-container">
+                            <div class="settings-left">
+                                <h1 style="font-weight: 500;">Change Profile</h1>
+                                <div class="wrapper-pic">
+                                    <form action="">
+                                        <label for="profile-pic" class="pen-icon">
+                                            <i style="font-size: 30px;" class='bx bxs-edit'></i>
+                                        </label>
+                                        <input type="file" id="profile-pic" class="hidden-input">
+                                        <button type="submit" class="profile-pic-save-btn" onclick="return  confirm('Are you sure you want to save this picture?')">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="settings-right">
+                                <h1 style="font-weight: 500; margin-bottom: 15px;">Change profile information</h1>
+                                <form action="">
+                                    <div class="pw-container">
+                                        <label for="field">Doctor Field</label>
+                                        <select name="field">
+                                            <option value="" selected disabled>Choose</option>
+                                            <option value="Speciality Consultations">Speciality Consultations</option>
+                                            <option value="Nephrology">Nephrology</option>
+                                            <option value="Pulmonology">Pulmonology</option>
+                                            <option value="Urology">Urology</option>
+                                            <option value="Orthopedics">Orthopedics</option>
+                                            <option value="Pulmonology">Endocrinology</option>
+                                        </select>
+                                    </div>
+                                    <div class="pw-container">
+                                        <label for="caption">About you?</label>
+                                        <input type="text" name="caption" placeholder="Caption">
+                                    </div>
+                                    <div class="pw-container">
+                                        <label for="experience">Years of work experience</label>
+                                        <input type="text" name="experience" placeholder="13 Years">
+                                    </div>
+                                    <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this information?')">Save</button>
+                                </form>
+                            </div>
+                            <div class="settings-right">
+                                <h1 style="font-weight: 500; margin-bottom: 15px;">Change Password</h1>
+                                <form action="">
+                                    <div class="pw-container">
+                                        <label for="current-pw">Current password</label>
+                                        <input type="password" name="current-pw" placeholder="Your old password">
+                                    </div>
+                                    <div class="pw-container">
+                                        <label for="current-pw">New password</label>
+                                        <input type="password" name="current-pw" placeholder="Your new password">
+                                    </div>
+                                    <div class="pw-container">
+                                        <label for="current-pw">Retype new password</label>
+                                        <input type="password" name="current-pw" placeholder="Repeat your new password">
+                                    </div>
+                                    <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this password?')">Save</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>    
             </section>
         </div>
     </main>

@@ -38,27 +38,3 @@ if (isset($_GET['doc'])) {
 
 
 
-<?php
-
-// if(isset($_GET['doc'])) {
-//     $docId = $_GET['doc']; 
-
-//     $pw = '123';
-//     $hashedPassword = password_hash($pw, PASSWORD_BCRYPT);
-
-//     $query = "UPDATE doctor_acc SET 
-//             doctor_password='$hashedPassword' WHERE doctor_id=$docId";
-
-//     $result = mysqli_query($connect, $query);
-
-//     if ($result == true) {
-//         header("Location: ../pages/doctors.php?error=confirmed appointment");
-//         exit();
-//     } else {
-//         header("Location: ../pages/doctors.php?error=error");
-//         exit();
-//     }
-// }
-
-
-?>

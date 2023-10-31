@@ -384,6 +384,7 @@
             <section id="requests" style="display: none;">
                 <h1>Appointment Requests</h1>
                     <hr style="opacity: 0.2;"><br>
+                    <p>Remember, clear communication is key throughout the process. If you need to decline an appointment, provide a polite and valid reason, and if you need to reschedule, propose alternative dates and times that work for you. Timely and considerate responses to appointment requests demonstrate professionalism and good etiquette.</p><br><br><br>
                     <div class="records-container" id="records-container">
                         <div class="table-wrapper">
                             <table>
@@ -428,6 +429,7 @@
             <section id="messages" style="display: none;">
             <h1>Messages</h1>
                     <hr style="opacity: 0.2;"><br>
+                    <p>Remember that all responses to inquiries and reviews should align with your company's values and policies. Always maintain a respectful and customer-centric approach, as this can significantly impact your reputation and the customer's experience.</p><br><br><br>
                     <div class="records-container" id="records-container">
                         <div class="table-wrapper">
                             <table>

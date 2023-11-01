@@ -48,15 +48,8 @@ if(isset($_POST['search'])) {
                             </div>
                             <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
                         </div>  ';
-            } else if ($error == 'deleted'){
-                echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top">&#10003;</div>
-                            <div class="pop-info-center">
-                                <h1>Deleted!</h1>
-                                <p>Successfully deleted data.</p>
-                            </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
-                        </div>  ';
+            } else {
+
             } 
         }
 
@@ -65,12 +58,12 @@ if(isset($_POST['search'])) {
 
             if($message === 'Wrong Current Password.') { 
                 echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top" style="background-color: red; font-size: 72px;">&times;</div>
+                            <div class="pop-info-top">&#10003;</div>
                                 <div class="pop-info-center">
                                     <h1 style="font-size: 48px;">Error!</h1><br>
                                     <p>Your current password is wrong. Try Again!</p>
                                 </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" style="background-color: red;" onclick="popUpVanish()">Ok</button></div>
+                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
                         </div>  ';
             }
             else if($message === 'Successfully Changed Password.') { 
@@ -99,16 +92,6 @@ if(isset($_POST['search'])) {
                                 <div class="pop-info-center">
                                     <h1 style="font-size: 48px;">Thank You!</h1><br>
                                     <p>The account created successfully. Thanks!</p>
-                                </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
-                        </div>  ';
-            }
-            else if($message === 'Password reset successfully') { 
-                echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top">&#10003;</div>
-                                <div class="pop-info-center">
-                                    <h1 style="font-size: 48px;">Thank You!</h1><br>
-                                    <p>The account password has been reset. Thanks!</p>
                                 </div>
                             <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
                         </div>  ';
@@ -159,13 +142,12 @@ if(isset($_POST['search'])) {
                 </ul>
             </li>
             <li>
-                <a href="#" onclick="showSection('settings')">
-                    <i class='bx bxs-cog'></i>
-                    <span class="link_name" style="white-space: nowrap;">Settings</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
-                </ul>
+                <div class="iocn-link">
+                    <a href="#" onclick="showSection('settings')">
+                        <i class='bx bxs-cog'></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <div class="profile-details">
@@ -362,9 +344,9 @@ if(isset($_POST['search'])) {
                                             <td><?php echo $fetch_doctor['doctor_username']; ?></td>
                                             <td><?php echo $fetch_doctor['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
-                                                <a href="../backend/resetpw.php?reset=<?php echo $fetch_doctor['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to reset the password?')" class="btn-action">Reset Account</a>
+                                                <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
-                                                <a href="../backend/resetpw.php?del=<?php echo $fetch_doctor['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to delete the account?')" class="btn-action">Delete</a>
+                                                <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
                                         <?php 
@@ -410,16 +392,16 @@ if(isset($_POST['search'])) {
                                     while ($fetch_nurse = mysqli_fetch_assoc($nurse)){
                                     ?>
                                         <tr>
-                                            <td><?php echo $fetch_nurse['doctor_id']; ?></td>
-                                            <td><?php echo $fetch_nurse['account_created']; ?></td>
-                                            <td><?php echo $fetch_nurse['doctor_firstname'];
-                                            echo ' '; echo $fetch_nurse['doctor_lastname'];?></td>
-                                            <td><?php echo $fetch_nurse['doctor_username']; ?></td>
-                                            <td><?php echo $fetch_nurse['doctor_email']; ?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_id']; ?></td>
+                                            <td><?php echo $fetch_nurse ['account_created']; ?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_firstname'];
+                                            echo ' '; echo $fetch_nurse ['doctor_lastname'];?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_username']; ?></td>
+                                            <td><?php echo $fetch_nurse ['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
-                                                <a href="../backend/resetpw.php?reset=<?php echo $fetch_nurse['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to reset the password?')" class="btn-action">Reset Account</a>
+                                                <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
-                                                <a href="../backend/resetpw.php?del=<?php echo $fetch_nurse['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to delete the account?')" class="btn-action">Delete</a>
+                                                <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
                                         <?php 
@@ -472,9 +454,9 @@ if(isset($_POST['search'])) {
                                             <td><?php echo $fetch_medicine['doctor_username']; ?></td>
                                             <td><?php echo $fetch_medicine['doctor_email']; ?></td>
                                             <td style="white-space: nowrap;">
-                                                <a href="../backend/resetpw.php?reset=<?php echo $fetch_medicine['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to reset the password?')" class="btn-action">Reset Account</a>
+                                                <a href="#" class="btn-action">Reset Account</a>
                                                 <!-- whatever password u have it will be 123 -->
-                                                <a href="../backend/resetpw.php?del=<?php echo $fetch_medicine['doctor_id']; ?>" onclick="return  confirm('Are you sure you want to delete the account?')" class="btn-action">Delete</a>
+                                                <a href="#" class="btn-action">Delete</a>
                                             </td>
                                         </tr>
                                         <?php 

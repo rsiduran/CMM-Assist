@@ -19,7 +19,6 @@
     while ($row = mysqli_fetch_array($result)) {
         $docName = $row["doctor_firstname"] . ' ' . $row["doctor_lastname"];
         $doc = $row["doctor_firstname"];
-        $docID = $row["doctor_id"];
     }
 ?>
 
@@ -79,42 +78,6 @@
         }
     }
     ?>
-    <?php
-    if(isset($_GET['message'])) { 
-        $message = $_GET['message']; 
-
-            if($message === 'Passwords do not match.') { 
-                echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top" style="background-color: red; font-size: 72px;">&times;</div>
-                                <div class="pop-info-center">
-                                    <h1 style="font-size: 48px;">Error!</h1><br>
-                                    <p>Your current password is wrong. Try Again!</p>
-                                </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" style="background-color: red;" onclick="popUpVanish()">Ok</button></div>
-                        </div>  ';
-            }
-            else if($message === 'Password updated successfully') { 
-                echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top">&#10003;</div>
-                                <div class="pop-info-center">
-                                    <h1 style="font-size: 48px;">Thank You!</h1><br>
-                                    <p>Your password has been changed. Thanks!</p>
-                                </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
-                        </div>  ';
-            }
-            else if($message === 'Failed to Update Password.') { 
-                echo '  <div id="pop-up-log-in">
-                            <div class="pop-info-top" style="background-color: red; font-size: 72px;">&times;</div>
-                                <div class="pop-info-center">
-                                    <h1 style="font-size: 48px;">Error!</h1><br>
-                                    <p>Your password is failed to update. Try Again!</p>
-                                </div>
-                            <div class="pop-info-bottom"><button class="pop-info-bottom-button" style="background-color: red;" onclick="popUpVanish()">Ok</button></div>
-                        </div>  ';
-            }
-        }
-        ?>
     <div class="sidebar close">
         <div class="logo-details">
             <i class='bx bxs-heart'></i>
@@ -158,13 +121,12 @@
                 </ul>
             </li>
             <li>
-                <a href="#" onclick="showSection('settings')">
-                    <i class='bx bxs-cog'></i>
-                    <span class="link_name" style="white-space: nowrap;">Settings</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#" onclick="showSection('settings')">Settings</a></li>
-                </ul>
+                <div class="iocn-link">
+                    <a href="#" onclick="showSection('settings')">
+                        <i class='bx bxs-cog'></i>
+                        <span class="link_name">Settings</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <div class="profile-details">
@@ -422,7 +384,6 @@
             <section id="requests" style="display: none;">
                 <h1>Appointment Requests</h1>
                     <hr style="opacity: 0.2;"><br>
-                    <p>Remember, clear communication is key throughout the process. If you need to decline an appointment, provide a polite and valid reason, and if you need to reschedule, propose alternative dates and times that work for you. Timely and considerate responses to appointment requests demonstrate professionalism and good etiquette.</p><br><br><br>
                     <div class="records-container" id="records-container">
                         <div class="table-wrapper">
                             <table>
@@ -467,7 +428,6 @@
             <section id="messages" style="display: none;">
             <h1>Messages</h1>
                     <hr style="opacity: 0.2;"><br>
-                    <p>Remember that all responses to inquiries and reviews should align with your company's values and policies. Always maintain a respectful and customer-centric approach, as this can significantly impact your reputation and the customer's experience.</p><br><br><br>
                     <div class="records-container" id="records-container">
                         <div class="table-wrapper">
                             <table>
@@ -502,70 +462,7 @@
             </section>
             <!-- settings  -->
             <section id="settings" style="display: none;">
-                <h1>Profile Settings</h1>
-                    <hr style="opacity: 0.2;"><br>
-                    <p>Changing your password and profile settings is an integral part of maintaining your online security and personalization</p><br><br><br>
-                    <div class="settings-container-all">
-                        <div class="settings-container">
-                            <div class="settings-left">
-                                <h1 style="font-weight: 500;">Change Profile</h1>
-                                <div class="wrapper-pic">
-                                    <form action="">
-                                        <label for="profile-pic" class="pen-icon">
-                                            <i style="font-size: 30px;" class='bx bxs-edit'></i>
-                                        </label>
-                                        <input required type="file" id="profile-pic" class="hidden-input">
-                                        <button type="submit" class="profile-pic-save-btn" onclick="return  confirm('Are you sure you want to save this picture?')">Save</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="settings-right">
-                                <h1 style="font-weight: 500; margin-bottom: 15px;">Change profile information</h1>
-                                <form action="">
-                                    <div class="pw-container">
-                                        <label for="field">Doctor Field</label>
-                                        <select name="field">
-                                            <option value="" selected disabled>Choose</option>
-                                            <option value="Speciality Consultations">Speciality Consultations</option>
-                                            <option value="Nephrology">Nephrology</option>
-                                            <option value="Pulmonology">Pulmonology</option>
-                                            <option value="Urology">Urology</option>
-                                            <option value="Orthopedics">Orthopedics</option>
-                                            <option value="Pulmonology">Endocrinology</option>
-                                        </select>
-                                    </div>
-                                    <div class="pw-container">
-                                        <label for="caption">About you?</label>
-                                        <input type="text" name="caption" placeholder="Caption">
-                                    </div>
-                                    <div class="pw-container">
-                                        <label for="experience">Years of work experience</label>
-                                        <input type="text" name="experience" placeholder="13 Years">
-                                    </div>
-                                    <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this information?')">Save</button>
-                                </form>
-                            </div>
-                            <div class="settings-right">
-                                <h1 style="font-weight: 500; margin-bottom: 15px;">Change Password</h1>
-                                
-                                <form action="../backend/changePW.php?doc=<?php echo $docID; ?>" method="POST">
-                                    <div class="pw-container">
-                                        <label for="current-pw">Current password</label>
-                                        <input required type="password" name="current-pw" placeholder="Your old password">
-                                    </div>
-                                    <div class="pw-container">
-                                        <label for="now-pw">New password</label>
-                                        <input required type="password" name="new-pw" placeholder="Your new password">
-                                    </div>
-                                    <div class="pw-container">
-                                        <label for="retype-pw">Retype new password</label>
-                                        <input required type="password" name="retype-new-pw" placeholder="Repeat your new password">
-                                    </div>
-                                    <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this password?')">Save</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>    
+                
             </section>
         </div>
     </main>

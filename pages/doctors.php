@@ -559,27 +559,40 @@
                             </div>
                             <div class="settings-right">
                                 <h1 style="font-weight: 500; margin-bottom: 15px;">Change profile information</h1>
-                                <form action="">
+                                <form action="../backend/updateDoctorsProfile.php?docno=<?php echo $docID; ?>" method="POST">
                                     <div class="pw-container">
+                                    <?php
+                                        $queryOfRecord = "SELECT * FROM `doctor_acc` WHERE doctor_id = $docID";
+                                        $recurd = mysqli_query($connect, $queryOfRecord);
+
+                                        if (mysqli_num_rows($recurd) > 0){ 
+                                    ?>
+                                    <?php
+                                        while ($fetch_recurd = mysqli_fetch_assoc($recurd)){ 
+                                    ?>
                                         <label for="field">Doctor Field</label>
                                         <select name="field">
-                                            <option value="" selected disabled>Choose</option>
-                                            <option value="Speciality Consultations">Speciality Consultations</option>
-                                            <option value="Nephrology">Nephrology</option>
-                                            <option value="Pulmonology">Pulmonology</option>
-                                            <option value="Urology">Urology</option>
-                                            <option value="Orthopedics">Orthopedics</option>
-                                            <option value="Pulmonology">Endocrinology</option>
+                                            <option value="" disabled <?php if ($fetch_recurd['doctorField'] == '') echo 'selected'; ?>>Select</option>
+                                            <option value="Speciality Consultations" <?php if ($fetch_recurd['doctorField'] == 'Speciality Consultations') echo 'selected'; ?>>Speciality Consultations</option>
+                                            <option value="Nephrology" <?php if ($fetch_recurd['doctorField'] == 'Nephrology') echo 'selected'; ?>>Nephrology</option>
+                                            <option value="Pulmonology" <?php if ($fetch_recurd['doctorField'] == 'Pulmonology') echo 'selected'; ?>>Pulmonology</option>
+                                            <option value="Urology" <?php if ($fetch_recurd['doctorField'] == 'Urology') echo 'selected'; ?>>Urology</option>
+                                            <option value="Orthopedics" <?php if ($fetch_recurd['doctorField'] == 'Orthopedics') echo 'selected'; ?>>Orthopedics</option>
+                                            <option value="Endocrinology" <?php if ($fetch_recurd['doctorField'] == 'Endocrinology') echo 'selected'; ?>>Endocrinology</option>
                                         </select>
                                     </div>
                                     <div class="pw-container">
                                         <label for="caption">About you?</label>
-                                        <input type="text" name="caption" placeholder="Caption">
+                                        <input value="<?php echo $fetch_recurd['aboutYou']; ?>" type="text" name="caption" placeholder="Caption">
                                     </div>
                                     <div class="pw-container">
                                         <label for="experience">Years of work experience</label>
-                                        <input type="text" name="experience" placeholder="13 Years">
+                                        <input value="<?php echo $fetch_recurd['workExperience']; ?>" type="number" min="0" max="70" name="experience" placeholder="13 Years">
                                     </div>
+                                    <?php 
+                                        }
+                                    }
+                                    ?>
                                     <button type="submit" class="change-pw-btn" onclick="return  confirm('Are you sure you want to save this information?')">Save</button>
                                 </form>
                             </div>

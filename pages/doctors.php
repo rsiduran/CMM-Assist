@@ -510,13 +510,51 @@
                             <div class="settings-left">
                                 <h1 style="font-weight: 500;">Change Profile</h1>
                                 <div class="wrapper-pic">
-                                    <form action="">
+                                    <?php
+                                    include '../backend/config.php';
+                                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['picInput'])) {
+                                        $pic_type = $_FILES['picInput']['type'];
+                                        $pic_data = file_get_contents($_FILES['picInput']['tmp_name']);
+                                        $sql = "UPDATE `doctor_acc` SET pic_type = ?, pic_data = ? WHERE doctor_id = ?";
+                                        
+                                        // Use a prepared statement to prevent SQL injection
+                                        $stmt = $connect->prepare($sql);
+                                        $stmt->bind_param("ssi", $pic_type, $pic_data, $docID);
+                                        
+                                        if ($stmt->execute()) {
+                                            echo '<script>alert("Picture Updated")</script>';
+                                        } else {
+                                            echo '<script>alert("Error")</script>';
+                                        }
+                                    }
+                                    ?>
+                                    <form action="" method="POST" enctype="multipart/form-data">
                                         <label for="profile-pic" class="pen-icon">
                                             <i style="font-size: 30px;" class='bx bxs-edit'></i>
                                         </label>
-                                        <input required type="file" id="profile-pic" class="hidden-input">
-                                        <button type="submit" class="profile-pic-save-btn" onclick="return  confirm('Are you sure you want to save this picture?')">Save</button>
+                                        <input required type="file" name="picInput" id="profile-pic" class="hidden-input">
+                                        <button type="submit" class="profile-pic-save-btn" onclick="return confirm('Are you sure you want to save this picture?')">Save</button>
                                     </form>
+                                    
+                                    <div class="image-gallery">
+                                        <?php
+                                        $sql = "SELECT doctor_id FROM doctor_acc WHERE doctor_id = ?";
+                                        $stmt = $connect->prepare($sql);
+                                        $stmt->bind_param("i", $docID);
+                                        $stmt->execute();
+                                        $result = $stmt->get_result();
+                                        ?>
+
+                                        <?php
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
+                                                ?>
+                                                <img id="displayed-image" style="width: 100%; height: 100%; border-radius: 25px;" src="picView.php?image_id=<?php echo $row["doctor_id"];?>">
+                                            <?php
+                                            }
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="settings-right">

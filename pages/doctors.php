@@ -515,11 +515,14 @@
                                         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['picInput'])) {
                                             $pic_type = $_FILES['picInput']['type'];
                                             $pic_data = file_get_contents($_FILES['picInput']['tmp_name']);
-                                            $sql = "UPDATE `doctor_acc` SET pic_type = '$pic_type', pic_data = '$pic_data' WHERE doctor_id = '$docID'";
+                                            $sql = "UPDATE doctor_acc SET pic_type = ?, pic_data = ? WHERE doctor_id = ?";
                                             
-                                            $result2 = mysqli_query($connect, $sql);
-                                            if ($result2) {
-                                                echo '<script>alert("Picture Uploaded")</script>';
+                                            // Use a prepared statement to prevent SQL injection
+                                            $stmt = $connect->prepare($sql);
+                                            $stmt->bind_param("ssi", $pic_type, $pic_data, $docID);
+                                            
+                                            if ($stmt->execute()) {
+                                                echo '<script>alert("Picture Updated")</script>';
                                             } else {
                                                 echo '<script>alert("Error")</script>';
                                             }
@@ -535,10 +538,9 @@
                                     
                                     <div class="image-gallery">
                                     <?php
-                                        include '../backend/config.php';
-
-                                        $sql = "SELECT doctor_id FROM doctor_acc WHERE doctor_id = '$docID'";
+                                        $sql = "SELECT doctor_id FROM doctor_acc WHERE doctor_id = ?";
                                         $stmt = $connect->prepare($sql);
+                                        $stmt->bind_param("i", $docID);
                                         $stmt->execute();
                                         $result = $stmt->get_result();
                                         ?>
@@ -547,9 +549,8 @@
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
                                                 ?>
-                                            <?php ?>
                                                 <img id="displayed-image" style="width: 100%; height: 100%; border-radius: 25px;" src="picView.php?image_id=<?php echo $row["doctor_id"];?>">
-                                        <?php
+                                            <?php
                                             }
                                         }
                                         ?>

@@ -300,7 +300,7 @@ if(isset($_POST['search'])) {
                                             <td> <?php echo $fetch_appointment['email']; ?> </td>
                                             <td> <?php echo $fetch_appointment['appointmentDate'] . ', ' . $fetch_appointment['appointmentTime']; ?> </td>
                                             <td>
-                                                <p class="status delivered" style="<?php if($fetch_appointment['appointmentStatus'] == 'OFF') { echo 'background-color: red; color: white;'; } ?>"><?php if($fetch_appointment['appointmentStatus'] == 'ON') { echo 'Finished'; } else { echo 'Cancelled'; }; ?></p>
+                                                <p class="status delivered" style="<?php if($fetch_appointment['appointmentStatus'] == 'ON') {  } else { echo 'background-color: red; color: white;'; } ?>"><?php if($fetch_appointment['appointmentStatus'] == 'ON') { echo 'Finished'; } else { echo 'Cancelled'; }; ?></p>
                                             </td>
                                             <td> 
                                                 <a href="uploads/<?php echo $fetch_appointment['id']; ?>" class="bx-icon-1" style="font-size: 32px;"><i class='bx bxs-id-card'></i></a>

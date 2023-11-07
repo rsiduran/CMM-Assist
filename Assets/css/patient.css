@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Montserrat:wght@700&family=Nunito&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #EAEEEF;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+}
+
+nav {
+    font-family: 'poppins', sans-serif;
+    font-weight: bold;
+    height: 70px;
+    background-color: #B1C4B2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-sections {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 25px;
+    padding: 0 40px;
+}
+
+.nav-sections .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-sections .logo img {
+    height: 70%;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.account .account-dp {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account .account-dp i {
+    font-size: 20px;
+    color: green;
+}
+
+.account .account-name .top-name {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.account .account-name .bottom-name {
+    margin-top: -8px;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.nav-list {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.nav-list:nth-child(2) {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+.nav-list:nth-child(1):hover {
+    opacity: 0.77;
+}
+
+.nav-list:nth-child(2):hover {
+    filter: brightness(77%);
+}
+
+main {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.header {
+    font-size: 24px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.header .line {
+    height: 24px;
+    width: 1px;
+    background-color: black;
+    opacity: 0.3;
+    margin: 0 22px;
+}
+
+.header span {
+    opacity: 0.3;
+    font-weight: 100;
+}

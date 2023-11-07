@@ -247,11 +247,11 @@ if(isset($_POST['search'])) {
                         <div class="dashboard-item">
                             <div class="dashboard-left yellow"><i class='bx bx-plus-medical'></i></div>
                             <div class="dashboard-right">
-                                <div class="dashboard-top-text">Medicine Staff</div>
+                                <div class="dashboard-top-text">Patient Records</div>
                                 <div class="dashboard-bottom-text">
                                     <?php
                                         $i = 0;
-                                        $numberMedStaff = "SELECT * FROM `doctor_acc` WHERE doctor_occupation = 'medical_staff'";
+                                        $numberMedStaff = "SELECT * FROM `records`";
                                         $numberMed = mysqli_query($connect, $numberMedStaff);
                                         if ($numberMed) { // Check if the query was executed successfully
                                             $i = mysqli_num_rows($numberMed);

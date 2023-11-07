@@ -76,6 +76,15 @@
                 </div>
                 <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
             </div>  ';
+        } else if($error === 'updated') { 
+            echo '  <div id="pop-up-log-in">
+                <div class="pop-info-top">&#10003;</div>
+                <div class="pop-info-center">
+                    <h1>Thank you!</h1>
+                    <p>Record has been updated. Thanks! '. $doc .'.</p>
+                </div>
+                <div class="pop-info-bottom"><button class="pop-info-bottom-button" onclick="popUpVanish()">Ok</button></div>
+            </div>  ';
         }
     }
     ?>

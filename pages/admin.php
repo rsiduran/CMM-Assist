@@ -433,6 +433,9 @@ if(isset($_POST['search'])) {
                             </article>
                         </main>
                     </div>
+                    
+                    <?php /* to delete
+
                     <div class="dashboard-bottom">
                         <main class="table">
                             <article class="table__header">
@@ -488,6 +491,9 @@ if(isset($_POST['search'])) {
                             </article>
                         </main>
                     </div>
+                    
+                    */?> <!--to Delete php comment tag-->
+
                 </div>
             </section>
             <!-- form  -->
@@ -535,7 +541,7 @@ if(isset($_POST['search'])) {
                                     <select class="input-field" name="occupation" id="occupation" required>
                                         <option value="doctor">Doctor</option>
                                         <option value="nurse">Nurse</option>
-                                        <option value="medical_staff">Medical Staff</option>
+                                        <!-- <option value="medical_staff">Medical Staff</option> -->
                                     </select>
                                     <div class="form-group">
                                         <button type="submit" id="submit" class="submit-button">Create Account</button>

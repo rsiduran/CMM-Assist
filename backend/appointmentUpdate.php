@@ -15,6 +15,8 @@
     if(isset($_GET['msg'])) {
         $appointmentId = $_GET['msg']; 
 
+        //ditu is maglalagay ng codes abt emailing para sa accounts.
+
         $pw = '123';
         $hashedPassword = password_hash($pw, PASSWORD_BCRYPT);
 

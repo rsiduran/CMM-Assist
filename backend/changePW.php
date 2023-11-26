@@ -73,6 +73,26 @@ if (isset($_GET['doc'])) {
     }
 ?>
 
+<?php
+    if(isset($_GET['deletePatient'])) {
+        $patientId = $_GET['deletePatient'];
+        $query = "DELETE FROM `appointments` WHERE appointment_id = ?";
+        $stmt = mysqli_prepare($connect, $query);
+        mysqli_stmt_bind_param($stmt, "i", $patientId);
+        $result = mysqli_stmt_execute($stmt);
+
+        if ($result) {
+            $affectedRows = mysqli_stmt_affected_rows($stmt);
+            header("Location: logout.php");
+        } else {
+            echo "Error: " . mysqli_error($connect);
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+?>
+
+
 
 
 

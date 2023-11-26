@@ -93,6 +93,7 @@
     
     <main id="homeApt">
         <h1 id="header"class="header">Appointments <div class="line"> </div> <span>Home > Appointments</span></h1>
+        <a href="../backend/changePW.php?deletePatient=<?php echo $patientAcc; ?>" onclick="return  confirm('Are you sure you want to cancel your appointment?')" class="cancelApt">Cancel Appointment</a>
         <div class="schedule-container">
             <div class="schedule-section">
                 <div class="test">
@@ -139,6 +140,7 @@
         let changeFE = document.getElementById('changePw')
         let home = document.getElementById('homeApt')
         let pwcontainer = document.getElementById('pw-container')
+        let header2 = document.getElementById('header2')
         function changePw() {
             home.style.display = "none"
             changeFE.style = "block"
@@ -147,7 +149,7 @@
 
         function changeHome() {
             home.style.display = "block"
-            changeFE.style = "none"
+            changeFE.style.display = "none"
             pwcontainer.style.display = "none"
         }
 

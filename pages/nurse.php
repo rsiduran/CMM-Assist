@@ -450,7 +450,7 @@
                                         if ($result->num_rows > 0) {
                                             while ($row = $result->fetch_assoc()) {
                                                 ?>
-                                                <img id="displayed-image" style="width: 100%; height: 100%; border-radius: 25px;" src="picView.php?image_id=<?php echo $row["doctor_id"];?>">
+                                                <img id="displayed-image" class="nurse-gallery" src="picView.php?image_id=<?php echo $row["doctor_id"];?>">
                                             <?php
                                             }
                                         }
